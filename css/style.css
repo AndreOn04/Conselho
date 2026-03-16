@@ -8,10 +8,15 @@
 }
 
 html {
-    overflow-x: hidden; 
     width: 100%;
+    overflow-x: hidden;
 }
 
+body {
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%; /* Evita zoom automático de texto no iOS */
+}
 :root {
     --primary-dark: #0f172a;
     --primary-action: #3b82f6;
