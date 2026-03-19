@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .forEach((d) => d.classList.remove("active"));
   });
 });
+// Dropdown
 
 // Responsividade - Hanburguer - Menu
 document.addEventListener("DOMContentLoaded", () => {
@@ -35,25 +36,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const navMenu = document.querySelector(".nav-menu");
   const dropdowns = document.querySelectorAll(".dropdown-toggle");
 
-  menuIcon.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-    const iconName = navMenu.classList.contains("active")
-      ? "close-outline"
-      : "menu-outline";
-    menuIcon.querySelector("ion-icon").setAttribute("name", iconName);
-  });
+  // Menu Hamburguer
+  if (menuIcon) {
+    menuIcon.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      const icon = menuIcon.querySelector("ion-icon");
+      if (icon) {
+        const isOpened = navMenu.classList.contains("active");
+        icon.setAttribute("name", isOpened ? "close-outline" : "menu-outline");
+      }
+    });
+  }
 
   dropdowns.forEach((btn) => {
-    e.preventDefault();
-    const submenu = this.parentElement.querySelector(".submenu");
+    btn.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const submenu = btn.parentElement.querySelector(".submenu");
 
-    document.querySelectorAll(".submenu").forEach((m) => {
-      if (m !== submenu) m.classList.remove("active");
+        document.querySelectorAll(".submenu").forEach((m) => {
+          if (m !== submenu) m.classList.remove("active");
+        });
+
+        submenu.classList.toggle("active");
+      }
     });
-
-    submenu.classList.toggle("active");
   });
 });
+// Responsividade - Hanburguer - Menu
 
 // Animações HERO
 document.addEventListener("DOMContentLoaded", () => {
@@ -77,10 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(aboutSection);
   }
 });
+// Animações HERO
 
 // Animação Composição conselho
 document.addEventListener("DOMContentLoaded", () => {
-  // Selecionamos todos os itens da lista
   const listItems = document.querySelectorAll(".comp-item");
 
   const observerOptions = {
@@ -122,7 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
     itemObserver.observe(item);
   });
 });
+// Animação Composição conselho
 
+// Animação CheckLists
 document.addEventListener("DOMContentLoaded", () => {
   const helpElements = document.querySelectorAll(
     ".help-header, .help-text-side, .help-visual-slide",
@@ -167,9 +179,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   checklistItems.forEach((item) => listObserver.observe(item));
 });
+// Animação CheckLists
+
+// Animação Página Contato
+document.addEventListener("DOMContentLoaded", () => {
+
+  const infoCol = document.querySelector('.reveal-bottom');
+  const formCol = document.querySelector('.reveal-right');
+
+  setTimeout(() => {
+    if(infoCol) infoCol.classList.add('active-reveal');
+
+    setTimeout(() => {
+      if(formCol) formCol.classList.add('active-reveal');
+    }, 200);
+  }, 100);
+});
+// Animação Página Contato
 
 /* FAQ Section */
-
 document.addEventListener("DOMContentLoaded", () => {
   const faqItems = document.querySelectorAll('.faq-item');
 
@@ -188,3 +216,47 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 })
+/* FAQ Section */
+
+
+// Animaçao School 
+document.addEventListener("DOMContentLoaded", () => {
+    const secaoSchool = document.querySelector('#school');
+    const numero2 = document.querySelector('.n2');
+
+    const dispararNoElemento = (elemento) => {
+        if (!elemento) return;
+
+        const rect = elemento.getBoundingClientRect();
+        
+        const x = (rect.left + rect.width / 2) / window.innerWidth;
+        const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+        confetti({
+            particleCount: 80,
+            spread: 70,
+            origin: { x: x, y: y }, 
+            zIndex: 1,
+            colors: ['#ff0000', '#ffa500', '#ffff00', '#008000', '#0000ff', '#4b0082', '#ee82ee']
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                dispararNoElemento(numero2); 
+                observer.unobserve(secaoSchool);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    if (secaoSchool) observer.observe(secaoSchool);
+
+    if (numero2) {
+        numero2.style.cursor = 'pointer';
+        numero2.addEventListener('mouseenter', () => {
+            dispararNoElemento(numero2);
+        });
+    }
+});
+// Animaçao School 

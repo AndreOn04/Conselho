@@ -1,46 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contact-form");
+  const modal = document.getElementById("confirm-modal");
+  const btnEdit = document.getElementById("btn-edit");
+  const btnConfirm = document.getElementById("btn-confirm");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", async (e) => {
+    contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      modal.classList.add("active");
+    });
 
-      const btn = contactForm.querySelector(".btn-send");
-      const btnText = btn.querySelector("span");
-      const btnIcon = btn.querySelector("ion-icon");
+    btnEdit.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
 
-      btn.disabled = true;
-      btnText.innerText = "Enviando...";
-      btnIcon.setAttribute("name", "refresh-outline");
-      btnIcon.classList.add("spinning");
+    btnConfirm.addEventListener("click", async () => {
+      modal.classList.remove("active");
+
+      const btnSubmit = contactForm.querySelector(".btn-send");
+      const originalText = btnSubmit.innerHTML;
+
+      btnSubmit.disabled = true;
+      btnSubmit.style.cursor = "await";
+
+      let timeLeft = 30;
+      const countdown = setInterval(() => {
+        btnSubmit.innerHTML = `<ion-icon name="sync-outline" class="spinning"></ion-icon> Processando (${timeLeft}s)`;
+        timeLeft--;
+
+        if (timeLeft < 0) {
+          clearInterval(countdown);
+        }
+      }, 1000);
+
+      await new Promise((resolve) => setTimeout(resolve, 3000));
 
       const formData = new FormData(contactForm);
-      const endpoint = "https://formspree.io/f/xaqpppjv";
 
       try {
-        const response = await fetch(endpoint, {
+        btnSubmit.innerHTML = `<ion-icon name="cloud-upload-outline" class="spinning"></ion-icon> Finalizando...`;
+
+        const response = await fetch("https://formspree.io/f/xaqpppjv", {
           method: "POST",
           body: formData,
           headers: { Accept: "application/json" },
         });
 
-        await new Promise((resolve) => setTimeout(resolve, 3000));
-
         if (response.ok) {
           contactForm.reset();
+          // Sucesso! Redireciona
           window.location.href = "https://formspree.io/thanks?language=pt";
         } else {
-          alert(
-            "Erro ao enviar. Verifique se o e-mail foi ativado no Formspree.",
-          );
+          throw new Error("Erro no envio");
         }
       } catch (error) {
-        alert("Erro de conexão. Tente novamente.");
-      } finally {
-        btn.disabled = false;
-        btnText.innerText = "Enviar Mensagem";
-        btnIcon.setAttribute("name", "paper-plane-outline");
-        btnIcon.classList.remove("spinning");
+        alert("Ocorreu um erro ao enviar. Por favor, tente novamente.");
+        btnSubmit.disabled = false;
+        btnSubmit.innerHTML = originalText;
+        btnSubmit.style.cursor = "pointer";
       }
     });
   }

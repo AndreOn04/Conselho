@@ -49,7 +49,7 @@
                             <ion-icon name="chevron-down-outline"></ion-icon>
                         </a>
                         <ul class="submenu">
-                            <li><a href="#types-direitos"> Direitos da Criança e Adolescente </a></li>
+                            <li><a href="./children.html"> Direitos da Criança e Adolescente </a></li>
                             <li><a href="#types-seniors"> Deveres dos Pais </a></li>
                             <li><a href=""></a></li>
                         </ul>
@@ -71,7 +71,7 @@
             </div>
 
             <div class="contact-wrapper">
-                <div class="contact-info">
+                <div class="contact-info reveal-bottom">
                     <div class="info-card">
                         <ion-icon name="location-outline"></ion-icon>
                         <div>
@@ -95,7 +95,8 @@
                     </div>
                 </div>
 
-                <form action="https://formspree.io/f/xaqpppjv" method="POST" class="contact-form" id="contact-form">
+                <form action="https://formspree.io/f/xaqpppjv" method="POST" class="contact-form reveal-right"
+                    id="contact-form">
                     <div class="input-group">
                         <input type="text" id="name" name="name" placeholder="Seu nome" required>
                     </div>
@@ -103,7 +104,8 @@
                         <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
                     </div>
                     <div class="input-group">
-                        <textarea name="message" id="message" rows="5" placeholder="Como podemos ajudar?" required></textarea>
+                        <textarea name="message" id="message" rows="5" placeholder="Como podemos ajudar?"
+                            required></textarea>
                     </div>
                     <button type="submit" class="btn-send">
                         <span>Enviar Mensagem</span>
@@ -112,6 +114,22 @@
                     <div id="form-status"></div>
                 </form>
 
+            </div>
+
+            <div class="modal-overlay" id="confirm-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <h3> Confirme os seus dados. </h3>
+                    </div>
+                    <p>Por favor, verifique se as informações são verídicas, pois é através delas que entraremos em
+                        contato.</p>
+
+                    <div class="modal-actions">
+                        <button id="btn-edit" class="btn-secondary"> Editar </button>
+                        <button id="btn-confirm" class="btn-primary"> Confirmar e Enviar. </button>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -166,6 +184,20 @@
     <!-- JavaScript -->
     <script src="../src/js/index.js"></script>
     <script src="../src/js/Formspree.js"></script>
+
+    <!-- Hand Talk -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <!-- Hand Talk -->
 
     <!-- Ion Icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
