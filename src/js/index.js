@@ -30,6 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // Dropdown
 
+// ProgressBar
+const progressBar = document.querySelector('.progress-bar');
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const height = document.documentElement.scrollHeight - window.innerHeight;
+
+  const progress = (scrollTop / height ) * 100;
+
+  progressBar.style.width = progress + "%";
+});
+
+// ProgressBar
+
 // Responsividade - Hanburguer - Menu
 document.addEventListener("DOMContentLoaded", () => {
   const menuIcon = document.getElementById("menu-icon");
