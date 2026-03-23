@@ -34,12 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
 const progressBar = document.querySelector(".progress-bar");
 
 window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const height = document.documentElement.scrollHeight - window.innerHeight;
+  if (progressBar) {
+    const scrollTop = window.scrollY;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / height) * 100;
 
-  const progress = (scrollTop / height) * 100;
-
-  progressBar.style.width = progress + "%";
+    progressBar.style.width = progress + "%";
+  }
 });
 
 // ProgressBar
@@ -313,24 +314,28 @@ document.addEventListener("DOMContentLoaded", () => {
       "Art. 136. V - fiscalizar entidades governamentais ou não, públicas ou privadas, que executem programas de acolhimento institucional, visando à garantia dos direitos de crianças e adolescentes. ",
   };
 
-  btns.forEach((btn) => {
-    btn.onclick = function () {
-      const artKey = this.getAttribute("data-art");
-      console.log("Botão clicado! Artigo:", artKey);
+  if (btns.length > 0 && modal && modalText) {
+    btns.forEach((btn) => {
+      btn.onclick = function () {
+        const artKey = this.getAttribute("data-art");
+        console.log("Botão clicado! Artigo:", artKey);
 
-      if (lawData[artKey]) {
-        modalText.innerText = lawData[artKey];
-        modal.classList.add("on-visible");
-      }
-    };
+        if (lawData[artKey]) {
+          modalText.innerText = lawData[artKey];
+          modal.classList.add("on-visible");
+        }
+      };
+    });
+  }
+
+  closeBtn?.addEventListener("click", () => {
+    modal?.classList.remove("on-visible");
   });
 
-  const closeModal = () => modal.classList.remove("on-visible");
-
-  closeBtn.onclick = closeModal;
-
-  modal.onclick = function (e) {
-    if (e.target === modal) closeModal();
-  };
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("on-visible");
+    }
+  });
 });
 // Animação Modal - Conselho na prática
