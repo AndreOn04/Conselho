@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // Dropdown
 
 // ProgressBar
-const progressBar = document.querySelector('.progress-bar');
+const progressBar = document.querySelector(".progress-bar");
 
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const height = document.documentElement.scrollHeight - window.innerHeight;
 
-  const progress = (scrollTop / height ) * 100;
+  const progress = (scrollTop / height) * 100;
 
   progressBar.style.width = progress + "%";
 });
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   );
 
-  if(aboutSection) {
+  if (aboutSection) {
     observer.observe(aboutSection);
   }
 });
@@ -197,15 +197,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Animação Página Contato
 document.addEventListener("DOMContentLoaded", () => {
-
-  const infoCol = document.querySelector('.reveal-bottom');
-  const formCol = document.querySelector('.reveal-right');
+  const infoCol = document.querySelector(".reveal-bottom");
+  const formCol = document.querySelector(".reveal-right");
 
   setTimeout(() => {
-    if(infoCol) infoCol.classList.add('active-reveal');
+    if (infoCol) infoCol.classList.add("active-reveal");
 
     setTimeout(() => {
-      if(formCol) formCol.classList.add('active-reveal');
+      if (formCol) formCol.classList.add("active-reveal");
     }, 200);
   }, 100);
 });
@@ -213,64 +212,125 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* FAQ Section */
 document.addEventListener("DOMContentLoaded", () => {
-  const faqItems = document.querySelectorAll('.faq-item');
+  const faqItems = document.querySelectorAll(".faq-item");
 
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
 
-    question.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
+    question.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
 
-      faqItems.forEach(allItems => {
-        allItems.classList.remove('active');
+      faqItems.forEach((allItems) => {
+        allItems.classList.remove("active");
       });
-      if(!isActive) {
-        item.classList.add('active');
+      if (!isActive) {
+        item.classList.add("active");
       }
-    })
-  })
-})
+    });
+  });
+});
 /* FAQ Section */
 
-
-// Animaçao School 
+// Animaçao School
 document.addEventListener("DOMContentLoaded", () => {
-    const secaoSchool = document.querySelector('#school');
-    const numero2 = document.querySelector('.n2');
+  const secaoSchool = document.querySelector("#school");
+  const numero2 = document.querySelector(".n2");
 
-    const dispararNoElemento = (elemento) => {
-        if (!elemento) return;
+  const dispararNoElemento = (elemento) => {
+    if (!elemento) return;
 
-        const rect = elemento.getBoundingClientRect();
-        
-        const x = (rect.left + rect.width / 2) / window.innerWidth;
-        const y = (rect.top + rect.height / 2) / window.innerHeight;
+    const rect = elemento.getBoundingClientRect();
 
-        confetti({
-            particleCount: 80,
-            spread: 70,
-            origin: { x: x, y: y }, 
-            zIndex: 1,
-            colors: ['#ff0000', '#ffa500', '#ffff00', '#008000', '#0000ff', '#4b0082', '#ee82ee']
-        });
-    };
+    const x = (rect.left + rect.width / 2) / window.innerWidth;
+    const y = (rect.top + rect.height / 2) / window.innerHeight;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                dispararNoElemento(numero2); 
-                observer.unobserve(secaoSchool);
-            }
-        });
-    }, { threshold: 0.5 });
+    confetti({
+      particleCount: 80,
+      spread: 70,
+      origin: { x: x, y: y },
+      zIndex: 1,
+      colors: [
+        "#ff0000",
+        "#ffa500",
+        "#ffff00",
+        "#008000",
+        "#0000ff",
+        "#4b0082",
+        "#ee82ee",
+      ],
+    });
+  };
 
-    if (secaoSchool) observer.observe(secaoSchool);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          dispararNoElemento(numero2);
+          observer.unobserve(secaoSchool);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
 
-    if (numero2) {
-        numero2.style.cursor = 'pointer';
-        numero2.addEventListener('mouseenter', () => {
-            dispararNoElemento(numero2);
-        });
-    }
+  if (secaoSchool) observer.observe(secaoSchool);
+
+  if (numero2) {
+    numero2.style.cursor = "pointer";
+    numero2.addEventListener("mouseenter", () => {
+      dispararNoElemento(numero2);
+    });
+  }
 });
-// Animaçao School 
+// Animaçao School
+
+// Animação Modal - Conselho na prática
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.querySelector(".modal-overlay");
+  const modalText = document.getElementById("modalText");
+  const btns = document.querySelectorAll(".btn-law-modal");
+  const closeBtn = document.querySelector(".close-modal");
+
+  const lawData = {
+    "136-1":
+      "Art. 136. I - atender, aconselhar e encaminhar à rede de serviços públicos ou privados, crianças e adolescentes que se encontrem em situação de risco pessoal ou social;",
+
+    "136-2":
+      "Art. 136. II - Compete ao Conselho Tutelar: aplicar medidas de proteção, nas hipóteses previstas nos arts. 98 e 101, inclusive: \n\n" +
+      "a) matricular os menores em estabelecimentos de ensino; \n\n" +
+      "b) encaminhá-los para tratamento médico, psicológico, psiquiátrico ou hospitalar;",
+
+    "136-3":
+      "Art. 136. III - promover a execução de suas decisões, podendo: \n\n" +
+      "a) requisitar serviços públicos nas áreas de saúde, educação, serviço social, previdência, trabalho e segurança; \n\n" +
+      "b) representar junto à autoridade judiciária nos casos de descumprimento injustificado de suas deliberações.",
+
+    "136-4":
+      "Art. 136. IV - São atribuições do Conselho Tutelar: \n\n" +
+      "encaminhar ao Ministério Público notícia de fato que constitua infração administrativa ou penal contra os direitos da criança ou adolescente;",
+
+    "136-5":
+      "Art. 136. V - fiscalizar entidades governamentais ou não, públicas ou privadas, que executem programas de acolhimento institucional, visando à garantia dos direitos de crianças e adolescentes. ",
+  };
+
+  btns.forEach((btn) => {
+    btn.onclick = function () {
+      const artKey = this.getAttribute("data-art");
+      console.log("Botão clicado! Artigo:", artKey);
+
+      if (lawData[artKey]) {
+        modalText.innerText = lawData[artKey];
+        modal.classList.add("on-visible");
+      }
+    };
+  });
+
+  const closeModal = () => modal.classList.remove("on-visible");
+
+  closeBtn.onclick = closeModal;
+
+  modal.onclick = function (e) {
+    if (e.target === modal) closeModal();
+  };
+});
+// Animação Modal - Conselho na prática
