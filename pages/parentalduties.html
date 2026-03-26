@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contato.</title>
+    <title>Deveres dos responsáveis.</title>
     <!-- Link CSS -->
     <link rel="stylesheet" href="../css/style.css" />
 
@@ -31,7 +31,7 @@
 
         <nav class="nav-menu">
           <ul class="nav-list">
-            <li><a href="../index.html"> O Início </a></li>
+            <li><a href="/index.html">Início</a></li>
             <li class="dropdown">
               <a href="#conselho" class="dropdown-toggle">
                 O conselho
@@ -55,11 +55,13 @@
               </a>
               <ul class="submenu">
                 <li>
-                  <a href="./children.html">
+                  <a href="../pages/children.html">
                     Direitos da Criança e Adolescente
                   </a>
                 </li>
-                <li><a href="./parentalduties.html"> Deveres dos Pais </a></li>
+                <li>
+                  <a href="/pages/parentalduties.html"> Deveres dos Pais </a>
+                </li>
                 <li><a href=""></a></li>
               </ul>
             </li>
@@ -71,106 +73,81 @@
     </header>
     <!-- Header -->
 
-    <!-- Contato -->
-    <section class="contact-section">
-      <div class="container-centralizado">
-        <div class="contact-header">
-          <h2>Fale Conosto</h2>
-          <p>
-            Dúvidas, sugestões ou informações sobre direitos da criança e do
-            adolescente.
-          </p>
-        </div>
+    <div class="progress-bar"></div>
 
-        <div class="contact-wrapper">
-          <div class="contact-info reveal-bottom">
-            <div class="info-card">
-              <ion-icon name="location-outline"></ion-icon>
-              <div>
-                <h4>Onde estamos localizados</h4>
-                <p>Rua Exemplo, 123 - Centro, Cuiabá-MT</p>
-              </div>
-            </div>
-            <div class="info-card">
-              <ion-icon name="mail-outline"></ion-icon>
-              <div>
-                <h4>Use no contato de e-mail</h4>
-                <p>contato@conselhotutelar.com</p>
-              </div>
-            </div>
-            <div class="info-card">
-              <ion-icon name="call-outline"></ion-icon>
-              <div>
-                <h4>Telefone</h4>
-                <p>(65) 99999-9999</p>
-              </div>
+    <section class="hero-duties hero-full-screen">
+      <div class="overlay-hero"></div>
+      <div class="duties-centralizado reveal-bottom">
+        <span class="badge-orientacao"> Orientações Legais </span>
+        <!-- <h1> Responsabilidade dos <span>Responsáveis.</span> </h1> -->
+        <p>
+          O Estatuto da Criança e do Adolescente (ECA) estabelece que pais e
+          responsáveis têm a obrigação legal de garantir o desenvolvimento
+          saudável, seguro e digno de crianças e adolescentes. Isso inclui não
+          apenas suprir necessidades básicas, mas também assegurar educação,
+          respeito, convivência familiar e proteção contra qualquer forma de
+          negligência, violência ou exploração.
+        </p>
+      </div>
+    </section>
+
+    <section class="duties-list-section">
+      <div class="container-duties">
+        <h2 class="title-centered">
+          Deveres Legais dos <span>Responsáveis.</span>
+        </h2>
+
+        <div class="glass-list-container">
+          <div class="duty-item">
+            <span class="duty-number"> 01 </span>
+            <div class="duty-content">
+              <h3>Sustento e Guarda</h3>
+              <p>
+                Dever de garantir a integridade física, fornecer alimentação,
+                abrigo e todas as condições materiais necessárias para a
+                sobrevivência digna da criança.
+              </p>
             </div>
           </div>
 
-          <form
-            action="https://formspree.io/f/xaqpppjv"
-            method="POST"
-            class="contact-form reveal-right"
-            id="contact-form"
-          >
-            <div class="input-group">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Seu nome"
-                required
-              />
+          <div class="duty-item">
+            <span class="duty-number"> 02 </span>
+            <div class="duty-content">
+              <h3>Educação e Matrícula</h3>
+              <p>
+                Obrigação de matricular o filho na rede regular de ensino e
+                acompanhar ativamente sua frequência e aproveitamento escolar,
+                conforme o Art. 55 do ECA.
+              </p>
             </div>
-            <div class="input-group">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Seu e-mail"
-                required
-              />
-            </div>
-            <div class="input-group">
-              <textarea
-                name="message"
-                id="message"
-                rows="5"
-                placeholder="Como podemos ajudar?"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="btn-send">
-              <span>Enviar Mensagem</span>
-              <ion-icon name="paper-plane-outline"></ion-icon>
-            </button>
-            <div id="form-status"></div>
-          </form>
-        </div>
+          </div>
 
-        <div class="modal-overlay" id="confirm-modal">
-          <div class="modal-content">
-            <div class="modal-contact">
-              <ion-icon name="alert-outline"></ion-icon>
-              <h3>Confirme as suas informações.</h3>
+          <div class="duty-item">
+            <span class="duty-number"> 03 </span>
+            <div class="duty-content">
+              <h3>Poder Familiar</h3>
+              <p>
+                Exercer a direção da criação, orientando o desenvolvimento moral
+                e social, além de representar ou assistir os filhos em atos da
+                vida civil.
+              </p>
             </div>
-            <p>
-              Por favor, verifique se as informações são verídicas, pois é
-              através delas que entraremos em contato.
-            </p>
+          </div>
 
-            <div class="modal-actions">
-              <button id="btn-edit" class="btn-secondary">Editar</button>
-              <button id="btn-confirm" class="btn-primary">
-                Confirmar e Enviar.
-              </button>
+          <div class="duty-item">
+            <span class="duty-number"> 04 </span>
+            <div class="duty-content">
+              <h3>Convivência Familiar</h3>
+              <p>
+                Proporcionar um ambiente seguro e afetuoso, garantindo o direito
+                da criança de crescer em família, livre de qualquer forma de
+                negligência ou violência.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Contato -->
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -232,7 +209,6 @@
 
     <!-- JavaScript -->
     <script src="../src/js/index.js"></script>
-    <script src="../src/js/Formspree.js"></script>
 
     <!-- Hand Talk -->
     <div vw class="enabled">

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const originalText = btnSubmit.innerHTML;
     
           btnSubmit.disabled = true;
-          btnSubmit.style.cursor = "wait"; 
+          btnSubmit.style.cursor = "wait";
     
           let timeLeft = 30;
           const countdown = setInterval(() => {
