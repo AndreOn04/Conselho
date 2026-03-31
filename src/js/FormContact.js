@@ -4,6 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnEdit = document.getElementById("btn-edit");
   const btnConfirm = document.getElementById("btn-confirm");
 
+  // Animação Página Contato
+  const infoCol = document.querySelector(".reveal-bottom");
+  const formCol = document.querySelector(".reveal-right");
+
+  setTimeout(() => {
+    if (infoCol) infoCol.classList.add("active-reveal");
+
+    setTimeout(() => {
+      if (formCol) formCol.classList.add("active-reveal");
+    }, 200);
+  }, 100);
+  // Animação Página Contato
+
   if (contactForm && modal) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();

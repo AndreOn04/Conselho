@@ -40,6 +40,9 @@ body {
     --text-main: #1e293b;
     --text-muted: #64748b;
 
+    --text-color: #1a1a1a;
+    --btn-bg: #f0f0f0;
+
     --error: #ef4444;
     --sucess: #10b981;
 
@@ -62,8 +65,8 @@ body {
 
 /* Header */
 .main-header {
-    background-color: var(--primary-dark);
-    color: var(--bg-main);
+    background-color: var(--bg-main);
+    color: var(--primary-dark);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -93,7 +96,7 @@ body {
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--bg-main);
+    color: var(--primary-dark);
 }
 
 .logo span {
@@ -114,7 +117,7 @@ body {
 }
 
 .nav-list a {
-    color: var(--bg-main);
+    color: var(--primary-dark);
     text-decoration: none;
     font-weight: 500;
     display: flex;
@@ -123,7 +126,7 @@ body {
 }
 
 .nav-list a:hover {
-    color: var(--accent);
+    color: var(--primary-dark);
 }
 
 .dropdown {
@@ -142,7 +145,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--primary-dark);
+    background-color: var(--bg-main);
     min-width: 250px;
     list-style: none;
     padding: 10px 0;
@@ -327,33 +330,6 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
-}
-
-.about-image-effect {
-    position: relative;
-    width: 100%;
-    max-width: 450px;
-    height: 300px;
-
-    background-image: url(../src/imagens/conselho-hero.png);
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    z-index: 2;
-}
-
-.about-image-effect::before {
-    content: "";
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 100%;
-    height: 100%;
-
-    background-color: var(--primary-dark);
-    border-radius: 10px;
-    opacity: 0.1;
-    z-index: -1;
 }
 /* Hero Section */
 
@@ -558,7 +534,7 @@ body {
 
     flex: 0.7;
     height: 550px;
-    background-image: url(../src/imagens/sabio.png);
+    background-image: url(../src/svgs/Internship.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
@@ -1923,8 +1899,6 @@ body {
     transform: translateY(0);
 }
 
-
-
 /* Deveres */
 
 /* Referencias */
@@ -2566,6 +2540,40 @@ body {
     .duty-number {
         font-size: 2rem;
         margin-bottom: 5px;
+    }
+
+    .consequences-section {
+        padding: 60px 20px;
+    }
+
+    .block-header {
+        padding: 15px 20px;
+    }
+
+    .block-header h3 {
+        font-size: 0.9rem;
+    }
+
+    .block-body {
+        padding: 0 20px;
+    }
+
+    .block-header.active + .block-body {
+        max-height: 2000px;
+        padding: 20px;
+    }
+
+    .artigo-balloon {
+        width: 90vw;
+        max-width: 320px;
+
+        left: 5vw !important;
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    .artigo-balloon::after {
+        display: none;
     }
 
     /* CT SECTION */
