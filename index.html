@@ -58,7 +58,9 @@
                     Direitos da Criança e Adolescente
                   </a>
                 </li>
-                <li><a href="./pages/parentalduties.html"> Deveres dos Pais </a></li>
+                <li>
+                  <a href="./pages/parentalduties.html"> Deveres dos Pais </a>
+                </li>
                 <li><a href=""></a></li>
               </ul>
             </li>
@@ -99,7 +101,7 @@
 
         <div class="about-image-container">
           <div class="about-image-effect"></div>
-          <img src="./src/svgs/children.svg" alt="">
+          <img src="./src/svgs/children.svg" alt="" />
         </div>
       </div>
     </section>
@@ -272,10 +274,9 @@
                 O Conselho Tutelar atua na defesa e garantia dos direitos de
                 crianças e adolescentes, podendo orientar famílias, aplicar
                 medidas de proteção e encaminhar casos para serviços públicos de
-                saúde, educação e assistência social.
-                Qualquer cidadão pode procurar o Conselho Tutelar de sua
-                  cidade para relatar situações de risco, abandono ou
-                  maus-tratos.
+                saúde, educação e assistência social. Qualquer cidadão pode
+                procurar o Conselho Tutelar de sua cidade para relatar situações
+                de risco, abandono ou maus-tratos.
               </p>
               <p>
                 Além disso, quando a situação envolve possíveis crimes,
@@ -301,7 +302,14 @@
             <div class="help-checklist-area">
               <h3>Quando é necessário chamar o Conselho Tutelar?</h3>
               <div class="content-text">
-                O Conselho Tutelar deve ser acionado <span class="text-reveal-marker">sempre que houver ameaça ou violação dos direitos de crianças e adolescentes (até 18 anos), causada por negligência, abuso, violência ou omissão da família, Estado ou sociedade.</span> Casos incluem violência física/sexual, trabalho infantil, evasão escolar, falta de moradia ou saúde, e abandono.
+                O Conselho Tutelar deve ser acionado
+                <span class="text-reveal-marker"
+                  >sempre que houver ameaça ou violação dos direitos de crianças
+                  e adolescentes (até 18 anos), causada por negligência, abuso,
+                  violência ou omissão da família, Estado ou sociedade.</span
+                >
+                Casos incluem violência física/sexual, trabalho infantil, evasão
+                escolar, falta de moradia ou saúde, e abandono.
               </div>
               <div class="subtitle-content-text">
                 Principais situações para acionar o Conselho Tutelar:
@@ -309,23 +317,28 @@
               <div class="check-list-vertical">
                 <p>
                   <span class="check-area"></span>
-                  <strong>Negligência familiar:</strong> Falta de higiene, desnutrição, falta de acompanhamento médico ou escolar.
+                  <strong>Negligência familiar:</strong> Falta de higiene,
+                  desnutrição, falta de acompanhamento médico ou escolar.
                 </p>
                 <p>
                   <span class="check-area"></span>
-                  <strong>Maus-tratos e violência:</strong> Sinais de agressão física, abuso sexual ou violência psicológica.
+                  <strong>Maus-tratos e violência:</strong> Sinais de agressão
+                  física, abuso sexual ou violência psicológica.
                 </p>
                 <p>
                   <span class="check-area"></span>
-                  <strong>Abandono:</strong> Crianças deixadas sozinhas ou em situação de rua.
+                  <strong>Abandono:</strong> Crianças deixadas sozinhas ou em
+                  situação de rua.
                 </p>
                 <p>
                   <span class="check-area"></span>
-                  <strong>Trabalho infantil:</strong> Exploração de trabalho infantil ou adolescente.
+                  <strong>Trabalho infantil:</strong> Exploração de trabalho
+                  infantil ou adolescente.
                 </p>
                 <p>
                   <span class="check-area"></span>
-                  <strong>Violação escolar:</strong> Evasão escolar ou recusa de matrícula pela instituição.
+                  <strong>Violação escolar:</strong> Evasão escolar ou recusa de
+                  matrícula pela instituição.
                 </p>
               </div>
             </div>
@@ -656,6 +669,47 @@
 
     <!-- FAQ -->
 
+    <!-- Settings -->
+    <div class="settings-fab" id="settingsFab">
+      <button class="fab-main-btn" onclick="toggleSettingsMenu()">
+        <ion-icon name="settings-outline"></ion-icon>
+      </button>
+
+      <!-- Dark Mode Toggle -->
+      <div class="fab-menu" id="fabMenu">
+        <div class="fab-item">
+          <span>Tema</span>
+          <li class="theme-switch-container">
+            <input type="checkbox" id="chk" class="checkbox" />
+            <label for="chk" class="label">
+              <ion-icon name="moon-outline" class="fa-moon"></ion-icon>
+              <ion-icon name="sunny-outline" class="fa-sun"></ion-icon>
+              <div class="ball"></div>
+            </label>
+          </li>
+      </div>
+
+        <!-- Hand Talk -->
+        <div class="fab-item">
+          <span>Libras</span>
+          <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+          </div>
+
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget("https://vlibras.gov.br/app");
+          </script>
+          <!-- Hand Talk -->
+        </div>
+      </div>
+      <!-- Dark Mode Toggle -->
+    </div>
+    <!-- Settings -->
+
     <!-- Footer -->
     <footer class="main-footer">
       <div class="footer-wrapper">
@@ -718,20 +772,6 @@
     <script src="./src/js/index.js"></script>
     <script src="./src/js/TextMarker.js"></script>
     <script src="./src/js/Check.js"></script>
-
-    <!-- Hand Talk -->
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
-    </div>
-
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget("https://vlibras.gov.br/app");
-    </script>
-    <!-- Hand Talk -->
 
     <!-- Ion Icons -->
     <script

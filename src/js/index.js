@@ -30,6 +30,48 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // Dropdown
 
+// Dark Mode
+const chk = document.getElementById('chk');
+const body = document.body;
+
+if (chk) {
+  chk.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+}
+
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+  body.classList.add('dark-mode');
+  if (chk) chk.checked = true;
+}
+
+function toggleSettingsMenu () {
+  const menu = document.getElementById('fabMenu');
+  const btn = document.querySelector('fab-main-btn ion-icon');
+
+  menu.classList.toggle('active');
+
+  if(menu.classList.contains('active')){
+    btn.style.transform = 'rotate(90deg)';
+  } else {
+    btn.style.transform = 'rotate(0deg)';
+  }
+}
+
+document.addEventListener('click', (e) => {
+  const tab = document.getElementById('settingsFab');
+  if(!fab.contains(e.target)) {
+    document.getElementById('fabMenu').classList.remove('active');
+  }
+})
+
 // ProgressBar
 const progressBar = document.querySelector(".progress-bar");
 
