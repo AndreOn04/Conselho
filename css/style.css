@@ -26,34 +26,6 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
-body.dark-mode {
-    --bg-main: #000000;
-    --primary-dark: #ffffff;
-    
-    --text-main: #f8fafc;
-    --border-light: #334155;
-    
-    --bg-soft: #0f172a;
-    --text-highlight: linear-gradient(120deg, #1e3a8a 0%, #1e3a8a 100%);
-
-    --text-footer-title: #ffffff;
-    --text-footer-body: #cbd5e1;
-}
-
-body.dark-mode .comp-number {
-    color: rgba(255, 255, 255, 0.07);
-}
-
-body.dark-mode .comp-number {
-    color: rgba(59, 130, 246, 0.1);
-}
-
-body.dark-mode .comp-item {
-    background: var(--bg-soft);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    border-left: 5px solid var(--primary-action); 
-}
-
 :root {
     --primary-dark: #0f172a;
     --primary-action: #3b82f6;
@@ -81,6 +53,64 @@ body.dark-mode .comp-item {
 
     --text-footer-title: #0f172a;
     --text-footer-body: #64748b;
+
+    --contact-bg-card: #f8fafc;      
+    --contact-input-bg: #ffffff;     
+    --contact-input-border: #e2e8f0; 
+    --contact-btn-bg: #0f172a;       
+    --contact-btn-text: #ffffff;
+
+    --contact-text-title: #0f172a;
+    --contact-text-body: #475569;
+
+    --footer-border: 1px solid #e2e8f0;
+    --footer-bg: #f8fafc;
+    --footer-text-title: #0f172a;
+    --footer-text-body: #475569;
+    --footer-border: #e2e8f0;
+}
+
+body.dark-mode {
+    --bg-main: #000000;
+    --primary-dark: #ffffff;
+    
+    --text-main: #f8fafc;
+    --border-light: #334155;
+    
+    --bg-soft: #0f172a;
+    --text-highlight: linear-gradient(120deg, #1e3a8a 0%, #1e3a8a 100%);
+
+    --text-footer-title: #ffffff;
+    --text-footer-body: #cbd5e1;
+
+    --contact-bg-card: #0f172a;
+    --contact-input-bg: #1e293b;
+    --contact-input-border: #334155;
+    --contact-btn-bg: #ffffff;
+    --contact-btn-text: #000000;
+
+    --contact-text-title: #ffffff;
+    --contact-text-body: #cbd5e1;
+
+    --footer-border: 1px solid #1e293b;
+    --footer-bg: #0f172a;
+    --footer-text-title: #ffffff;
+    --footer-text-body: #cbd5e1;
+    --footer-border: #1e293b;
+}
+
+body.dark-mode .comp-number {
+    color: rgba(255, 255, 255, 0.07);
+}
+
+body.dark-mode .comp-number {
+    color: rgba(59, 130, 246, 0.1);
+}
+
+body.dark-mode .comp-item {
+    background: var(--bg-soft);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-left: 5px solid var(--primary-action); 
 }
 
 .settings-fab {
@@ -308,17 +338,35 @@ body.dark-mode .nav-list a {
 
 .submenu {
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--bg-main);
-    min-width: 250px;
+    top: 120%;
+    left: 50%;
+
+    transform: translateX(-50%);
+    background-color: var(--bg-soft);
+    min-width: 280px;
     list-style: none;
-    padding: 10px 0;
-    margin-top: 10px;
+    padding: 15px 0;
+
+    margin-top: 20px;
     border-radius: 4px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 
     display: none;
+    z-index: 1000;
+
+    border-bottom: 4px solid var(--primary-action);
+}
+
+.submenu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--bg-main);
 }
 
 .submenu.active {
@@ -326,17 +374,22 @@ body.dark-mode .nav-list a {
 }
 
 .submenu li a {
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 0.9rem;
+    font-weight: 700;
+
+    color: var(--text-main);
     display: block;
-    transition: background 0.2s;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .submenu li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--accent);
-}
+    background-color: var(--bg-soft);
+    color: var(--primary-action);
 
+    padding-left: 30px;
+}
 /* Header */
 
 /* Hero Section */
@@ -2114,6 +2167,12 @@ body.dark-mode .nav-list a {
 /* Referencias */
 
 /* Contato */
+.contact-section {
+    background-color: var(--contact-bg-card);
+    padding: 30px 0px;
+    transition: background-color 0.3s ease;
+}
+
 .contact-wrapper {
     display: flex;
     gap: 50px;
@@ -2145,8 +2204,14 @@ body.dark-mode .nav-list a {
 .contact-header h2 {
     font-size: 2.1rem;
     text-transform: uppercase;
-    color: var(--primary-dark);
+    color: var(--contact-text-title);
     margin-bottom: 20px;
+}
+
+.contact-header p {
+    color: var(--contact-text-body);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-info {
@@ -2159,14 +2224,25 @@ body.dark-mode .nav-list a {
 .info-card {
     display: flex;
     align-items: center;
+
     gap: 20px;
     padding: 20px;
-    background: var(--bg-soft);
+
+    background: var(--contact-bg-card);
+    border: 1px solid var(--contact-input-border);
+
     border-radius: 12px;
 }
 
 .info-card h4 {
+    color: var(--contact-text-title);
     margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.info-card p,
+.info-card span {
+    color: var(--contact-text-body);
 }
 
 .info-card ion-icon {
@@ -2176,10 +2252,12 @@ body.dark-mode .nav-list a {
 
 .contact-form {
     flex: 1.5;
-    background: var(--bg-main);
+    background: var(--contact-form-bg);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-light);
+
+    border: 1px solid var(--contact-input-border);
+
     padding: 20px;
     margin-bottom: 30px;
 }
@@ -2192,7 +2270,12 @@ body.dark-mode .nav-list a {
 .input-group textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid var(--border-light);
+
+    background: var(--contact-input-bg);
+    border: 1px solid var(--contact-input-border);
+
+    color: var(--contact-text-title);
+    
     border-radius: 8px;
     outline: none;
     transition: 0.3s;
@@ -2205,8 +2288,8 @@ body.dark-mode .nav-list a {
 }
 
 .btn-send {
-    background: var(--primary-dark);
-    color: #fff;
+    background: var(--contact-btn-bg);
+    color: var(--contact-btn-text);
     padding: 15px 30px;
     border: none;
     border-radius: 8px;
@@ -2220,6 +2303,7 @@ body.dark-mode .nav-list a {
 
 .btn-send:hover {
     background: var(--primary-action);
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
@@ -2257,13 +2341,14 @@ body.dark-mode .nav-list a {
 }
 
 .modal-content {
-    background: #fff;
+    background: var(--bg-main);
+    color: var(--text-main);
     padding: 30px;
     border-radius: 15px;
     max-width: 450px;
     width: 90%;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--contact-input-border);
 }
 
 .modal-contact {
@@ -2305,8 +2390,8 @@ body.dark-mode .nav-list a {
 }
 
 .btn-primary {
-    background: var(--primary-dark);
-    color: #fff;
+    background: var(--contact-btn-bg);
+    color: var(--contact-btn-text);
 }
 
 .btn-primary:hover {
@@ -2321,11 +2406,13 @@ body.dark-mode .nav-list a {
 
 /* Footer */
 .main-footer {
-    background-color: #0f172a;
-    color: var(--text-footer);
+    background-color: var(--footer-bg);
+    color: var(--footer-text-body);
 
     padding: 60px 0 30px 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    border-top: 1px solid var(--footer-border);
 }
 
 .footer-wrapper {
@@ -2342,7 +2429,7 @@ body.dark-mode .nav-list a {
 }
 
 .footer-box h4 {
-    color: var(--text-footer-title);
+    color: var(--footer-text-title);
     font-size: 1rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -2357,7 +2444,7 @@ body.dark-mode .nav-list a {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 15px;
-    color: var(--text-footer-body);
+    color: var(--footer-text-body);
 }
 
 .footer-links {
@@ -2391,7 +2478,7 @@ body.dark-mode .nav-list a {
 
 .footer-divider {
     border: 0;
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid var(--footer-border);
     margin: 40px auto;
     max-width: 1200px;
 }
@@ -2411,7 +2498,7 @@ body.dark-mode .nav-list a {
 .footer-copyright {
     text-align: center;
     font-size: 0.8rem;
-    color: var(--text-muted);
+    color: var(--footer-text-body);
 }
 
 body.dark-mode .footer-bottom-logos img {
@@ -2426,11 +2513,11 @@ body.dark-mode .footer-bottom-logos img {
     .menu-mobile-icon {
         display: block;
     }
-
+    
     .container {
         flex-wrap: wrap;
     }
-
+    
     .nav-menu {
         width: 100%;
         max-height: 0;
@@ -2449,14 +2536,18 @@ body.dark-mode .footer-bottom-logos img {
         align-items: stretch;
     }
 
-    .nav-list > li > a {
+    /* .nav-list > li > a {
         border-bottom: 1px solid var(--text-muted);
+    } */
+
+    .border-bottom {
+        border-bottom: 1px solid var(--border-light);
     }
 
     .nav-list li {
         width: 100%;
     }
-
+    
     .nav-list li a {
         display: flex;
         align-items: center;
@@ -2477,21 +2568,40 @@ body.dark-mode .footer-bottom-logos img {
         font-size: 22px;
     }
 
-    /* SUBMENU */
-    .submenu {
-        position: static;
-        display: none;
-        width: 100%;
+    .nav-list .submenu {
+        position: static !important;
+        transform: none !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+        border-bottom: none !important;
+        border-radius: 0 !important;
+    }
+    
+    .nav-list .submenu::before {
+        display: none !important;
+    }
+    
+    .nav-list .submenu li a {
+        padding-left: 50px !important; 
+        height: 55px !important;
+        font-size: 0.95rem !important;
+        font-weight: 500 !important;
+        color: var(--text-main) !important;
+        background: transparent !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
     }
 
-    .dropdown.active .submenu {
-        display: block;
+    .nav-list .submenu li a:hover {
+        transition: all 0.3s ease !important;
+        padding-left: 36px !important;
     }
 
-    .submenu li a {
-        height: 50px;
-        padding-left: 40px;
-        border-bottom: none;
+    .dropdown.active > .submenu {
+        display: block !important;
     }
 
     /* Banner Principal */

@@ -214,6 +214,47 @@
         </div>
       </div>
 
+       <!-- Settings -->
+    <div class="settings-fab" id="settingsFab">
+      <button class="fab-main-btn" onclick="toggleSettingsMenu()">
+        <ion-icon name="settings-outline"></ion-icon>
+      </button>
+
+      <!-- Dark Mode Toggle -->
+      <div class="fab-menu" id="fabMenu">
+        <div class="fab-item">
+          <span>Tema</span>
+          <li class="theme-switch-container">
+            <input type="checkbox" id="chk" class="checkbox" />
+            <label for="chk" class="label">
+              <ion-icon name="moon-outline" class="fa-moon"></ion-icon>
+              <ion-icon name="sunny-outline" class="fa-sun"></ion-icon>
+              <div class="ball"></div>
+            </label>
+          </li>
+      </div>
+
+        <!-- Hand Talk -->
+        <div class="fab-item">
+          <span>Libras</span>
+          <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+          </div>
+
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget("https://vlibras.gov.br/app");
+          </script>
+          <!-- Hand Talk -->
+        </div>
+      </div>
+      <!-- Dark Mode Toggle -->
+    </div>
+    <!-- Settings -->
+
       <hr class="footer-divider" />
 
       <div class="footer-bottom-logos">
