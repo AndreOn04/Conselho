@@ -12,6 +12,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
 
   <body>
@@ -85,27 +90,78 @@
       </div>
     </section>
 
-    <section class="about-section">
-      <div class="container">
-        <div class="about-intro">
-          <h2>O que é Conselho <span>Tutelar?</span></h2>
-          <p>
-            O Conselho Tutelar é um órgão público municipal do Brasil criado
-            para proteger e garantir os direitos de crianças e adolescentes
-            <strong>(pessoas com menos de 18 anos).</strong> Ele foi
-            estabelecido pelo Estatuto da Criança e do Adolescente (ECA), uma
-            lei que define os direitos e deveres relacionados à infância e
-            juventude no país.
-          </p>
+    <section class="about-section swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="container">
+            <div class="about-intro">
+              <h2>O que é Conselho <span>Tutelar?</span></h2>
+              <p>
+                O Conselho Tutelar é um órgão público municipal do Brasil criado
+                para proteger e garantir os direitos de crianças e adolescentes
+                <strong>(pessoas com menos de 18 anos).</strong> Ele foi
+                estabelecido pelo Estatuto da Criança e do Adolescente (ECA),
+                uma lei que define os direitos e deveres relacionados à infância
+                e juventude no país.
+              </p>
+            </div>
+
+            <div class="about-image-container">
+              <div class="about-image-effect"></div>
+              <img src="./src/svgs/children.svg" alt="Conselho Tutelar" />
+            </div>
+          </div>
         </div>
 
-        <div class="about-image-container">
-          <div class="about-image-effect"></div>
-          <img src="./src/svgs/children.svg" alt="" />
+        <div class="swiper-slide">
+          <div class="container-flex">
+            <div class="creation-conselho">
+              <h2 class="underline-dynamic"> <span class="creation">Cria</span>ção </h2>
+              <p>
+                Compete ao Município a criação do Conselho Tutelar, por meio de lei municipal, que disporá sobre o local, dia e horário de funcionamento do órgão, inclusive quanto à remuneração dos respectivos membros, aos quais são assegurados <span class="trigger-artigo selection" data-id="111">direitos sociais</span>, devendo constar da <span class="trigger-artigo selection" data-id="222">lei orçamentária</span> municipal a previsão dos recursos necessários ao seu funcionamento e à remuneração e formação continuada dos conselheiros tutelares. (art. 134, do ECA).
+              </p>
+              <div class="child-creation">
+                <p>
+                  O Estatuto da Criança e do Adolescente, ao definir a composição do Conselho Tutelar, teve a descentralização um dos seus princípios, como define o <span class="trigger-artigo" data-id="132">art. 132:</span> 
+                </p>
+              </div>
+            </div>
+
+             <div class="about-image-container">
+              <div class="about-image-effect"></div>
+              <img src="./src/svgs/Creation.svg" alt="Creation" />
+            </div>
+
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="container-flex">
+            <div class="creation-conselho">
+              <h2 class="underline-dynamic"> Auto<span class="autonomy">nomia</span> </h2>
+              <p>
+                O Conselho Tutelar, para o cumprimento de suas atribuições, não necessita da autorização de outros agentes, autoridades ou órgãos públicos para agir. No desempenho de suas atribuições, não se subordina aos <span class="trigger-conceito selection" data-id="poder-executivo">Poderes Executivo</span> e <span class="trigger-conceito selection" data-id="legislativo">Legislativo Municipais</span>, ao Poder Judiciário ou ao Ministério Público.
+              </p>
+              <div class="child-creation">
+                <p>
+                  Do ponto de vista administrativo, o Conselho Tutelar está vinculado ao Município, geralmente à Secretaria Municipal de Assistência Social. Portanto, o horário de funcionamento do órgão, o exercício de atividades e regime de plantão, dentre outras questões administrativas, são fixadas por meio de lei municipal e devem ser fiscalizadas pelo Poder Executivo.
+                </p>
+              </div>
+            </div>
+
+             <div class="about-image-container">
+              <div class="about-image-effect"></div>
+              <img src="./src/svgs/Law.svg" alt="Creation" />
+            </div>
+
+          </div>
         </div>
       </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </section>
-    <!-- O que é Conselho Tutelar -->
 
     <!-- Composições do Conselho Tutelar -->
     <section class="composition-section">
@@ -113,7 +169,7 @@
         <div class="composition-header centralizado">
           <h2>Composição do <span> Conselho </span></h2>
           <p>
-            Conheça a estrutura funcional e como é formado o órgão no município.
+            Os conselheiros tutelares são escolhidos pela população local e o processo de escolha dos membros do Conselho Tutelar deverá, preferencialmente, observar as seguintes diretrizes:
           </p>
         </div>
       </div>
@@ -251,9 +307,8 @@
             <div class="help-summary-paragraphs">
               <p>
                 A proteção de crianças e adolescentes é um dever compartilhado
-                por toda a sociedade. De acordo com a
-                <strong>Constituição Federal de 1988, em seu artigo 227</strong
-                >,
+                por toda a sociedade. De acordo com a Constituição Federal de
+                1988, em seu artigo 227,
                 <span class="text-reveal-marker"
                   >é responsabilidade da família, da sociedade e do Estado
                   assegurar, com prioridade absoluta, os direitos das crianças e
@@ -351,7 +406,7 @@
     <!-- FAQ -->
     <section class="faq-section">
       <div class="container-centralizado">
-        <div class="faq-header">
+        <div class="faq-header" id="faq">
           <h2>Dúvidas <span>Frequentes</span></h2>
         </div>
 
@@ -669,6 +724,86 @@
 
     <!-- FAQ -->
 
+    <!-- Referências -->
+    <section class="referencias-section">
+      <div class="container-flex">
+        <div class="referencias-content">
+          <h2 class="underline-dynamic"> Fontes & Referências </h2>
+
+          <ul class="list-referencias">
+            <li>
+              <span class="ref-number">1</span>
+              <div class="ref-text">
+                <strong>BRASIL, Lei nº 8.069 (13 de julho de 1990).</strong>
+                <p>
+                  <a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank"> Estatuto da Criança e do Adolescente </a>  Diário Oficial da República. Consultado em 23 de junho de 2020
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">2</span>
+              <div class="ref-text">
+                <strong>PROMENINO (30 de novembro de 2016). </strong>
+                <p>
+                  Fundação Telefônica Vivo. Consultado em 23 de junho de 2020
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">3</span>
+              <div class="ref-text">
+                <strong>SOUZA, Ismael Francisco de (16 de dezembro de 2013).</strong>
+                <p>
+                  <a href="https://jus.com.br/artigos/26154/conselho-tutelar" target="_blank"> Conselho tutelar: do processo de participação popular à efetivação dos direitos de crianças e adolescentes </a>  Revista Jus Navigandi. Consultado em 23 de junho de 2020
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">4</span>
+              <div class="ref-text">
+                <strong>BRASIL, Presidência da República (2013).</strong>
+                <p>
+                  <a href="https://portal.mpap.mp.br/images/infancia/Cadastro_CT.pdf" target="_blank"> Cadastro Nacional dos Conselhos Tutelares </a>  Brasília: Secretaria de Direitos Humanos
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">5</span>
+              <div class="ref-text">
+                <strong>CONANDA (17 de março de 2010).</strong>
+                <p>
+                  <a href="https://www.gov.br/participamaisbrasil/conanda/conanda/resolucoes/139-resolucao-139-de-17-de-marco-de-2010/view" target="_blank"> Dispõe sobre os parâmetros para a criação e funcionamento dos Conselhos Tutelares no Brasil, e dá outras providências </a>  Consultado em 23 de junho de 2020
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">6</span>
+              <div class="ref-text">
+                <strong>MPMG (6 de junho de 2017). </strong>
+                <p>
+                  <a href="https://site.mppr.mp.br/crianca/Pagina/O-Conselho-Tutelar-em-perguntas-e-respostas" target="_blank"> Conselho Tutelar: Perguntas e Respostas </a> Consultado em 14 de junho de 2020
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">7</span>
+              <div class="ref-text">
+                <strong> Planalto. 2 de junho de 1992. </strong>
+                <p>
+                  <a href="https://www.planalto.gov.br/ccivil_03/leis/l8429.htm" target="_blank"> LEI Nº 8.429, DE 2 DE JUNHO DE 1992 </a> Consultado em 14 de agosto de 2025
+                </p>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Referências -->
+  
+
     <!-- Settings -->
     <div class="settings-fab" id="settingsFab">
       <button class="fab-main-btn" onclick="toggleSettingsMenu()">
@@ -725,12 +860,24 @@
         </div>
 
         <div class="footer-box">
-          <h4>Acesso Rápido</h4>
+          <h4>Links Úteis:</h4>
           <ul class="footer-links">
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Atribuições</a></li>
-            <li><a href="#">ECA</a></li>
-            <li><a href="#">Dúvidas Frequentes</a></li>
+            <li>
+              <a
+                href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+                target="_blank"
+              >
+                ECA na Íntegra:
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.gov.br/mdh/pt-br/acesso-a-informacao/participacao-social/conselho-nacional-dos-direitos-da-crianca-e-do-adolescente-conanda/conanda"
+                target="_blank"
+                >Conselho Nacional (Conanda):</a
+              >
+            </li>
+            <li><a href="#faq">Dúvidas Frequentes</a></li>
           </ul>
         </div>
 
@@ -772,6 +919,8 @@
     <script src="./src/js/index.js"></script>
     <script src="./src/js/TextMarker.js"></script>
     <script src="./src/js/Check.js"></script>
+    <script src="./src/js/ModalParent.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Ion Icons -->
     <script

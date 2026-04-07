@@ -26,6 +26,26 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+.underline-dynamic {
+    position: relative;
+    display: inline-block;
+}
+
+.underline-dynamic::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.underline-dynamic:hover::after {
+    width: 100%;
+}
+
 :root {
     --primary-dark: #0f172a;
     --primary-action: #3b82f6;
@@ -59,7 +79,6 @@ body {
     --contact-input-border: #e2e8f0; 
     --contact-btn-bg: #0f172a;       
     --contact-btn-text: #ffffff;
-
     --contact-text-title: #0f172a;
     --contact-text-body: #475569;
 
@@ -88,7 +107,6 @@ body.dark-mode {
     --contact-input-border: #334155;
     --contact-btn-bg: #ffffff;
     --contact-btn-text: #000000;
-
     --contact-text-title: #ffffff;
     --contact-text-body: #cbd5e1;
 
@@ -457,8 +475,14 @@ body.dark-mode .nav-list a {
 }
 
 .about-section {
-    padding: 80px 0;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+
     background-color: var(--bg-soft);
+
+    overflow: hidden;
+    position: relative;
 
     opacity: 0;
     transform: translateY(60px);
@@ -468,11 +492,75 @@ body.dark-mode .nav-list a {
         transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.swiper-slide .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.swiper-button-next, 
+.swiper-button-prev {
+    color: var(--accent) !important; /* Usa sua cor azul/laranja de destaque */    width: 50px !important;
+    height: 50px !important;
+    transition: all 0.3s ease;
+}
+
 .about-intro,
 .about-image-container {
     opacity: 0;
     transform: translateY(30px);
     transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.swiper-slide .container-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    gap: 60px;
+    padding: 40px 80px;
+
+    padding-top: 120px;
+}
+
+.creation-conselho h2 {
+    font-size: 2.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.creation-conselho .autonomy, .creation {
+    color: var(--accent) !important;
+}
+
+.creation-conselho p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    
+    max-width: 730px;
+    margin-bottom: 30px;
+}
+
+.selection {
+    text-decoration: none !important;
+
+    color: var(--primary-action) !important;
+
+    font-weight: 400 !important;
+
+    cursor: pointer;
+}
+
+.selection:hover {
+    text-decoration: underline !important;
 }
 
 .about-section.visible {
@@ -574,6 +662,14 @@ body.dark-mode .nav-list a {
 .composition-header.centralizado h2::after {
     left: 50%;
     transform: translateX(-50%);
+}
+
+.composition-header.centralizado p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 700px;
+
+    margin: 0 auto;
 }
 
 .check-area {
@@ -742,8 +838,7 @@ body.dark-mode .nav-list a {
 }
 
 .help-summary-paragraphs span {
-    font-style: italic;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .text-reveal-marker {
@@ -785,7 +880,7 @@ body.dark-mode .nav-list a {
 }
 
 .content-text span {
-    font-weight: bold;
+    font-weight: 5000;
 }
 
 .subtitle-content-text {
@@ -1460,33 +1555,6 @@ body.dark-mode .nav-list a {
     text-align: left;
 }
 
-.scroll-down {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 60px;
-    height: 60px;
-
-    background-image: url(../src/imagens/arrow.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    opacity: 0.7;
-    transition: 0.4s ease;
-
-    animation: moveDown 2s ease-in-out infinite;
-
-    filter: invert(65%) sepia(43%) saturate(3023%) hue-rotate(211deg) brightness(101%) contrast(101%);
-}
-
-.scroll-down:hover {
-    opacity: 1;
-}
-
 @keyframes moveDown {
     0%,
     100% {
@@ -1595,13 +1663,13 @@ body.dark-mode .nav-list a {
 }
 
 .bg-dark {
-    background-color: var(--primary-dark);
-    color: #fff;
+    background-color: var(--bg-soft);
+    color: var(--text-main);
 }
 
 .bg-light {
-    background-color: #f8fafc;
-    color: var(--text-main);
+    background-color: var(--primary-dark);
+    color: var(--bg-main);
 }
 
 .container-flex {
@@ -1663,12 +1731,13 @@ body.dark-mode .nav-list a {
 
 .lista-juridica li {
     padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+    border-bottom: 1px solid var(--text-footer-body);
 }
 
 .lista-juridica.reverse li {
     padding: 15px 0;
-    border-bottom: 1px solid var(--text-main);
+    border-bottom: 1px solid var(--text-footer-body);
 }
 
 .col-grafico {
@@ -2125,6 +2194,32 @@ body.dark-mode .nav-list a {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.artigo-balloon.conceito-balao {
+    width: 450px;
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    overflow: hidden;    
+}
+
+.balao-imagem {
+    width: 150px;
+    object-fit: cover;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.balao-info {
+    padding: 15px;
+    flex: 1;
+}
+
+.balao-info h4 {
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
 .artigo-balloon::after {
     content: "";
     position: absolute;
@@ -2143,25 +2238,46 @@ body.dark-mode .nav-list a {
 /* Deveres */
 
 /* Referencias */
-.referencias {
-    margin: 30px auto 0 auto;
-    max-width: 920px;
-
-    font-size: 0.9rem;
-
-    padding: 60px 0;
+.referencias-section {
+    padding: 80px 0;
+    background-color: var(--bg-soft);
+    color: var(--text-main);
 }
 
-.referencias li {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.referencias h4,
-.referencias ul,
-.referencias li {
-    text-align: left;
+.list-referencias {
     list-style: none;
+    margin-top: 30px;
+}
+
+.list-referencias li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.list-referencias li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ref-number {
+    font-size: 1rem;
+}
+
+.ref-text {
+    display: block;
+    line-height: 1.6;
+    margin-bottom: 2px;
+}
+
+.ref-text p {
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 /* Referencias */
