@@ -44,7 +44,7 @@ const bancoConceitos = {
   "poder-executivo": {
     titulo: "Poder Executivo",
     texto: "No Brasil, uma prefeitura é a sede do poder executivo do município (semelhante à câmara municipal, em Portugal). Esta é comandada por um prefeito e dividida em secretarias de governo, como educação, saúde ou meio ambiente. O termo prefeitura também pode designar o prédio onde está instalada a sede do governo municipal, também chamado de paço municipal onde geralmente se localiza o gabinete do prefeito.",
-    imagem: "../src/imagens/prefeitura.jpg"
+    imagem: "../src/imagens/Prefeitura.jpg"
   },
 
   "legislativo": {
