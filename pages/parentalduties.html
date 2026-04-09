@@ -367,8 +367,125 @@
         <!-- 04 -->
       </div>
     </section>
-
     <!-- Consequências Legais -->
+
+    <!-- Referências -->
+    <section class="referencias-section">
+      <div class="container-flex">
+        <div class="referencias-content">
+          <h2 class="underline-dynamic"> Fontes & Referências </h2>
+
+          <ul class="list-referencias">
+            <li>
+              <span class="ref-number">1</span>
+              <div class="ref-text">
+                <strong>BRASIL, Lei nº 8.069 (13 de julho de 1990).</strong>
+                <p>
+                  <a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank"> Estatuto da Criança e do Adolescente </a>  Diário Oficial da República. Consultado em 23 de junho de 2020
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">2</span>
+              <div class="ref-text">
+                <strong>PROMENINO (30 de novembro de 2016). </strong>
+                <p>
+                  Fundação Telefônica Vivo. Consultado em 23 de junho de 2020
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">3</span>
+              <div class="ref-text">
+                <strong>SOUZA, Ismael Francisco de (16 de dezembro de 2013).</strong>
+                <p>
+                  <a href="https://jus.com.br/artigos/26154/conselho-tutelar" target="_blank"> Conselho tutelar: do processo de participação popular à efetivação dos direitos de crianças e adolescentes </a>  Revista Jus Navigandi. Consultado em 23 de junho de 2020
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">4</span>
+              <div class="ref-text">
+                <strong>BRASIL, Presidência da República (2013).</strong>
+                <p>
+                  <a href="https://portal.mpap.mp.br/images/infancia/Cadastro_CT.pdf" target="_blank"> Cadastro Nacional dos Conselhos Tutelares </a>  Brasília: Secretaria de Direitos Humanos
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">5</span>
+              <div class="ref-text">
+                <strong>CONANDA (17 de março de 2010).</strong>
+                <p>
+                  <a href="https://www.gov.br/participamaisbrasil/conanda/conanda/resolucoes/139-resolucao-139-de-17-de-marco-de-2010/view" target="_blank"> Dispõe sobre os parâmetros para a criação e funcionamento dos Conselhos Tutelares no Brasil, e dá outras providências </a>  Consultado em 23 de junho de 2020
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">6</span>
+              <div class="ref-text">
+                <strong>MPMG (6 de junho de 2017). </strong>
+                <p>
+                  <a href="https://site.mppr.mp.br/crianca/Pagina/O-Conselho-Tutelar-em-perguntas-e-respostas" target="_blank"> Conselho Tutelar: Perguntas e Respostas </a> Consultado em 14 de junho de 2020
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="ref-number">7</span>
+              <div class="ref-text">
+                <strong> Planalto. 2 de junho de 1992. </strong>
+                <p>
+                  <a href="https://www.planalto.gov.br/ccivil_03/leis/l8429.htm" target="_blank"> LEI Nº 8.429, DE 2 DE JUNHO DE 1992 </a> Consultado em 14 de agosto de 2025
+                </p>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+    <!-- Referências -->
+  
+    <!-- Settings -->
+    <div class="settings-fab" id="settingsFab">
+      <button class="fab-main-btn" onclick="toggleSettingsMenu()">
+        <ion-icon name="settings-outline"></ion-icon>
+      </button>
+
+      <!-- Dark Mode Toggle -->
+      <div class="fab-menu" id="fabMenu">
+        <div class="fab-item">
+          <span>Tema</span>
+          <li class="theme-switch-container">
+            <input type="checkbox" id="chk" class="checkbox" />
+            <label for="chk" class="label">
+              <ion-icon name="moon-outline" class="fa-moon"></ion-icon>
+              <ion-icon name="sunny-outline" class="fa-sun"></ion-icon>
+              <div class="ball"></div>
+            </label>
+          </li>
+        </div>
+
+        <!-- Hand Talk -->
+        <div class="fab-item">
+          <span>Libras</span>
+          <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+          </div>
+
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget("https://vlibras.gov.br/app");
+          </script>
+          <!-- Hand Talk -->
+        </div>
+      </div>
+      <!-- Dark Mode Toggle -->
+    </div>
+    <!-- Settings -->
 
     <!-- Footer -->
     <footer class="main-footer">

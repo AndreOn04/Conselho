@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 area.innerHTML =
                   '<ion-icon name="checkmark-circle"></ion-icon>';
               }
-
               setTimeout(() => {
                 area.classList.add("active");
               }, 100);
@@ -68,24 +67,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const listObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting) {
           const span = entry.target.querySelector(".check-area");
-          if (span) {
-            if (!span.querySelector("ion-icon")) {
+          if(span) {
+            if(!span.querySelector("ion-icon")) {
               span.innerHTML = '<ion-icon name="checkmark-circle"></ion-icon>';
-            }
+            } 
             span.classList.add("active");
           }
           listObserver.unobserve(entry.target);
         }
       });
-    },
-    {
-      threshold: 0.9,
+    }, {
+      threshold: 0.3,
       rootMargin: "0px 0px -50px 0px",
-    },
-  );
-
+    }
+  )
   checklistItems.forEach((item) => listObserver.observe(item));
 });
 // Animação CheckLists
