@@ -53,48 +53,48 @@ if (currentTheme === "dark") {
 }
 
 function toggleSettingsMenu() {
-    const menu = document.getElementById("fabMenu");
-    const btn = document.querySelector(".fab-main-btn ion-icon");
+  const menu = document.getElementById("fabMenu");
+  const btn = document.querySelector(".fab-main-btn ion-icon");
 
-    if (!menu || !btn) return;
+  if (!menu || !btn) return;
 
-    menu.classList.toggle("active");
+  menu.classList.toggle("active");
 
-    if (menu.classList.contains("active")) {
-        btn.style.transform = "rotate(90deg)";
-    } else {
-        btn.style.transform = "rotate(0deg)";
-    }
+  if (menu.classList.contains("active")) {
+    btn.style.transform = "rotate(90deg)";
+  } else {
+    btn.style.transform = "rotate(0deg)";
+  }
 }
 
 // Fechar menu ao clicar fora
 function toggleSettingsMenu() {
-    const menu = document.getElementById("fabMenu");
-    const btnIcon = document.querySelector(".fab-main-btn ion-icon"); 
+  const menu = document.getElementById("fabMenu");
+  const btnIcon = document.querySelector(".fab-main-btn ion-icon");
 
-    if (!menu || !btnIcon) return;
+  if (!menu || !btnIcon) return;
 
-    menu.classList.toggle("active");
+  menu.classList.toggle("active");
 
-    if (menu.classList.contains("active")) {
-        btnIcon.style.transform = "rotate(90deg)";
-    } else {
-        btnIcon.style.transform = "rotate(0deg)";
-    }
+  if (menu.classList.contains("active")) {
+    btnIcon.style.transform = "rotate(90deg)";
+  } else {
+    btnIcon.style.transform = "rotate(0deg)";
+  }
 }
 
 document.addEventListener("click", (e) => {
-    const menu = document.getElementById("fabMenu");
-    const settingsBtn = document.getElementById("settingsFab");
+  const menu = document.getElementById("fabMenu");
+  const settingsBtn = document.getElementById("settingsFab");
 
-    if (!menu || !settingsBtn) return;
-    
-    if (!settingsBtn.contains(e.target) && !menu.contains(e.target)) {
-        menu.classList.remove("active");
-        
-        const icon = settingsBtn.querySelector("ion-icon");
-        if (icon) icon.style.transform = "rotate(0deg)";
-    }
+  if (!menu || !settingsBtn) return;
+
+  if (!settingsBtn.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.remove("active");
+
+    const icon = settingsBtn.querySelector("ion-icon");
+    if (icon) icon.style.transform = "rotate(0deg)";
+  }
 });
 
 // ProgressBar
@@ -118,13 +118,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdowns = document.querySelectorAll(".dropdown-toggle");
 
   // Menu Hamburguer
-  if (menuIcon) {
+  if (menuIcon && navMenu ) {
     menuIcon.addEventListener("click", () => {
       navMenu.classList.toggle("active");
-      const icon = menuIcon.querySelector("ion-icon");
-      if (icon) {
-        const isOpened = navMenu.classList.contains("active");
-        icon.setAttribute("name", isOpened ? "close-outline" : "menu-outline");
+      
+      const barsIcon = menuIcon.querySelector(".fa-bars-staggered");
+      const closeIcon = menuIcon.querySelector(".icon-close");
+
+      if (navMenu.classList.contains("active")) {
+        barsIcon.style.display = "none";
+        closeIcon.style.display = "block";
+      } else {
+        barsIcon.style.display = "block";
+        closeIcon.style.display = "none";
       }
     });
   }
@@ -192,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 /* FAQ Section */
 
+// Swiper - Slider
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".mySwiper", {
     loop: false,
@@ -214,7 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     breakpoints: {
       320: {
-        slidesPerView: 1,
+        slidesPerView: 1.2,
+        centeredSlides: true,
         spaceBetween: 20,
       },
       768: {
@@ -223,4 +231,108 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
+
+  function startAnimationSlide() {
+    setInterval(() => {
+      if (swiper && !swiper.isEnd && !swiper.animating) {
+        const nudgeAmount = swiper.width * 0.3;
+        const currentTranslate = swiper.translate;
+
+        swiper.setTransition(800);
+        swiper.setTranslate(currentTranslate - nudgeAmount);
+
+        setTimeout(() => {
+          swiper.setTransition(600);
+          swiper.setTranslate(currentTranslate);
+
+          setTimeout(() => swiper.updateProgress(), 600);
+        }, 1000);
+      }
+    }, 7000);
+  }
+
+  startAnimationSlide();
 });
+// Swiper - Slider
+
+// Settings - Configurações
+const configManager = {
+    fonts: [
+        { name: 'Inter', val: "'Inter', sans-serif" },
+        { name: 'Poppins', val: "'Poppins', sans-serif" },
+        { name: 'Montserrat', val: "'Montserrat', sans-serif" },
+        { name: 'Roboto', val: "'Roboto', sans-serif" },
+        { name: 'Open Sans', val: "'Open Sans', sans-serif" },
+        { name: 'Playfair Display', val: "'Playfair Display', serif" },
+        { name: 'Lato', val: "'Lato', sans-serif" },
+        { name: 'Oswald', val: "'Oswald', sans-serif" }
+    ],
+    weights: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+};
+
+function initSettings() {
+    const familyArea = document.getElementById('font-family-options');
+    const weightArea = document.getElementById('font-weight-options');
+
+    const savedFont = localStorage.getItem('preferredFont');
+    const savedWeight = localStorage.getItem('preferredWeight');
+
+    if(savedFont) {
+      document.documentElement.style.setProperty('--font-main', savedFont);
+      document.body.style.fontFamily = savedFont;
+    }
+
+    if(savedWeight) {
+      document.documentElement.style.setProperty('--weight-main', savedWeight);
+      document.body.style.fontWeight = savedWeight;
+    }
+
+    // Renderizar Fontes
+    configManager.fonts.forEach(f => {
+        const b = document.createElement('button');
+        b.textContent = f.name;
+        b.style.fontFamily = f.val;
+
+        if(localStorage.getItem('preferredFont') === f.val) {
+          b.classList.add('active');
+        }
+        
+        b.onclick = () => {
+            familyArea.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+            b.classList.add('active');
+
+            localStorage.setItem('preferredFont', f.val);
+          
+            document.documentElement.style.setProperty('--font-main', f.val);
+            document.body.style.fontFamily = f.val;
+        };
+        familyArea.appendChild(b);
+    });
+    
+    configManager.weights.forEach(w => {
+        const b = document.createElement('button');
+        b.textContent = w;
+        if(savedWeight == w) b.classList.add('active');
+
+        if(localStorage.getItem('preferredWeight') == w) {
+          b.classList.add('active');
+        }
+        
+        b.onclick = () => {
+            
+            weightArea.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+            b.classList.add('active');
+
+            localStorage.setItem('preferredWeight', w);
+            
+            document.documentElement.style.setProperty('--weight-main', w);
+            document.body.style.fontWeight = w;
+        };
+        weightArea.appendChild(b);
+        if(savedFont) document.body.style.fontFamily = savedFont;
+    });
+}
+
+document.addEventListener("DOMContentLoaded", initSettings);
+
+// Settings - Configurações

@@ -1,501 +1,343 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossas Atribuições</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O que é conselho tutelar?</title>
     <!-- Link CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<body>
+    <!-- Google Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&family=Open+Sans:wght@300..800&family=Playfair+Display:wght@400..900&family=Lato:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Google Fontes -->
 
+    <!-- Fonte Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Fonte Awesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
     <!-- Header -->
     <header class="main-header">
-        <div class="container">
-            <!-- Hanburguer - Menu Mobile -->
-            <div class="menu-mobile-icon" id="menu-icon">
-                <ion-icon name="menu-outline"></ion-icon>
-            </div>
-            <div class="logo">
-                <a href="/"> Conselho <span>Tutelar</span>
-                    <img src="../src/logo/logo-header.png" alt=" Logo Conselho ">
-                </a>
-            </div>
-
-            <nav class="nav-menu">
-                <ul class="nav-list">
-                    <li><a href="/index.html">Início</a></li>
-
-                    <li class="dropdown">
-                        <a href="#conselho" class="dropdown-toggle">
-                            O conselho
-                            <ion-icon name="chevron-down-outline"></ion-icon>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="/pages/atributo.html"> Atribuições </a></li>
-                            <li><a href="#legislação"> Estatuto da Criança e do Adolescente </a></li>
-                            <li><a href="#quem-somos"> Quem somos? </a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#orientacoes" class="dropdown-toggle">
-                            Orientações
-                            <ion-icon name="chevron-down-outline"></ion-icon>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="./children.html"> Direitos da Criança e Adolescente </a></li>
-                            <li><a href="./parentalduties.html"> Deveres dos Pais </a></li>
-                            <li><a href=""></a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="../pages/contato.html">Contato</a></li>
-
-                </ul>
-            </nav>
+      <div class="container">
+        <!-- Hanburguer - Menu Mobile -->
+        <div class="menu-mobile-icon" id="menu-icon">
+          <i class="fa-solid fa-bars-staggered"></i>
+          <i class="fa-solid fa-xmark icon-close"></i>
         </div>
+        <div class="logo">
+          <a href="/">
+            Conselho <span>Tutelar</span>
+            <img src="../src/logo/logo-header.png" alt=" Logo Conselho " />
+          </a>
+        </div>
+
+        <nav class="nav-menu">
+          <ul class="nav-list">
+            <li><a href="../index.html"> O Início </a></li>
+            <li class="dropdown">
+              <a href="#conselho" class="dropdown-toggle border-bottom">
+                O conselho
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </a>
+              <ul class="submenu">
+                <li><a href="/pages/atributo.html"> Atribuições </a></li>
+                <li>
+                  <a href="#legislação">
+                    Estatuto da Criança e do Adolescente
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#orientacoes" class="dropdown-toggle border-bottom">
+                Orientações
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </a>
+              <ul class="submenu">
+                <li>
+                  <a href="children.html">
+                    Direitos da Criança e Adolescente
+                  </a>
+                </li>
+                <li>
+                  <a href="parentalduties.html"> Deveres dos Pais </a>
+                </li>
+                <li><a href="#quem-somos"> Quem somos? </a></li>
+              </ul>
+            </li>
+
+            <li><a href="../pages/contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <!-- Header -->
 
-    <div class="progress-bar"></div>
-
-    <!-- Atribuições do Conselho -->
-    <section class="atrib-section">
-        <div class="container-centralizado">
-            <div class="atrib-header">
-                <span>Competências Legais</span>
-                <h2>Atribuições do Conselho</h2>
-                <div class="divider"></div>
-                <div class="fundamento">
-                    <div class="ct-section">
-                        <h3> Papel Institucional </h3>
-                        <p>
-                            O ECA define o Conselho Tutelar como mecanismo essencial de proteção da infância, atuando
-                            sempre que direitos forem ameaçados ou violados por ação, omissão, abuso dos
-                            pais/responsáveis,
-                            da sociedade, do Estado ou pela própria conduta da criança/adolescente (art. 98). O órgão
-                            não substitui juiz, Ministério Público ou polícia: ele <strong style="font-weight: bold; color: black;"
-                                class="text-reveal-marker">aplica
-                                medidas protetivas
-                                administrativas</strong>,
-                            acompanha casos e aciona a rede de proteção e o sistema de justiça quando necessário.
-                        </p>
-                        <blockquote>
-                            Base legal principal: arts. 131, 136, 98, 101 e 129 do ECA (Lei nº 8.069/1990).
-                        </blockquote>
-                    </div>
-                </div>
-
-                <!-- 01 -->
-                <div class="atrib-explorer">
-                    <div class="atrib-panel">
-                        <div class="panel-info">
-                            <span class="panel-num">01</span>
-                            <div class="panel-content">
-                                <h4>Atendimento Direto</h4>
-                                <p>Crianças e adolescentes em situação de risco pessoal ou social, conforme o
-                                    <strong>art. 136, inciso I.</strong>
-                                </p>
-                                <button class="btn-law-modal" data-art="136-1">
-                                    <ion-icon name="document-text-outline"></ion-icon>
-                                    Art. 136, inciso I
-                                </button>
-
-                                <div id="law-modal" class="modal-overlay">
-                                    <div class="modal-content">
-                                        <header class="modal-header">
-                                            <h3 id="modal-title"> Letra da Lei </h3>
-                                            <button class="close-modal">&times;</button>
-                                        </header>
-                                        <div class="modal-body">
-                                            <blockquote id="modalText"></blockquote>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="panel-action">
-                            <div class="action-tag">Aplicação Prática</div>
-                            <ul>
-                                <li><ion-icon name="checkmark-circle-outline"></ion-icon> Encaminhamento a cursos de
-                                    apoio </li>
-                                <li><ion-icon name="checkmark-circle-outline"></ion-icon> Tratamento de dependência
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- 01 -->
-
-                    <div class="atrib-panel">
-                        <div class="panel-info">
-                            <span class="panel-num">02</span>
-                            <div class="panel-content">
-                                <h4>Intermédio</h4>
-                                <p>Encaminhamento para matrícula escolar e suporte médico, conforme o <strong>art. 136,
-                                        inciso II.</strong></p>
-                                <button class="btn-law-modal" data-art="136-2">
-                                    <ion-icon name="document-text-outline"></ion-icon>
-                                    Art. 136, inciso II
-                                </button>
-
-                                <div id="law-modal" class="modal-overlay">
-                                    <div class="modal-content">
-                                        <header class="modal-header">
-                                            <h3 id="modal-title"> Letra da Lei </h3>
-                                            <button class="close-modal">&times;</button>
-                                        </header>
-                                        <div class="modal-body">
-                                            <blockquote id="modalText"></blockquote>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="panel-action">
-                            <div class="action-tag">Aplicação Prática</div>
-                            <ul>
-                                <li><ion-icon name="checkmark-circle-outline"></ion-icon> Matrícula escolar imediata
-                                </li>
-                                <li><ion-icon name="checkmark-circle-outline"></ion-icon> Requisição de tratamento
-                                    médico</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="atrib-explorer">
-                    <div class="atrib-panel">
-                        <div class="panel-info">
-                            <span class="panel-num">03</span>
-                            <div class="panel-content">
-                                <h4>Suporte à família</h4>
-                                <p>Aconselhamento de pais, conforme o <strong>art. 136, inciso III.</strong></p>
-                                <button class="btn-law-modal" data-art="136-3">
-                                    <ion-icon name="document-text-outline"></ion-icon>
-                                    Art. 136, inciso III
-                                </button>
-
-                                <div id="law-modal" class="modal-overlay">
-                                    <div class="modal-content">
-                                        <header class="modal-header">
-                                            <h3 id="modal-title"> Letra da Lei </h3>
-                                            <button class="close-modal">&times;</button>
-                                        </header>
-                                        <div class="modal-body">
-                                            <blockquote id="modalText"></blockquote>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="panel-action">
-                            <div class="action-tag">Aplicação Prática</div>
-                            <ul>
-                                <li><ion-icon name="checkmark-circle-outline"></ion-icon> Aconselhamento familiar </li>
-                                <li><ion-icon name="checkmark-circle-outline"></ion-icon> Aplicação das medidas de
-                                    proteção </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="atrib-panel">
-                        <div class="panel-info">
-                            <span class="panel-num">04</span>
-                            <div class="panel-content">
-                                <h4> Atuação em conjunto </h4>
-                                <p>Apoio na articulação com outros serviços, conforme o <strong>art. 136, inciso
-                                        IV.</strong></p>
-                                <button class="btn-law-modal" data-art="136-4">
-                                    <ion-icon name="document-text-outline"></ion-icon>
-                                    Art. 136, inciso II
-                                </button>
-
-                                <div id="law-modal" class="modal-overlay">
-                                    <div class="modal-content">
-                                        <header class="modal-header">
-                                            <h3 id="modal-title"> Letra da Lei </h3>
-                                            <button class="close-modal">&times;</button>
-                                        </header>
-                                        <div class="modal-body">
-                                            <blockquote id="modalText"></blockquote>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="panel-action">
-                            <div class="action-tag">Aplicação Prática</div>
-                            <ul>
-                                <li><ion-icon name="checkmark-circle-outline"></ion-icon> Articulação com o Ministério
-                                    Público e juízes </li>
-                                <li><ion-icon name="checkmark-circle-outline"></ion-icon> Atuação integrada com outros
-                                    serviços de proteção </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="atrib-explorer">
-                    <div class="atrib-panel">
-                        <div class="panel-info">
-                            <span class="panel-num">05</span>
-                            <div class="panel-content">
-                                <h4>Fiscalização de entidades</h4>
-                                <p>Verificação do cumprimento das medidas de proteção, conforme o <strong>art. 136,
-                                        inciso V.</strong></p>
-                                <button class="btn-law-modal" data-art="136-5">
-                                    <ion-icon name="document-text-outline"></ion-icon>
-                                    Art. 136, inciso V
-                                </button>
-
-                                <div id="law-modal" class="modal-overlay">
-                                    <div class="modal-content">
-                                        <header class="modal-header">
-                                            <h3 id="modal-title"> Letra da Lei </h3>
-                                            <button class="close-modal">&times;</button>
-                                        </header>
-                                        <div class="modal-body">
-                                            <blockquote id="modalText"></blockquote>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="panel-action">
-                            <div class="action-tag">Aplicação Prática</div>
-                            <ul>
-                                <li><ion-icon name="checkmark-circle-outline"></ion-icon> Fiscalização de entidades de
-                                    atendimento </li>
-                                <li><ion-icon name="checkmark-circle-outline"></ion-icon> Acompanhamento de situações de
-                                    risco </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <section class="limit-conselho">
-                        <div class="container-limit">
-                            <h2 class="title-centered"> O que o Conselho Tutelar <strong class="text-danger">Não pode</strong> fazer </h2>
-
-                            <div class="divisor"></div>
-                        
-                            <div class="text-center-progress">
-                                <p>
-                                    O Conselho Tutelar não pode <strong class="text-reveal-marker">alterar guarda, proibir visitas, aplicar punições criminais ou retirar crianças da família definitivamente</strong>, pois essas ações são exclusivas do Poder Judiciário. Também não devem realizar escutas técnicas de crianças vítimas de violência ou tomar medidas sem fundamentação legal e técnica.
-                                </p>
-                            </div>
-
-                            <div class="class-atribut">
-                                <div class="class-item class-duty">
-                                    <div class="icon-center">
-                                        <ion-icon name="business-outline"></ion-icon>
-                                    </div>
-                                    <div class="duty-card">
-                                        <h3>01. Substituir a justiça ou a polícia</h3>
-                                        <p>
-                                            O Conselho Tutelar não tem poder judicial. Ou seja, ele não pode decidir sobre questões judiciais ou aplicar penas, como um juiz faria. Ele pode apenas encaminhar casos para a justiça, quando necessário.
-                                        </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="class-item class-duty">
-                                    <div class="icon-center">
-                                        <ion-icon name="lock-closed-outline"></ion-icon>
-                                    </div>
-                                    <div class="duty-card">
-                                        <h3>02. Prender ou aplicar medidas de privação de liberdade:</h3>
-                                        <p>
-                                            O Conselho não tem poder para prender ou aplicar medidas como internação. No caso de uma infração ou crime, a responsabilidade é da polícia ou do sistema judiciário.
-                                        </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="class-item class-duty">
-                                    <div class="icon-center">
-                                        <ion-icon name="people-circle-outline"></ion-icon>
-                                    </div>
-                                    <div class="duty-card">
-                                        <h3>03. Determinar a guarda de crianças ou adolescentes:</h3>
-                                        <p>
-                                            O Conselho Tutelar não pode decidir sobre a guarda de uma criança ou adolescente. Essa decisão deve ser tomada pelo juiz, com base em um processo legal.
-                                        </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="class-item class-duty">
-                                    <div class="icon-center">
-                                        <ion-icon name="home-outline"></ion-icon>
-                                    </div>
-                                    <div class="duty-card">
-                                        <h3>04. Interferir em decisões de âmbito familiar: </h3>
-                                        <p>
-                                            O Conselho Tutelar pode intervir quando há violação de direitos ou situações de risco, mas não pode interferir em decisões que envolvem a convivência familiar saudável, como a escolha de escola ou outras questões cotidianas, salvo em casos de negligência ou abuso
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="class-item class-duty">
-                                    <div class="icon-center">
-                                        <ion-icon name="document-text-outline"></ion-icon>
-                                    </div>
-                                    <div class="duty-card">
-                                        <h3>05. Atuar sem o respaldo legal: </h3>
-                                        <p>
-                                            O Conselho Tutelar não pode agir de forma arbitrária, sem observar a legislação vigente e sem respeitar os direitos das partes envolvidas.
-                                        </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="class-item class-duty">
-                                    <div class="icon-center">
-                                        <ion-icon name="search-outline"></ion-icon>
-                                    </div>
-                                    <div class="duty-card">
-                                        <h3>06. Realizar investigações ou inquéritos criminais: </h3>
-                                        <p>
-                                            O Conselho Tutelar pode apurar denúncias de violação de direitos, mas não pode conduzir investigações criminais, que são de competência da polícia e do Ministério Público.
-                                        </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="class-item class-duty">
-                                    <div class="icon-center">
-                                        <ion-icon name="git-compare-outline"></ion-icon>
-                                    </div>
-                                    <div class="duty-card">
-                                        <h3>07. Tomar decisões unilaterais: </h3>
-                                        <p>
-                                            As decisões do Conselho Tutelar devem ser sempre colegiadas (decididas por todos os conselheiros), e em muitas situações, o Conselho só pode atuar em conjunto com outros órgãos de proteção, como a assistência social, a saúde e a educação.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="divisor"></div>
-
-                    <section class="ajuda-section">
-                        <div class="ajuda-header">
-                            <span> Próximos Passos </span>
-                            <h2> Como Buscar <strong>Orientações</strong> </h2>
-                            <p> Se você identificou uma situação que precisa de atenção, veja como proceder para
-                                garantir apoio especializado. </p>
-                        </div>
-
-                        <div class="ajuda-container">
-                            <div class="ajuda-card">
-                                <div class="ajuda-icon">
-                                    <ion-icon name="search-outline"></ion-icon>
-                                </div>
-                                <div class="ajuda-info">
-                                    <h3>01. Observe os Sinais</h3>
-                                    <p>Identifique mudanças de comportamento, isolamento ou sinais físicos que indiquem
-                                        que algo não vai bem.</p>
-                                </div>
-                            </div>
-
-                            <div class="ajuda-card">
-                                <div class="ajuda-icon">
-                                    <ion-icon name="chatbubbles-outline"></ion-icon>
-                                </div>
-                                <div class="ajuda-info">
-                                    <h3>02. Diálogo Seguro</h3>
-                                    <p>Busque conversar em um ambiente tranquilo, ouvindo sem julgamentos e transmitindo
-                                        segurança.</p>
-                                </div>
-
-                            </div>
-                            <div class="ajuda-card">
-                                <div class="ajuda-icon">
-                                    <ion-icon name="business-outline"></ion-icon>
-                                </div>
-                                <div class="ajuda-info">
-                                    <h3>03. Apoio Profissional</h3>
-                                    <p>Procure a rede de proteção local: escolas, postos de saúde ou o CRAS para
-                                        orientações técnicas.</p>
-                                </div>
-                            </div>
-
-                            <div class="ajuda-card">
-                                <div class="ajuda-icon">
-                                    <ion-icon name="heart-half-outline"></ion-icon>
-                                </div>
-                                <div class="ajuda-info">
-                                    <h3>04. Proteção Efetiva</h3>
-                                    <p>Acione o Conselho Tutelar para que medidas de proteção administrativa sejam
-                                        aplicadas conforme o ECA.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+    <section class="hero-atribuicao">
+      <div class="hero-overlay-atrib">
+        <div class="hero-content-atrib">
+          <h1 class="hero-title-atrib"> Atribuições do Conselho </h1>
+          <p class="hero-description-atrib">
+            O Conselho Tutelar é responsável por zelar pelos direitos das crianças
+            e adolescentes, atuando em situações de risco e vulnerabilidade. Suas
+            atribuições incluem receber denúncias, aplicar medidas de proteção,
+            encaminhar casos para órgãos competentes e promover ações de
+            conscientização sobre os direitos infantojuvenis.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Atribuições do Conselho -->
+    <section class="atributos-citacoes-wrapper">
+      <!-- 01 -->
+      <div class="tipos-trilha" aria-label="Linha do tempo dos cinco tipos de violência">
+      <article class="tipo-etapa">
+        <div class="tipo-etapa-esquerda">
+          <h4>Atender <br>Denúncias</h4>
+          <p>O conselheiro tutelar avalia situações de violência: </p>
+        </div>
+        <div class="tipo-etapa-centro" aria-hidden="true"><span class="tipo-etapa-numero">1</span></div>
+        <div class="tipo-etapa-direita">
+          <ul>
+            <li>física</li>
+            <li>psicológica ou sexual;</li>
+            <li>negligência, abandono;</li>
+            <li>trabalho infantil;</li>
+            <li>evasão escolar;</li>
+            <li>uso de drogas; conflitos familiares;</li>
+          </ul>
+        </div>
+      </article>
+      <!-- 01 -->
+
+      <!-- 02 -->
+      <article class="tipo-etapa">
+        <div class="tipo-etapa-esquerda">
+          <h4>Aplicar medidas de proteção</h4>
+          <p>Após a análise do caso, o conselheiro tutelar pode aplicar diversas medidas, como:</p>
+        </div>
+        <div class="tipo-etapa-centro" aria-hidden="true"><span class="tipo-etapa-numero">2</span></div>
+        <div class="tipo-etapa-direita">
+          <ul>
+            <li>Encaminhamento para serviços de saúde, educação ou assistência social;</li>
+            <li>Atendimento psicológico especializado;</li>
+            <li>Inclusão em programas de fortalecimento familiar;</li>
+            <li> Orientação aos responsáveis;</li>
+            <li>Acompanhamento sistemático do caso;</li>
+            <li>Acolhimento institucional, em situações extremas.</li>
+          </ul>
+        </div>
+      </article>
+      <!-- 02 -->
+
+      <!-- 03 -->
+      <article class="tipo-etapa">
+        <div class="tipo-etapa-esquerda">
+          <h4>Requisitar <br>Serviços Públicos</h4>
+          <p>O conselheiro tutelar possui a prerrogativa de requisitar, e não apenas solicitar, serviços essenciais para garantir a proteção da criança. Isso inclui:</p>
+        </div>
+        <div class="tipo-etapa-centro" aria-hidden="true"><span class="tipo-etapa-numero">3</span></div>
+        <div class="tipo-etapa-direita">
+          <ul>
+            <li>matrícula escolar;</li>
+            <li>atendimentos médicos;</li>
+            <li>emissão de documentos;</li>
+            <li>transporte emergencial</li>
+          </ul>
+        </div>
+      </article>
+      <!-- 03 -->
+
+      <!-- 04 -->
+      <article class="tipo-etapa">
+        <div class="tipo-etapa-esquerda">
+          <h4>Aritcular a <br> rede de proteção</h4>
+          <p>Nenhuma violação é atendida de forma isolada. O conselheiro trabalha em conjunto com</p>
+        </div>
+        <div class="tipo-etapa-centro" aria-hidden="true"><span class="tipo-etapa-numero">4</span></div>
+        <div class="tipo-etapa-direita">
+          <ul>
+            <li>escolas; hospitais;</li>
+            <li>postos de saúde</li>
+            <li>CRAS;</li>
+            <li>CREAS;</li>
+            <li>organizações sociais,</li>
+            <li>delegacias</li>
+            <li>Ministério Público</li>
+          </ul>
+        </div>
+      </article>
+      <!-- 04 -->
+  </section>
+
+  <div class="divisor"></div>
+  
+  <section class="vedacoes-section">
+    <div class="container-vedacoess">
+      <div class="section-title">
+        <h2> O que o conselho <span>não pode fazer.</span></h2>
+      </div>
+      <div class="section-description">
+        <p>
+          O Conselho Tutelar é um órgão autônomo de proteção, com atribuições definidas em lei. Sua atuação é <span class="text-reveal-marker">estritamente administrativa e protetiva</span>, não possuindo competências jurisdicionais, policiais ou executivas coercitivas fora dos limites legais.
+        </p>
+      </div>
+      
+      
+    </div>
+  </section>
+
+  
+
+
+
+
+    <!-- Settings -->
+    <div class="settings-fab" id="settingsFab">
+      <button class="fab-main-btn" onclick="toggleSettingsMenu()">
+        <ion-icon name="settings-outline"></ion-icon>
+      </button>
+
+      <!-- Dark Mode Toggle -->
+      <div class="fab-menu" id="fabMenu">
+        <div class="fab-item">
+          <span>Tema</span>
+          <li class="theme-switch-container">
+            <input type="checkbox" id="chk" class="checkbox" />
+            <label for="chk" class="label">
+              <ion-icon name="moon-outline" class="fa-moon"></ion-icon>
+              <ion-icon name="sunny-outline" class="fa-sun"></ion-icon>
+              <div class="ball"></div>
+            </label>
+          </li>
+        </div>
+
+        <!-- Fonts -->
+        <div class="settings-group">
+          <h4>Fonte</h4>
+          <div id="font-family-options" class="options-grid"></div>
+        </div>
+
+        <div class="settings-group">
+          <h4>Peso Fonte</h4>
+          <div id="font-weight-options" class="options-row"></div>
+        </div>
+        <!-- Fonts -->
+        </div>
+      </div>
+      <!-- Dark Mode Toggle -->
+    </div>
+    <!-- Settings -->
 
     <!-- Footer -->
     <footer class="main-footer">
-        <div class="footer-wrapper">
-            <div class="footer-box">
-                <h4>Projeto Educativo</h4>
-                <p>Iniciativa do <strong>curso de Análise e Desenvolvimento de Sistemas</strong>. UNIASSELVI - Centro
-                    Universitário Leonardo da Vinci.</p>
-                <p class="project">Projeto de Caráter Educativo.</p>
-                <p>Foco na conscientização e proteção dos direitos.</p>
-            </div>
-
-            <div class="footer-box">
-                <h4>Acesso Rápido</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Atribuições</a></li>
-                    <li><a href="#">ECA</a></li>
-                    <li><a href="#">Dúvidas Frequentes</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-box">
-                <h4>Atendimentos</h4>
-                <div class="footer-contact">
-                    <span><ion-icon name="call-outline"></ion-icon> (00) 0000-0000</span>
-                    <span><ion-icon name="alert-circle-outline"></ion-icon> <strong>Plantão: 100</strong></span>
-                    <span><ion-icon name="mail-outline"></ion-icon> contato@site.com.br</span>
-                </div>
-            </div>
+      <div class="footer-wrapper">
+        <div class="footer-box">
+          <h4>Projeto Educativo</h4>
+          <p>
+            Iniciativa do
+            <strong>curso de Análise e Desenvolvimento de Sistemas</strong>.
+            UNIASSELVI - Centro Universitário Leonardo da Vinci.
+          </p>
+          <p class="project">Projeto de Caráter Educativo.</p>
+          <p>Foco na conscientização e proteção dos direitos.</p>
         </div>
 
-        <hr class="footer-divider">
-
-        <div class="footer-bottom-logos">
-            <img src="../src/logo/logo-header.png" alt="Logo Projeto">
-            <img src="../src/imagens/hand-talk.png" alt="Acessibilidade">
+        <div class="footer-box">
+          <h4>Links Úteis:</h4>
+          <ul class="footer-links">
+            <li>
+              <a
+                href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+                target="_blank"
+              >
+                ECA na Íntegra:
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.gov.br/mdh/pt-br/acesso-a-informacao/participacao-social/conselho-nacional-dos-direitos-da-crianca-e-do-adolescente-conanda/conanda"
+                target="_blank"
+                >Conselho Nacional (Conanda):</a
+              >
+            </li>
+            <li><a href="#faq">Dúvidas Frequentes</a></li>
+          </ul>
         </div>
 
-        <div class="footer-copyright">
-            <p>&copy; 2026 Conselho Tutelar - Projeto Educativo. Todos os direitos reservados.</p>
+        <div class="footer-box">
+          <h4>Atendimentos</h4>
+          <div class="footer-contact">
+            <span
+              ><ion-icon name="call-outline"></ion-icon> (00) 0000-0000</span
+            >
+            <span
+              ><ion-icon name="alert-circle-outline"></ion-icon>
+              <strong>Plantão: 100</strong></span
+            >
+            <span
+              ><ion-icon name="mail-outline"></ion-icon>
+              contato@site.com.br</span
+            >
+          </div>
         </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom-logos">
+        <img src="../src/logo/logo-header.png" alt="Logo Projeto" />
+        <img src="../src/imagens/hand-talk.png" alt="Acessibilidade" />
+      </div>
+
+      <div class="footer-copyright">
+        <p>
+          &copy; 2026 Conselho Tutelar - Projeto Educativo. Todos os direitos
+          reservados.
+        </p>
+      </div>
     </footer>
     <!-- Footer -->
 
     <!-- JavaScript -->
-    <script src="../src/js/index.js"></script>
-    <script src="../src/js/TextMarker.js"></script>
-    <script src="../src/js/atributoModal.js"></script>
+      <script src="../src/js/index.js"></script>
+      <script src="../src/js/TextMarker.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JavaScript -->
+
+    <!-- Hand Talk -->
+    <div class="fab-item">
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+    
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
+      </script>
+    <!-- Hand Talk -->
 
     <!-- Ion Icons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
-
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

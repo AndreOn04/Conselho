@@ -12,6 +12,13 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Fonte Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <!-- Fonte Awesome -->
   </head>
 
   <body>
@@ -20,7 +27,8 @@
       <div class="container">
         <!-- Hanburguer - Menu Mobile -->
         <div class="menu-mobile-icon" id="menu-icon">
-          <ion-icon name="menu-outline"></ion-icon>
+          <i class="fa-solid fa-bars-staggered"></i>
+          <i class="fa-solid fa-xmark icon-close"></i>
         </div>
         <div class="logo">
           <a href="/">
@@ -214,46 +222,46 @@
         </div>
       </div>
 
-       <!-- Settings -->
-    <div class="settings-fab" id="settingsFab">
-      <button class="fab-main-btn" onclick="toggleSettingsMenu()">
-        <ion-icon name="settings-outline"></ion-icon>
-      </button>
+      <!-- Settings -->
+      <div class="settings-fab" id="settingsFab">
+        <button class="fab-main-btn" onclick="toggleSettingsMenu()">
+          <ion-icon name="settings-outline"></ion-icon>
+        </button>
 
-      <!-- Dark Mode Toggle -->
-      <div class="fab-menu" id="fabMenu">
-        <div class="fab-item">
-          <span>Tema</span>
-          <li class="theme-switch-container">
-            <input type="checkbox" id="chk" class="checkbox" />
-            <label for="chk" class="label">
-              <ion-icon name="moon-outline" class="fa-moon"></ion-icon>
-              <ion-icon name="sunny-outline" class="fa-sun"></ion-icon>
-              <div class="ball"></div>
-            </label>
-          </li>
-      </div>
-
-        <!-- Hand Talk -->
-        <div class="fab-item">
-          <span>Libras</span>
-          <div vw class="enabled">
-            <div vw-access-button class="active"></div>
-            <div vw-plugin-wrapper>
-              <div class="vw-plugin-top-wrapper"></div>
-            </div>
+        <!-- Dark Mode Toggle -->
+        <div class="fab-menu" id="fabMenu">
+          <div class="fab-item">
+            <span>Tema</span>
+            <li class="theme-switch-container">
+              <input type="checkbox" id="chk" class="checkbox" />
+              <label for="chk" class="label">
+                <ion-icon name="moon-outline" class="fa-moon"></ion-icon>
+                <ion-icon name="sunny-outline" class="fa-sun"></ion-icon>
+                <div class="ball"></div>
+              </label>
+            </li>
           </div>
 
-          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-          <script>
-            new window.VLibras.Widget("https://vlibras.gov.br/app");
-          </script>
           <!-- Hand Talk -->
+          <div class="fab-item">
+            <span>Libras</span>
+            <div vw class="enabled">
+              <div vw-access-button class="active"></div>
+              <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+              </div>
+            </div>
+
+            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+            <script>
+              new window.VLibras.Widget("https://vlibras.gov.br/app");
+            </script>
+            <!-- Hand Talk -->
+          </div>
         </div>
+        <!-- Dark Mode Toggle -->
       </div>
-      <!-- Dark Mode Toggle -->
-    </div>
-    <!-- Settings -->
+      <!-- Settings -->
 
       <hr class="footer-divider" />
 

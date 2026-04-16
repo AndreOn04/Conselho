@@ -7,7 +7,16 @@
     <!-- Link CSS -->
     <link rel="stylesheet" href="./css/style.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Google Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&family=Open+Sans:wght@300..800&family=Playfair+Display:wght@400..900&family=Lato:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Google Fontes -->
+
+    <!-- Fonte Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Fonte Awesome -->
 
     <link
       rel="stylesheet"
@@ -21,7 +30,8 @@
       <div class="container">
         <!-- Hanburguer - Menu Mobile -->
         <div class="menu-mobile-icon" id="menu-icon">
-          <ion-icon name="menu-outline"></ion-icon>
+          <i class="fa-solid fa-bars-staggered"></i>
+          <i class="fa-solid fa-xmark icon-close"></i>
         </div>
         <div class="logo">
           <a href="/">
@@ -33,7 +43,7 @@
         <nav class="nav-menu">
           <ul class="nav-list">
             <li class="dropdown">
-              <a href="#conselho" class="dropdown-toggle border-bottom">
+              <a href="#conselho" class="dropdown-toggle border-top">
                 O conselho
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </a>
@@ -44,7 +54,6 @@
                     Estatuto da Criança e do Adolescente
                   </a>
                 </li>
-                <li><a href="#quem-somos"> Quem somos? </a></li>
               </ul>
             </li>
 
@@ -62,7 +71,7 @@
                 <li>
                   <a href="./pages/parentalduties.html"> Deveres dos Pais </a>
                 </li>
-                <li><a href=""></a></li>
+                <li><a href="#quem-somos"> Quem somos? </a></li>
               </ul>
             </li>
 
@@ -72,13 +81,13 @@
       </div>
     </header>
     <!-- Header -->
-
+      
     <div class="progress-bar"></div>
 
     <!-- O que é Conselho Tutelar -->
     <section class="hero">
       <div class="container hero-content">
-        <h1>Conselho <span>Tutelar</span></h1>
+        <h1>Seja Bem-<span>Vindo</span></h1>
         <p>
           Zelando pelos direitos da criança e do adolescente com seriedade e
           compromisso.
@@ -112,44 +121,113 @@
         <div class="swiper-slide">
           <div class="container-flex">
             <div class="creation-conselho">
-              <h2 class="underline-dynamic"> <span class="creation">Cria</span>ção </h2>
+              <h2 class="underline-dynamic">
+                <span class="creation">Cria</span>ção
+              </h2>
               <p>
-                Compete ao Município a criação do Conselho Tutelar, por meio de lei municipal, que disporá sobre o local, dia e horário de funcionamento do órgão, inclusive quanto à remuneração dos respectivos membros, aos quais são assegurados <span class="trigger-artigo selection" data-id="111">direitos sociais</span>, devendo constar da <span class="trigger-artigo selection" data-id="222">lei orçamentária</span> municipal a previsão dos recursos necessários ao seu funcionamento e à remuneração e formação continuada dos conselheiros tutelares. (art. 134, do ECA).
+                Compete ao Município a criação do Conselho Tutelar, por meio de
+                lei municipal, que disporá sobre o local, dia e horário de
+                funcionamento do órgão, inclusive quanto à remuneração dos
+                respectivos membros, aos quais são assegurados
+                <span class="trigger-artigo selection" data-id="111"
+                  >direitos sociais</span
+                >, devendo constar da
+                <span class="trigger-artigo selection" data-id="222"
+                  >lei orçamentária</span
+                >
+                municipal a previsão dos recursos necessários ao seu
+                funcionamento e à remuneração e formação continuada dos
+                conselheiros tutelares. (art. 134, do ECA).
               </p>
               <div class="child-creation">
                 <p>
-                  O Estatuto da Criança e do Adolescente, ao definir a composição do Conselho Tutelar, teve a descentralização um dos seus princípios, como define o <span class="trigger-artigo" data-id="132">art. 132:</span> 
+                  O Estatuto da Criança e do Adolescente, ao definir a
+                  composição do Conselho Tutelar, teve a descentralização um dos
+                  seus princípios, como define o
+                  <span class="trigger-artigo" data-id="132">art. 132:</span>
                 </p>
               </div>
             </div>
 
-             <div class="about-image-container">
+            <div class="about-image-container">
               <div class="about-image-effect"></div>
               <img src="./src/svgs/Creation.svg" alt="Creation" />
             </div>
-
           </div>
         </div>
-        
+
         <div class="swiper-slide">
           <div class="container-flex">
             <div class="creation-conselho">
-              <h2 class="underline-dynamic"> Auto<span class="autonomy">nomia</span> </h2>
+              <h2 class="underline-dynamic">
+                Auto<span class="autonomy">nomia</span>
+              </h2>
               <p>
-                O Conselho Tutelar, para o cumprimento de suas atribuições, não necessita da autorização de outros agentes, autoridades ou órgãos públicos para agir. No desempenho de suas atribuições, não se subordina aos <span class="trigger-conceito selection" data-id="poder-executivo">Poderes Executivo</span> e <span class="trigger-conceito selection" data-id="legislativo">Legislativo Municipais</span>, ao Poder Judiciário ou ao Ministério Público.
+                O Conselho Tutelar, para o cumprimento de suas atribuições, não
+                necessita da autorização de outros agentes, autoridades ou
+                órgãos públicos para agir. No desempenho de suas atribuições,
+                não se subordina aos
+                <span
+                  class="trigger-conceito selection"
+                  data-id="poder-executivo"
+                  >Poderes Executivo</span
+                >
+                e
+                <span class="trigger-conceito selection" data-id="legislativo"
+                  >Legislativo Municipais</span
+                >, ao Poder Judiciário ou ao Ministério Público.
               </p>
               <div class="child-creation">
                 <p>
-                  Do ponto de vista administrativo, o Conselho Tutelar está vinculado ao Município, geralmente à Secretaria Municipal de Assistência Social. Portanto, o horário de funcionamento do órgão, o exercício de atividades e regime de plantão, dentre outras questões administrativas, são fixadas por meio de lei municipal e devem ser fiscalizadas pelo Poder Executivo.
+                  Do ponto de vista administrativo, o Conselho Tutelar está
+                  vinculado ao Município, geralmente à Secretaria Municipal de
+                  Assistência Social. Portanto, o horário de funcionamento do
+                  órgão, o exercício de atividades e regime de plantão, dentre
+                  outras questões administrativas, são fixadas por meio de lei
+                  municipal e devem ser fiscalizadas pelo Poder Executivo.
                 </p>
               </div>
             </div>
 
-             <div class="about-image-container">
+            <div class="about-image-container">
               <div class="about-image-effect"></div>
               <img src="./src/svgs/Law.svg" alt="Creation" />
             </div>
+          </div>
+        </div>
 
+        <div class="swiper-slide">
+          <div class="container-flex">
+            <div class="creation-conselho">
+              <h2 class="underline-dynamic">
+                Natureza <span class="autonomy">Jurídica</span>
+              </h2>
+              <p>
+                O Conselho Tutelar não integra o Poder Judiciário e nem está de
+                qualquer modo vinculado ou subordinado à autoridade judiciária.
+              </p>
+              <div class="child-creation">
+                <p>
+                  As decisões tomadas pelo Conselho Tutelar não são de cunho
+                  jurisdicional, mas sim administrativo - sendo tomadas de forma
+                  colegiada - estando sujeitas, no entanto, ao controle
+                  judicial, a pedido de seu destinatário ou do Ministério
+                  Público.
+                </p>
+                <p>
+                  Um dos principais objetivos da criação do Conselho Tutelar foi
+                  a “desjudicialização” do atendimento, de modo que a solução
+                  das situações de violação de direitos infanto-juvenis, sempre
+                  que possível, não mais dependesse da intervenção da autoridade
+                  judiciária.
+                </p>
+              </div>
+            </div>
+
+            <div class="about-image-container">
+              <div class="about-image-effect"></div>
+              <img src="./src/svgs/Justice.svg" alt="Creation" />
+            </div>
           </div>
         </div>
       </div>
@@ -165,7 +243,9 @@
         <div class="composition-header centralizado">
           <h2>Composição do <span> Conselho </span></h2>
           <p>
-            Os conselheiros tutelares são escolhidos pela população local e o processo de escolha dos membros do Conselho Tutelar deverá, preferencialmente, observar as seguintes diretrizes:
+            Os conselheiros tutelares são escolhidos pela população local e o
+            processo de escolha dos membros do Conselho Tutelar deverá,
+            preferencialmente, observar as seguintes diretrizes:
           </p>
         </div>
       </div>
@@ -724,7 +804,7 @@
     <section class="referencias-section">
       <div class="container-flex">
         <div class="referencias-content">
-          <h2 class="underline-dynamic"> Fontes & Referências </h2>
+          <h2 class="underline-dynamic">Fontes & Referências</h2>
 
           <ul class="list-referencias">
             <li>
@@ -732,7 +812,13 @@
               <div class="ref-text">
                 <strong>BRASIL, Lei nº 8.069 (13 de julho de 1990).</strong>
                 <p>
-                  <a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank"> Estatuto da Criança e do Adolescente </a>  Diário Oficial da República. Consultado em 23 de junho de 2020
+                  <a
+                    href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+                    target="_blank"
+                  >
+                    Estatuto da Criança e do Adolescente
+                  </a>
+                  Diário Oficial da República. Consultado em 23 de junho de 2020
                 </p>
               </div>
             </li>
@@ -748,9 +834,18 @@
             <li>
               <span class="ref-number">3</span>
               <div class="ref-text">
-                <strong>SOUZA, Ismael Francisco de (16 de dezembro de 2013).</strong>
+                <strong
+                  >SOUZA, Ismael Francisco de (16 de dezembro de 2013).</strong
+                >
                 <p>
-                  <a href="https://jus.com.br/artigos/26154/conselho-tutelar" target="_blank"> Conselho tutelar: do processo de participação popular à efetivação dos direitos de crianças e adolescentes </a>  Revista Jus Navigandi. Consultado em 23 de junho de 2020
+                  <a
+                    href="https://jus.com.br/artigos/26154/conselho-tutelar"
+                    target="_blank"
+                  >
+                    Conselho tutelar: do processo de participação popular à
+                    efetivação dos direitos de crianças e adolescentes
+                  </a>
+                  Revista Jus Navigandi. Consultado em 23 de junho de 2020
                 </p>
               </div>
             </li>
@@ -759,7 +854,13 @@
               <div class="ref-text">
                 <strong>BRASIL, Presidência da República (2013).</strong>
                 <p>
-                  <a href="https://portal.mpap.mp.br/images/infancia/Cadastro_CT.pdf" target="_blank"> Cadastro Nacional dos Conselhos Tutelares </a>  Brasília: Secretaria de Direitos Humanos
+                  <a
+                    href="https://portal.mpap.mp.br/images/infancia/Cadastro_CT.pdf"
+                    target="_blank"
+                  >
+                    Cadastro Nacional dos Conselhos Tutelares
+                  </a>
+                  Brasília: Secretaria de Direitos Humanos
                 </p>
               </div>
             </li>
@@ -768,7 +869,14 @@
               <div class="ref-text">
                 <strong>CONANDA (17 de março de 2010).</strong>
                 <p>
-                  <a href="https://www.gov.br/participamaisbrasil/conanda/conanda/resolucoes/139-resolucao-139-de-17-de-marco-de-2010/view" target="_blank"> Dispõe sobre os parâmetros para a criação e funcionamento dos Conselhos Tutelares no Brasil, e dá outras providências </a>  Consultado em 23 de junho de 2020
+                  <a
+                    href="https://www.gov.br/participamaisbrasil/conanda/conanda/resolucoes/139-resolucao-139-de-17-de-marco-de-2010/view"
+                    target="_blank"
+                  >
+                    Dispõe sobre os parâmetros para a criação e funcionamento
+                    dos Conselhos Tutelares no Brasil, e dá outras providências
+                  </a>
+                  Consultado em 23 de junho de 2020
                 </p>
               </div>
             </li>
@@ -777,7 +885,13 @@
               <div class="ref-text">
                 <strong>MPMG (6 de junho de 2017). </strong>
                 <p>
-                  <a href="https://site.mppr.mp.br/crianca/Pagina/O-Conselho-Tutelar-em-perguntas-e-respostas" target="_blank"> Conselho Tutelar: Perguntas e Respostas </a> Consultado em 14 de junho de 2020
+                  <a
+                    href="https://site.mppr.mp.br/crianca/Pagina/O-Conselho-Tutelar-em-perguntas-e-respostas"
+                    target="_blank"
+                  >
+                    Conselho Tutelar: Perguntas e Respostas
+                  </a>
+                  Consultado em 14 de junho de 2020
                 </p>
               </div>
             </li>
@@ -786,17 +900,21 @@
               <div class="ref-text">
                 <strong> Planalto. 2 de junho de 1992. </strong>
                 <p>
-                  <a href="https://www.planalto.gov.br/ccivil_03/leis/l8429.htm" target="_blank"> LEI Nº 8.429, DE 2 DE JUNHO DE 1992 </a> Consultado em 14 de agosto de 2025
+                  <a
+                    href="https://www.planalto.gov.br/ccivil_03/leis/l8429.htm"
+                    target="_blank"
+                  >
+                    LEI Nº 8.429, DE 2 DE JUNHO DE 1992
+                  </a>
+                  Consultado em 14 de agosto de 2025
                 </p>
               </div>
             </li>
           </ul>
-
         </div>
       </div>
     </section>
     <!-- Referências -->
-  
 
     <!-- Settings -->
     <div class="settings-fab" id="settingsFab">
@@ -818,21 +936,17 @@
           </li>
         </div>
 
-        <!-- Hand Talk -->
-        <div class="fab-item">
-          <span>Libras</span>
-          <div vw class="enabled">
-            <div vw-access-button class="active"></div>
-            <div vw-plugin-wrapper>
-              <div class="vw-plugin-top-wrapper"></div>
-            </div>
-          </div>
+        <!-- Fonts -->
+        <div class="settings-group">
+          <h4>Fonte</h4>
+          <div id="font-family-options" class="options-grid"></div>
+        </div>
 
-          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-          <script>
-            new window.VLibras.Widget("https://vlibras.gov.br/app");
-          </script>
-          <!-- Hand Talk -->
+        <div class="settings-group">
+          <h4>Peso Fonte</h4>
+          <div id="font-weight-options" class="options-row"></div>
+        </div>
+        <!-- Fonts -->
         </div>
       </div>
       <!-- Dark Mode Toggle -->
@@ -910,11 +1024,27 @@
     <!-- Footer -->
 
     <!-- JavaScript -->
-    <script src="./src/js/index.js"></script>
-    <script src="./src/js/TextMarker.js"></script>
-    <script src="./src/js/Check.js"></script>
-    <script src="./src/js/ModalParent.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="./src/js/index.js"></script>
+      <script src="./src/js/TextMarker.js"></script>
+      <script src="./src/js/Check.js"></script>
+      <script src="./src/js/ModalParent.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JavaScript -->
+
+    <!-- Hand Talk -->
+    <div class="fab-item">
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+    
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
+      </script>
+    <!-- Hand Talk -->
 
     <!-- Ion Icons -->
     <script
