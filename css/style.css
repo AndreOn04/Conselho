@@ -60,7 +60,7 @@ p, h1, h2, h3, h4, h5, h6, span, a, li, button {
     --accent: #f59e0b;
 
     --color-accent: #9089f2;
-    --color-purple: #5e13aa;
+    --color-purple: #4c357f;
     --color-danger: #d9534f;
 
     --text-highlight: linear-gradient(120deg, #d3e3fd 0%, #d3e3fd 100%);
@@ -1339,7 +1339,7 @@ body.dark-mode .nav-list a {
     left: 50%;
     top: 0;
     bottom: 0;
-    border-left: 4px dotted #4c357f;
+    border-left: 4px dotted var(--color-purple);
     transform: translateX(-50%);
     z-index: 0;
 }
@@ -1360,8 +1360,8 @@ body.dark-mode .nav-list a {
 }
 
 .tipo-etapa-esquerda h4 {
-    color: #3f2c73;
-    font-size: clamp(2rem, 2.5vw, 2.8rem);
+    color: var(--contact-text-title);
+    font-size: clamp(2rem, 2.5vw, 1rem);
     text-transform: uppercase;
     text-decoration: underline;
     font-weight: 800;
@@ -1372,7 +1372,7 @@ body.dark-mode .nav-list a {
 }
 
 .tipo-etapa-esquerda p {
-    color: #16161b;
+    color: var(--contact-text-title);
     font-size: 1.1rem;
     line-height: 1.5;
     max-width: 360px;
@@ -1440,7 +1440,7 @@ body.dark-mode .nav-list a {
 }
 
 .tipo-etapa-direita li {
-    color: #2e295f;
+    color: var(--contact-text-title);
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1509,6 +1509,66 @@ body.dark-mode .nav-list a {
 .section-description span {
     font-weight: bold;
 }
+
+.container-vedacoes {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.cards-wrapper-limit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.vedacao-item {
+    background: var(--bg-bg);
+    padding: 30px;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.1s ease-out, box-shadow 0.4s ease-out;
+    will-change: transform;
+}
+
+.vedacao-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.icon-area {
+    font-size: 2.5rem;
+    color: var(--color-danger);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.text-area h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--contact-text-title);
+    line-height: 1.5;
+}
+
+.text-area span {
+    color: var(--color-danger);
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.text-area p {
+    font-size: 0.90rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    text-align: justify;
+}
+
+
 
 
 /* Atribuições do Conselho */
@@ -2499,7 +2559,7 @@ body.dark-mode .nav-list a {
 
 /* Footer */
 .main-footer {
-    background-color: #FCD06D;
+    background-color: var(--color-accent);
 
     color: #fff;
 
@@ -2554,7 +2614,7 @@ body.dark-mode .nav-list a {
 
 .footer-links li a:hover {
     text-decoration: underline;
-    color: var(--primary-action);
+    color: var(--contact-btn-bg);
 }
 
 .footer-contact {
@@ -2572,7 +2632,7 @@ body.dark-mode .nav-list a {
 
 .footer-divider {
     border: 0;
-    border-top: 1px solid var(--footer-border);
+    border-top: 1px solid var(--text-muted);
     margin: 40px auto;
     max-width: 1200px;
 }
