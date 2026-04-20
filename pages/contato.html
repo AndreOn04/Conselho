@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contato.</title>
+    <title>O que é conselho tutelar?</title>
     <!-- Link CSS -->
     <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <!-- Google Fontes -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&family=Open+Sans:wght@300..800&family=Playfair+Display:wght@400..900&family=Lato:wght@100..900&family=Oswald:wght@200..700&display=swap"
       rel="stylesheet"
     />
+    <!-- Google Fontes -->
 
     <!-- Fonte Awesome -->
     <link
@@ -19,6 +23,29 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
     <!-- Fonte Awesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      body {
+        background: var(--cream);
+        color: var(--navy);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* ── NOISE TEXTURE OVERLAY ── */
+      body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+    </style>
   </head>
 
   <body>
@@ -80,103 +107,182 @@
     <!-- Header -->
 
     <!-- Contato -->
-    <section class="contact-section">
-      <div class="container-centralizado">
-        <div class="contact-header">
-          <h2>Fale Conosto</h2>
-          <p>
-            Dúvidas, sugestões ou informações sobre direitos da criança e do
-            adolescente.
-          </p>
+    <!-- ═══ HEADER ═══ -->
+    <div class="header-contato">
+      <div class="header-badge"><span></span> Atendimento ao Cidadão</div>
+      <h1>Entre em <em>contato</em><br />conosco</h1>
+      <p class="header-sub">
+        O Conselho Tutelar está à disposição para receber denúncias, esclarecer
+        dúvidas e garantir a proteção dos direitos de crianças e adolescentes.
+      </p>
+    </div>
+
+    <!-- ═══ MAIN ═══ -->
+    <main>
+      <div class="section-label">Canais de Atendimento</div>
+
+      <!-- CARDS GRID -->
+      <div class="contact-grid">
+        <!-- TELEFONE -->
+        <a href="tel:+556336000000" class="contact-card" title="Ligar agora">
+          <div class="card-arrow">↗</div>
+          <div class="card-icon">📞</div>
+          <div class="card-title">Telefone Fixo</div>
+          <div class="card-info">(63) 3600-0000</div>
+          <div class="card-hint">Horário comercial</div>
+        </a>
+
+        <!-- WHATSAPP -->
+        <a
+          href="https://wa.me/556399990000?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Conselho%20Tutelar."
+          target="_blank"
+          rel="noopener"
+          class="contact-card"
+          title="Abrir WhatsApp"
+        >
+          <div class="card-arrow">↗</div>
+          <div class="card-icon">💬</div>
+          <div class="card-title">WhatsApp</div>
+          <div class="card-info">(63) 9999-0000</div>
+          <div class="card-hint">Mensagens e dúvidas</div>
+        </a>
+
+        <!-- E-MAIL -->
+        <a
+          href="mailto:conselho.tutelar@municipio.mt.gov.br?subject=Contato%20via%20Site&body=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20o%20Conselho%20Tutelar."
+          class="contact-card"
+          title="Enviar e-mail"
+        >
+          <div class="card-arrow">↗</div>
+          <div class="card-icon">✉️</div>
+          <div class="card-title">E-mail Institucional</div>
+          <div class="card-info">
+            conselho.tutelar<br />@municipio.mt.gov.br
+          </div>
+          <div class="card-hint">Resposta em até 2 dias úteis</div>
+        </a>
+
+        <!-- PRESENCIAL -->
+        <div
+          class="contact-card"
+          id="copyAddress"
+          title="Copiar endereço"
+          style="cursor: pointer"
+        >
+          <div class="card-arrow">⧉</div>
+          <div class="card-icon">📍</div>
+          <div class="card-title">Atendimento Presencial</div>
+          <div class="card-info">Rua das Acácias, 245<br />Centro</div>
+          <div class="card-hint">Clique para copiar o endereço</div>
         </div>
 
-        <div class="contact-wrapper">
-          <div class="contact-info reveal-bottom">
-            <div class="info-card">
-              <ion-icon name="location-outline"></ion-icon>
-              <div>
-                <h4>Onde estamos localizados</h4>
-                <p>Rua Exemplo, 123 - Centro, Cuiabá-MT</p>
-              </div>
+        <!-- URGÊNCIA — ocupa linha inteira -->
+        <a
+          href="tel:100"
+          class="contact-card card-urgent"
+          title="Ligar para o Disque 100"
+        >
+          <div>
+            <div class="urgent-badge">
+              <span class="urgent-dot"></span> Denúncia Urgente
             </div>
-            <div class="info-card">
-              <ion-icon name="mail-outline"></ion-icon>
-              <div>
-                <h4>Use no contato de e-mail</h4>
-                <p>contato@conselhotutelar.com</p>
-              </div>
-            </div>
-            <div class="info-card">
-              <ion-icon name="call-outline"></ion-icon>
-              <div>
-                <h4>Telefone</h4>
-                <p>(65) 99999-9999</p>
-              </div>
+            <div class="card-title">Disque Direitos Humanos</div>
+            <div class="card-info">Ligue 100</div>
+            <div class="card-hint">
+              Gratuito · 24 horas · 7 dias por semana · Sigilo garantido
             </div>
           </div>
-
-          <form
-            action="https://formspree.io/f/xaqpppjv"
-            method="POST"
-            class="contact-form reveal-right"
-            id="contact-form"
+          <div
+            class="card-icon"
+            style="width: 64px; height: 64px; font-size: 1.6rem"
           >
-            <div class="input-group">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Seu nome"
-                required
-              />
-            </div>
-            <div class="input-group">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Seu e-mail"
-                required
-              />
-            </div>
-            <div class="input-group">
-              <textarea
-                name="message"
-                id="message"
-                rows="5"
-                placeholder="Como podemos ajudar?"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="btn-send">
-              <span>Enviar Mensagem</span>
-              <ion-icon name="paper-plane-outline"></ion-icon>
-            </button>
-            <div id="form-status"></div>
-          </form>
+            🛡️
+          </div>
+          <div class="card-arrow">↗</div>
+        </a>
+      </div>
+
+      <!-- LINHA INFERIOR -->
+      <div class="info-row">
+        <!-- HORÁRIOS -->
+        <div class="info-function">
+          <h3>Horário de Funcionamento</h3>
+          <table class="hours-table" id="hoursTable">
+            <tbody>
+              <tr>
+                <td>
+                  <span class="status-dot" id="dotSeg"></span>Segunda-feira
+                </td>
+                <td>08h00 – 17h00</td>
+              </tr>
+              <tr>
+                <td><span class="status-dot" id="dotTer"></span>Terça-feira</td>
+                <td>08h00 – 17h00</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="status-dot" id="dotQua"></span>Quarta-feira
+                </td>
+                <td>08h00 – 17h00</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="status-dot" id="dotQui"></span>Quinta-feira
+                </td>
+                <td>08h00 – 17h00</td>
+              </tr>
+              <tr>
+                <td><span class="status-dot" id="dotSex"></span>Sexta-feira</td>
+                <td>08h00 – 17h00</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="status-dot" style="background: #ccc"></span
+                  >Sábado e Domingo
+                </td>
+                <td>Fechado</td>
+              </tr>
+            </tbody>
+          </table>
+          <p
+            id="statusBanner"
+            style="margin-top: 18px; font-size: 0.82rem; font-weight: 500"
+          ></p>
         </div>
 
-        <div class="modal-overlay" id="confirm-modal">
-          <div class="modal-content">
-            <div class="modal-contact">
-              <ion-icon name="alert-outline"></ion-icon>
-              <h3>Confirme as suas informações.</h3>
-            </div>
-            <p>
-              Por favor, verifique se as informações são verídicas, pois é
-              através delas que entraremos em contato.
-            </p>
+        <!-- ENDEREÇO -->
+        <div class="info-function">
+          <h3>Como Chegar</h3>
 
-            <div class="modal-actions">
-              <button id="btn-edit" class="btn-secondary">Editar</button>
-              <button id="btn-confirm" class="btn-primary">
-                Confirmar e Enviar.
-              </button>
-            </div>
+          <div class="address-line">
+            <span class="icon-content">📍</span>
+            <p>
+              <strong>Rua das Acácias, 245</strong><br />Centro —
+              Município/MT<br />CEP: 78.000-000
+            </p>
           </div>
+
+          <div class="address-line">
+            <span class="icon-content">🚌</span>
+            <p>Linhas 01, 07 e 12 — ponto de ônibus a 50 metros da sede.</p>
+          </div>
+
+          <div class="address-line">
+            <span class="icon-content">🅿️</span>
+            <p>Estacionamento gratuito disponível na rua lateral.</p>
+          </div>
+
+          <a
+            class="map-btn"
+            href="https://www.google.com/maps/search/Rua+das+Acacias+245+Centro"
+            target="_blank"
+            rel="noopener"
+          >
+            ↗ &nbsp;Ver no Google Maps
+          </a>
         </div>
       </div>
-    </section>
+    </main>
 
     <!-- Contato -->
 
@@ -222,47 +328,6 @@
         </div>
       </div>
 
-      <!-- Settings -->
-      <div class="settings-fab" id="settingsFab">
-        <button class="fab-main-btn" onclick="toggleSettingsMenu()">
-          <ion-icon name="settings-outline"></ion-icon>
-        </button>
-
-        <!-- Dark Mode Toggle -->
-        <div class="fab-menu" id="fabMenu">
-          <div class="fab-item">
-            <span>Tema</span>
-            <li class="theme-switch-container">
-              <input type="checkbox" id="chk" class="checkbox" />
-              <label for="chk" class="label">
-                <ion-icon name="moon-outline" class="fa-moon"></ion-icon>
-                <ion-icon name="sunny-outline" class="fa-sun"></ion-icon>
-                <div class="ball"></div>
-              </label>
-            </li>
-          </div>
-
-          <!-- Hand Talk -->
-          <div class="fab-item">
-            <span>Libras</span>
-            <div vw class="enabled">
-              <div vw-access-button class="active"></div>
-              <div vw-plugin-wrapper>
-                <div class="vw-plugin-top-wrapper"></div>
-              </div>
-            </div>
-
-            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-            <script>
-              new window.VLibras.Widget("https://vlibras.gov.br/app");
-            </script>
-            <!-- Hand Talk -->
-          </div>
-        </div>
-        <!-- Dark Mode Toggle -->
-      </div>
-      <!-- Settings -->
-
       <hr class="footer-divider" />
 
       <div class="footer-bottom-logos">
@@ -281,6 +346,7 @@
 
     <!-- JavaScript -->
     <script src="../src/js/index.js"></script>
+    <script src="../src/js/contact.js"></script>
     <script src="../src/js/FormContact.js"></script>
 
     <!-- Hand Talk -->
@@ -296,8 +362,6 @@
       new window.VLibras.Widget("https://vlibras.gov.br/app");
     </script>
     <!-- Hand Talk -->
-
-    <script src="../src/js/Contact.js"></script>
 
     <!-- Ion Icons -->
     <script

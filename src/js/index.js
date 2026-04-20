@@ -177,84 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // Animações HERO
 
-/* FAQ Section */
-document.addEventListener("DOMContentLoaded", () => {
-  const faqItems = document.querySelectorAll(".faq-item");
-
-  faqItems.forEach((item) => {
-    const question = item.querySelector(".faq-question");
-
-    question.addEventListener("click", () => {
-      const isActive = item.classList.contains("active");
-
-      faqItems.forEach((allItems) => {
-        allItems.classList.remove("active");
-      });
-      if (!isActive) {
-        item.classList.add("active");
-      }
-    });
-  });
-});
-/* FAQ Section */
-
-// Swiper - Slider
-document.addEventListener("DOMContentLoaded", function () {
-  const swiper = new Swiper(".mySwiper", {
-    loop: false,
-    speed: 600,
-    grabCursor: true,
-    allowTouchMove: true,
-
-    effect: "slide",
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-
-    breakpoints: {
-      320: {
-        slidesPerView: 1.2,
-        centeredSlides: true,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 1,
-        spaceBetween: 40,
-      },
-    },
-  });
-
-  function startAnimationSlide() {
-    setInterval(() => {
-      if (swiper && !swiper.isEnd && !swiper.animating) {
-        const nudgeAmount = swiper.width * 0.3;
-        const currentTranslate = swiper.translate;
-
-        swiper.setTransition(800);
-        swiper.setTranslate(currentTranslate - nudgeAmount);
-
-        setTimeout(() => {
-          swiper.setTransition(600);
-          swiper.setTranslate(currentTranslate);
-
-          setTimeout(() => swiper.updateProgress(), 600);
-        }, 1000);
-      }
-    }, 7000);
-  }
-
-  startAnimationSlide();
-});
-// Swiper - Slider
-
 // Settings - Configurações
 const configManager = {
     fonts: [
@@ -277,60 +199,51 @@ function initSettings() {
     const savedFont = localStorage.getItem('preferredFont');
     const savedWeight = localStorage.getItem('preferredWeight');
 
-    if(savedFont) {
-      document.documentElement.style.setProperty('--font-main', savedFont);
-      document.body.style.fontFamily = savedFont;
+    if (familyArea) {
+        configManager.fonts.forEach(f => {
+            const b = document.createElement('button');
+            b.textContent = f.name;
+            
+            if (savedFont === f.val) b.classList.add('active');
+
+            b.onclick = () => {
+                familyArea.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+                b.classList.add('active');
+                
+                localStorage.setItem('preferredFont', f.val);
+                document.documentElement.style.setProperty('--font-main', f.val);
+                document.body.style.fontFamily = f.val;
+            };
+            familyArea.appendChild(b);
+        });
     }
 
-    if(savedWeight) {
-      document.documentElement.style.setProperty('--weight-main', savedWeight);
-      document.body.style.fontWeight = savedWeight;
+    if (weightArea) {
+        configManager.weights.forEach(w => {
+            const b = document.createElement('button');
+            b.textContent = w;
+
+            if (savedWeight == w) b.classList.add('active');
+
+            b.onclick = () => {
+                weightArea.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+                b.classList.add('active');
+
+                localStorage.setItem('preferredWeight', w);
+                document.documentElement.style.setProperty('--weight-main', w);
+                document.body.style.fontWeight = w;
+            };
+            weightArea.appendChild(b);
+        });
     }
-
-    // Renderizar Fontes
-    configManager.fonts.forEach(f => {
-        const b = document.createElement('button');
-        b.textContent = f.name;
-        b.style.fontFamily = f.val;
-
-        if(localStorage.getItem('preferredFont') === f.val) {
-          b.classList.add('active');
-        }
-        
-        b.onclick = () => {
-            familyArea.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
-            b.classList.add('active');
-
-            localStorage.setItem('preferredFont', f.val);
-          
-            document.documentElement.style.setProperty('--font-main', f.val);
-            document.body.style.fontFamily = f.val;
-        };
-        familyArea.appendChild(b);
-    });
-    
-    configManager.weights.forEach(w => {
-        const b = document.createElement('button');
-        b.textContent = w;
-        if(savedWeight == w) b.classList.add('active');
-
-        if(localStorage.getItem('preferredWeight') == w) {
-          b.classList.add('active');
-        }
-        
-        b.onclick = () => {
-            
-            weightArea.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
-            b.classList.add('active');
-
-            localStorage.setItem('preferredWeight', w);
-            
-            document.documentElement.style.setProperty('--weight-main', w);
-            document.body.style.fontWeight = w;
-        };
-        weightArea.appendChild(b);
-        if(savedFont) document.body.style.fontFamily = savedFont;
-    });
+    if (savedFont) {
+        document.body.style.fontFamily = savedFont;
+        document.documentElement.style.setProperty('--font-main', savedFont);
+    }
+    if (savedWeight) {
+        document.body.style.fontWeight = savedWeight;
+        document.documentElement.style.setProperty('--weight-main', savedWeight);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", initSettings);

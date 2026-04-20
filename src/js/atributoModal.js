@@ -52,3 +52,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 // Animação Modal - Conselho na prática
+
+//Atributo O que NÃO compete ao conselho - Cards
+const bancoDeDadosVedacoes = {
+    policia: "Não pode prender, deter ou conduzir pessoas coercitivamente. Em situações de crime ou risco imediato, deve acionar a polícia. Base legal: atribuições definidas no art. 136 do ECA.",
+    penalidades: "Sua função é garantir direitos e aplicar medidas de proteção, e não penalizar condutas. Base legal: arts. 101 e 136 do ECA.",
+    guarda: "O Conselho atua no encaminhamento e acompanhamento dos casos, sem poder decisório final. Base legal: arts. 28 a 52 e 148 do ECA.",
+    afastar: "Não é uma decisão arbitrária. Base legal: arts. 101, § único, e 136, I, do ECA.",
+    house: "Essa proteção é garantida constitucionalmente, salvo exceções legais específicas. Base legal: art. 5º, XI, da Constituição Federal.",
+    info: "A exposição indevida pode gerar responsabilização administrativa, civil e penal. Base legal: princípios do ECA e dever funcional aplicado à proteção da criança e do adolescente."
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const botoes = document.querySelectorAll('.btn-toggle-extra');
+
+    botoes.forEach(botao => {
+        botao.addEventListener('click', function() {
+            const card = this.closest('.vedacao-item');
+            const id = card.getAttribute('data-id');
+            const extraContainer = card.querySelector('.conteudo-extra');
+            
+            if (extraContainer.innerHTML === "") {
+                extraContainer.innerHTML = `<p>${bancoDeDadosVedacoes[id]}</p>`;
+            }
+            const estaAtivo = extraContainer.classList.toggle('active');
+            
+            this.textContent = estaAtivo ? 'Ler menos' : 'Ler mais';
+        });
+    });
+});
+//Atributo O que NÃO compete ao conselho - Cards
