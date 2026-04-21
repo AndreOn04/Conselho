@@ -7,11 +7,15 @@
     <!-- Link CSS -->
     <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Google Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&family=Open+Sans:wght@300..800&family=Playfair+Display:wght@400..900&family=Lato:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Google Fontes -->
+
+    <!-- Fonte Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Fonte Awesome -->
+
+    <link rel="icon" type="image/x-icon" href="/src/imagens/icon-head.png" />
 
     <!-- Fonte Awesome -->
     <link
@@ -52,7 +56,6 @@
                     Estatuto da Criança e do Adolescente
                   </a>
                 </li>
-                <li><a href="#quem-somos"> Quem somos? </a></li>
               </ul>
             </li>
 
@@ -67,8 +70,12 @@
                     Direitos da Criança e Adolescente
                   </a>
                 </li>
-                <li><a href="./parentalduties.html"> Deveres dos Pais </a></li>
-                <li><a href=""></a></li>
+                <li>
+                  <a href="./parentalduties.html"> Deveres dos Pais </a>
+                </li>
+                <li>
+                  <a href="#quem-somos"> Quem somos? </a>
+                </li>
               </ul>
             </li>
 
@@ -81,291 +88,328 @@
 
     <div class="progress-bar"></div>
 
-    <main class="children-page">
-      <section class="children-hero">
-        <div class="children-container">
-          <span class="tag-superior">
-            Estatuto da Criança e do Adolescente
-          </span>
-          <h1>Direitos <br /><span class="highlight"> Fundamentais </span></h1>
-          <p>
-            A proteção integral não é uma opção, é um dever absoluto do Estado,
-            da família e da sociedade.
+    <section class="children-hero" aria-label="Cabeçalho principal">
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+      <div class="hero-inner">
+        <div class="hero-eyebrow">Estatuto da Criança e do Adolescente</div>
+
+        <h1 class="hero-title">
+          Direitos
+          <span>Fundamentais</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          A proteção integral não é uma opção — é um dever absoluto do Estado,
+          da família e da sociedade.
+        </p>
+
+        <nav class="hero-pills" aria-label="Ir para seção">
+          <a href="#saude" class="hero-pill">⚕ Vida e Saúde</a>
+          <a href="#liberdade" class="hero-pill">🕊 Liberdade e Dignidade</a>
+          <a href="#educacao" class="hero-pill">📚 Educação e Cultura</a>
+          <a href="#convivencia" class="hero-pill">🏡 Convivência Familiar</a>
+        </nav>
+      </div>
+
+      <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+        <span>Explorar</span>
+        <div class="scroll-cue-line"></div>
+      </div>
+
+      <div class="hero-border" aria-hidden="true"></div>
+    </section>
+
+    <!-- ════════════════════ STATS ════════════════════ -->
+    <div class="stats-bar" role="region" aria-label="Dados do ECA">
+      <div class="stat-item">
+        <span class="stat-num" data-target="267">0</span>
+        <span class="stat-label">Artigos no ECA</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="1990">0</span>
+        <span class="stat-label">Ano de promulgação</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="18">0</span>
+        <span class="stat-label">Anos como critério de proteção</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="34">0</span>
+        <span class="stat-label">Anos em vigor</span>
+      </div>
+    </div>
+
+    <section class="direitos-section" aria-label="Direitos fundamentais">
+      <header class="section-header">
+        <span class="section-tag">Lei nº 8.069/90</span>
+        <h2 class="section-title">
+          O que a lei garante<br />para cada criança e adolescente
+        </h2>
+        <div class="section-rule" aria-hidden="true"></div>
+      </header>
+
+      <!-- 01 SAÚDE -->
+      <article class="direito-item" id="saude">
+        <div class="direito-content">
+          <div class="direito-num" aria-hidden="true">01</div>
+          <div class="direito-icon-wrap">
+            <div class="direito-icon" aria-hidden="true">⚕</div>
+            <span class="direito-chapter">Capítulo I — Arts. 7º ao 14º</span>
+          </div>
+          <h3 class="direito-title">Direito à Vida<br />e à Saúde</h3>
+          <p class="direito-desc">
+            Toda criança e adolescente tem direito a nascer e crescer com saúde
+            plena. Isso abrange atendimento médico, vacinação, cuidados
+            pré-natais e acompanhamento contínuo do desenvolvimento.
           </p>
-
-          <a href="#life-help" class="scroll-down"></a>
+          <ul class="artigos-list" role="list">
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 7º</span>
+              <span class="artigo-text"
+                >Nascimento e desenvolvimento sadio</span
+              >
+              <span class="artigo-detail"
+                >A criança e o adolescente têm direito a proteção à vida e à
+                saúde, mediante a efetivação de políticas sociais públicas que
+                permitam o nascimento e o desenvolvimento sadio e
+                harmonioso.</span
+              >
+            </li>
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 10º</span>
+              <span class="artigo-text"
+                >Obrigações dos hospitais e unidades de saúde</span
+              >
+              <span class="artigo-detail"
+                >Os hospitais devem manter registro das atividades
+                desenvolvidas, comunicar ao Conselho Tutelar casos de
+                maus-tratos e fornecer registros de nascimento às mães sem
+                condições.</span
+              >
+            </li>
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 14º</span>
+              <span class="artigo-text">Protocolos de vacinação e triagem</span>
+              <span class="artigo-detail"
+                >O SUS promoverá programas de assistência médica e odontológica
+                para a prevenção das enfermidades que ordinariamente afetam a
+                população infantil.</span
+              >
+            </li>
+          </ul>
         </div>
-      </section>
-
-      <div class="direitos-portal"></div>
-
-      <section class="eixo-conteudo bg-dark eixo-kit-medic" id="life-help">
-        <div class="container-flex">
-          <div class="col-texto">
-            <div class="wrapper-svgs eixo-medic">
-              <div class="numbers">
-                <span>0</span>
-                <span>1</span>
-              </div>
-
-              <img
-                src="../src/imagens/kit-medic.png"
-                alt=" Kit Medic "
-                class="icon icon-kit-medic"
-              />
-            </div>
-            <h2>Direito à vida e à Saúde</h2>
-            <div class="text">
-              <p>
-                Toda criança e adolescente tem direito a nascer e crescer com
-                saúde. Isso inclui atendimento médico, vacinação e cuidados
-                desde a gravidez.
-              </p>
-              <ul class="lista-juridica">
-                <li>
-                  <strong>Art. 7º:</strong> Nascimento e desenvolvimento sadio.
-                </li>
-                <li>
-                  <strong>Art. 10º:</strong> Obrigações dos hospitais e unidades
-                  de saúde.
-                </li>
-                <li>
-                  <strong>Art. 14º:</strong> Protocolos de vacinação e triagem.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-grafico">
-            <div class="box-destaque"></div>
-          </div>
+        <div class="direito-visual" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&q=80"
+            alt="Criança sendo atendida por médico"
+            loading="lazy"
+          />
+          <div class="visual-overlay"></div>
+          <span class="visual-tag">Saúde Integral</span>
         </div>
-      </section>
+      </article>
 
-      <section class="eixo-conteudo bg-light eixo-school" id="school">
-        <div class="container-flex reverse">
-          <div class="col-texto">
-            <div class="wrapper-svgs typeofeducation">
-              <div class="numbers">
-                <span class="n0">0</span>
-                <span class="n2">2</span>
-              </div>
-
-              <img
-                src="../src/imagens/school.png"
-                alt="School SVG"
-                class="icon icon-school"
-              />
-
-              <div class="celebration"></div>
-            </div>
-            <h2>Direito à educação</h2>
-            <div class="text">
-              <p>
-                Toda criança e adolescente tem direito de ir à escola, aprender
-                e ser respeitado pelos professores.
-              </p>
-              <ul class="lista-juridica reverse">
-                <li>
-                  <strong>Art. 53º:</strong> Direito à educação, respeito e
-                  igualdade na escola.
-                </li>
-                <li>
-                  <strong>Art. 54º:</strong> Dever do Estado de garantir ensino
-                  gratuito e obrigatório.
-                </li>
-                <li>
-                  <strong>Art. 55º:</strong> Obriga os pais a matricular os
-                  filhos na escola.
-                </li>
-              </ul>
-            </div>
+      <!-- 02 LIBERDADE -->
+      <article class="direito-item" id="liberdade">
+        <div class="direito-content">
+          <div class="direito-num" aria-hidden="true">02</div>
+          <div class="direito-icon-wrap">
+            <div class="direito-icon" aria-hidden="true">🕊</div>
+            <span class="direito-chapter">Capítulo II — Arts. 15º ao 18º</span>
           </div>
-          <div class="col-grafico">
-            <div class="box-destaque"></div>
-          </div>
+          <h3 class="direito-title">Liberdade, Respeito<br />e Dignidade</h3>
+          <p class="direito-desc">
+            Crianças e adolescentes têm direito pleno à liberdade, ao respeito e
+            à dignidade enquanto pessoas em desenvolvimento, resguardadas de
+            qualquer forma de violação ou discriminação.
+          </p>
+          <ul class="artigos-list" role="list">
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 15º</span>
+              <span class="artigo-text"
+                >Liberdade, respeito e dignidade como direitos
+                fundamentais</span
+              >
+              <span class="artigo-detail"
+                >A criança e o adolescente têm direito à liberdade, ao respeito
+                e à dignidade como pessoas humanas em processo de
+                desenvolvimento.</span
+              >
+            </li>
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 17º</span>
+              <span class="artigo-text"
+                >Inviolabilidade da integridade física e moral</span
+              >
+              <span class="artigo-detail"
+                >O direito ao respeito consiste na inviolabilidade da
+                integridade física, psíquica e moral da criança e do
+                adolescente, abrangendo a preservação da imagem, identidade e
+                autonomia.</span
+              >
+            </li>
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 18º</span>
+              <span class="artigo-text"
+                >Dever de todos de velar pela dignidade</span
+              >
+              <span class="artigo-detail"
+                >É dever de todos velar pela dignidade da criança e do
+                adolescente, pondo-os a salvo de qualquer tratamento desumano,
+                violento, aterrorizante, vexatório ou constrangedor.</span
+              >
+            </li>
+          </ul>
         </div>
-      </section>
+        <div class="direito-visual" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80"
+            alt="Crianças brincando livremente"
+            loading="lazy"
+          />
+          <div class="visual-overlay"></div>
+          <span class="visual-tag">Liberdade e Dignidade</span>
+        </div>
+      </article>
 
-      <section
-        class="eixo-conteudo bg-dark eixo-heppy-children"
-        id="vida-saude"
+      <!-- 03 EDUCAÇÃO -->
+      <article class="direito-item" id="educacao">
+        <div class="direito-content">
+          <div class="direito-num" aria-hidden="true">03</div>
+          <div class="direito-icon-wrap">
+            <div class="direito-icon" aria-hidden="true">📚</div>
+            <span class="direito-chapter">Capítulo IV — Arts. 53º ao 59º</span>
+          </div>
+          <h3 class="direito-title">Educação, Cultura<br />e Lazer</h3>
+          <p class="direito-desc">
+            A educação é direito inalienável de toda criança e adolescente,
+            visando ao pleno desenvolvimento da pessoa, o exercício da cidadania
+            e a qualificação para o trabalho.
+          </p>
+          <ul class="artigos-list" role="list">
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 53º</span>
+              <span class="artigo-text"
+                >Direito à educação como pleno desenvolvimento</span
+              >
+              <span class="artigo-detail"
+                >A criança e o adolescente têm direito à educação, visando ao
+                pleno desenvolvimento de sua pessoa, preparo para o exercício da
+                cidadania e qualificação para o trabalho.</span
+              >
+            </li>
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 54º</span>
+              <span class="artigo-text"
+                >Dever do Estado em garantir acesso à escola</span
+              >
+              <span class="artigo-detail"
+                >É dever do Estado assegurar ensino fundamental obrigatório e
+                gratuito, inclusive para os que a ele não tiveram acesso na
+                idade própria.</span
+              >
+            </li>
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 58º</span>
+              <span class="artigo-text"
+                >Respeito à identidade cultural no processo educativo</span
+              >
+              <span class="artigo-detail"
+                >No processo educacional serão respeitados os valores culturais,
+                artísticos e históricos próprios do contexto social da criança e
+                do adolescente.</span
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="direito-visual" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"
+            alt="Crianças em sala de aula"
+            loading="lazy"
+          />
+          <div class="visual-overlay"></div>
+          <span class="visual-tag">Educação e Cultura</span>
+        </div>
+      </article>
+
+      <!-- 04 CONVIVÊNCIA -->
+      <article class="direito-item" id="convivencia">
+        <div class="direito-content">
+          <div class="direito-num" aria-hidden="true">04</div>
+          <div class="direito-icon-wrap">
+            <div class="direito-icon" aria-hidden="true">🏡</div>
+            <span class="direito-chapter">Capítulo III — Arts. 19º ao 24º</span>
+          </div>
+          <h3 class="direito-title">Convivência<br />Familiar e Comunitária</h3>
+          <p class="direito-desc">
+            Toda criança e adolescente tem o direito de ser criado e educado no
+            seio de sua família, e excepcionalmente em família substituta,
+            sempre em ambiente de afeto e segurança.
+          </p>
+          <ul class="artigos-list" role="list">
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 19º</span>
+              <span class="artigo-text"
+                >Direito à convivência familiar e comunitária</span
+              >
+              <span class="artigo-detail"
+                >É direito da criança e do adolescente ser criado e educado no
+                seio de sua família e, excepcionalmente, em família substituta,
+                assegurada a convivência familiar e comunitária.</span
+              >
+            </li>
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 22º</span>
+              <span class="artigo-text"
+                >Deveres dos pais no sustento e guarda</span
+              >
+              <span class="artigo-detail"
+                >Aos pais incumbe o dever de sustento, guarda e educação dos
+                filhos menores, cabendo-lhes ainda, no interesse destes, a
+                obrigação de cumprir e fazer cumprir as determinações
+                judiciais.</span
+              >
+            </li>
+            <li class="artigo-item" role="listitem" tabindex="0">
+              <span class="artigo-badge">Art. 23º</span>
+              <span class="artigo-text"
+                >Pobreza não é motivo para perda do poder familiar</span
+              >
+              <span class="artigo-detail"
+                >A falta ou a carência de recursos materiais não constitui
+                motivo suficiente para a perda ou a suspensão do poder
+                familiar.</span
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="direito-visual" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&q=80"
+            alt="Família reunida"
+            loading="lazy"
+          />
+          <div class="visual-overlay"></div>
+          <span class="visual-tag">Família e Comunidade</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- ════════════════════ QUOTE BAND ════════════════════ -->
+    <div class="divider-band" role="complementary">
+      <blockquote class="divider-quote">
+        "É dever da família, da comunidade, da sociedade em geral e do poder
+        público assegurar, com absoluta prioridade, a efetivação dos direitos
+        referentes à vida, à saúde, à alimentação, à educação, ao esporte, ao
+        lazer..."
+      </blockquote>
+      <cite class="divider-source"
+        >Constituição Federal, Art. 227 — Brasil, 1988</cite
       >
-        <div class="container-flex">
-          <div class="col-texto">
-            <div class="wrapper-svgs heppy-childrens">
-              <div class="numbers">
-                <span>0</span>
-                <span>3</span>
-              </div>
-
-              <img
-                src="../src/imagens/family.png"
-                alt="Child"
-                class="icon icon-child"
-              />
-            </div>
-            <h2>Direito à convivência familiar e comunitária</h2>
-            <div class="text">
-              <p>
-                A criança deve crescer em ambiente familiar saudável e com
-                vínculos afetivos.
-              </p>
-              <ul class="lista-juridica">
-                <li>
-                  <strong>Art. 19º:</strong> Direito de ser criado e educado na
-                  família.
-                </li>
-                <li>
-                  <strong>Art. 101º:</strong> Medidas de proteção (acolhimento,
-                  guarda, etc.).
-                </li>
-                <li>
-                  <strong>Art. 23º:</strong> Baixa renda não é motivo para perda
-                  da guarda.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-grafico">
-            <div class="box-destaque"></div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="eixo-conteudo bg-light eixo-protected-violenc"
-        id="vida-saude"
-      >
-        <div class="container-flex reverse">
-          <div class="col-texto">
-            <div class="wrapper-svgs pretected-violenc">
-              <div class="numbers">
-                <span>0</span>
-                <span>4</span>
-              </div>
-
-              <img
-                src="../src/imagens/stop-bullying.png"
-                alt="Proteção Contra violência"
-                class="icon icon-stop-bullying"
-              />
-            </div>
-            <h2>Direito à proteção contra violência e negligência</h2>
-            <div class="text">
-              <p>
-                Nenhuma criança pode sofrer maus-tratos, abuso ou exploração.
-              </p>
-              <ul class="lista-juridica reverse">
-                <li>
-                  <strong>Art. 5º:</strong> Proíbe qualquer forma de violência
-                  ou discriminação.
-                </li>
-                <li>
-                  <strong>Art. 13º:</strong> Obriga denúncia de suspeita de
-                  maus-tratos.
-                </li>
-                <li>
-                  <strong>Art. 18-Aº:</strong> Proíbe castigos físicos e
-                  tratamento cruel.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-grafico">
-            <div class="box-destaque"></div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="eixo-conteudo bg-dark eixo-libertad-child"
-        id="vida-saude"
-      >
-        <div class="container-flex">
-          <div class="col-texto">
-            <div class="wrapper-svgs libertad-child">
-              <div class="numbers">
-                <span>0</span>
-                <span>5</span>
-              </div>
-
-              <img
-                src="../src/imagens/pranks.png"
-                alt="Libertad"
-                class="icon icon-pranks"
-              />
-            </div>
-            <h2>Direito à liberdade, respeito e dignidade</h2>
-            <div class="text">
-              <p>
-                A criança é sujeito de direitos e deve ser respeitada como
-                pessoa.
-              </p>
-              <ul class="lista-juridica">
-                <li>
-                  <strong>Art. 15º:</strong> Direito à liberdade, respeito e
-                  dignidade.
-                </li>
-                <li>
-                  <strong>Art. 16º:</strong> Direito de opinião, expressão e
-                  participação.
-                </li>
-                <li>
-                  <strong>Art. 17º:</strong> Proteção à integridade física,
-                  psicológica e moral.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-grafico">
-            <div class="box-destaque"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="eixo-conteudo bg-light eixo-work-child" id="vida-saude">
-        <div class="container-flex reverse">
-          <div class="col-texto">
-            <div class="wrapper-svgs work-child">
-              <div class="numbers">
-                <span>0</span>
-                <span>6</span>
-              </div>
-
-              <img
-                src="../src/imagens/working.png"
-                alt="Work Child"
-                class="icon icon-work-child"
-              />
-            </div>
-            <h2>Direito à profissionalização e proteção no trabalho</h2>
-            <div class="text">
-              <p>
-                Adolescentes podem trabalhar, mas com regras que garantam
-                segurança.
-              </p>
-              <ul class="lista-juridica reverse">
-                <li>
-                  <strong>Art. 60º:</strong> Proíbe trabalho antes dos 16 anos
-                  (salvo aprendiz a partir dos 14).
-                </li>
-                <li>
-                  <strong>Art. 67º:</strong> Proíbe trabalho perigoso, noturno
-                  ou prejudicial.
-                </li>
-                <li>
-                  <strong>Art. 69-Aº:</strong> Garante direito à
-                  profissionalização protegida.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-grafico">
-            <div class="box-destaque"></div>
-          </div>
-        </div>
-      </section>
-    </main>
+      <div class="divider-band-line" aria-hidden="true"></div>
+    </div>
 
     <!-- Referências -->
     <section class="referencias-section">
@@ -419,48 +463,6 @@
       </div>
     </section>
     <!-- Referências -->
-
-    <!-- Settings -->
-    <div class="settings-fab" id="settingsFab">
-      <button class="fab-main-btn" onclick="toggleSettingsMenu()">
-        <ion-icon name="settings-outline"></ion-icon>
-      </button>
-
-      <!-- Dark Mode Toggle -->
-      <div class="fab-menu" id="fabMenu">
-        <div class="fab-item">
-          <span>Tema</span>
-          <li class="theme-switch-container">
-            <input type="checkbox" id="chk" class="checkbox" />
-            <label for="chk" class="label">
-              <ion-icon name="moon-outline" class="fa-moon"></ion-icon>
-              <ion-icon name="sunny-outline" class="fa-sun"></ion-icon>
-              <div class="ball"></div>
-            </label>
-          </li>
-        </div>
-
-        <!-- Hand Talk -->
-        <div class="fab-item">
-          <span>Libras</span>
-          <div vw class="enabled">
-            <div vw-access-button class="active"></div>
-            <div vw-plugin-wrapper>
-              <div class="vw-plugin-top-wrapper"></div>
-            </div>
-          </div>
-
-          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-          <script>
-            new window.VLibras.Widget("https://vlibras.gov.br/app");
-          </script>
-          <!-- Hand Talk -->
-        </div>
-      </div>
-      <!-- Dark Mode Toggle -->
-    </div>
-    <!-- Settings -->
-
     <!-- Footer -->
     <footer class="main-footer">
       <div class="footer-wrapper">
