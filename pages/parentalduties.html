@@ -1,527 +1,347 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deveres dos responsáveis.</title>
+    <title>O que é conselho tutelar?</title>
     <!-- Link CSS -->
     <link rel="stylesheet" href="../css/style.css" />
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="icon" type="image/x-icon" href="/src/imagens/icon-head.png" />
+
     <!-- Google Fontes -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&family=Open+Sans:wght@300..800&family=Playfair+Display:wght@400..900&family=Lato:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&family=Open+Sans:wght@300..800&family=Playfair+Display:wght@400..900&family=Lato:wght@100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet" />
     <!-- Google Fontes -->
 
-     <link rel="icon" type="image/x-icon" href="/src/imagens/icon-head.png">
-
-     <!-- Fonte Awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Fonte Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <!-- Fonte Awesome -->
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-  </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
 
-  <body>
+<body>
     <!-- Header -->
     <header class="main-header">
-      <div class="container">
-        <!-- Hanburguer - Menu Mobile -->
-        <div class="menu-mobile-icon" id="menu-icon">
-          <ion-icon name="menu-outline"></ion-icon>
-        </div>
-        <div class="logo">
-          <a href="/">
+        <div class="container">
+            <!-- Hanburguer - Menu Mobile -->
+            <div class="menu-mobile-icon" id="menu-icon">
+                <i class="fa-solid fa-bars-staggered"></i>
+                <i class="fa-solid fa-xmark icon-close"></i>
+            </div>
+            <div class="logo">
+                <a href="/">
             Conselho <span>Tutelar</span>
             <img src="../src/logo/logo-header.png" alt=" Logo Conselho " />
           </a>
-        </div>
+            </div>
 
-        <nav class="nav-menu">
-          <ul class="nav-list">
-            <li><a href="/index.html">Início</a></li>
-            <li class="dropdown">
-              <a href="#conselho" class="dropdown-toggle">
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html"> O Início </a></li>
+                    <li class="dropdown">
+                        <a href="#conselho" class="dropdown-toggle border-bottom">
                 O conselho
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </a>
-              <ul class="submenu">
-                <li><a href="/pages/atributo.html"> Atribuições </a></li>
-                <li>
-                  <a href="#legislação">
+                        <ul class="submenu">
+                            <li><a href="/pages/atributo.html"> Atribuições </a></li>
+                            <li>
+                                <a href="#legislação">
                     Estatuto da Criança e do Adolescente
                   </a>
-                </li>
-              </ul>
-            </li>
+                            </li>
+                        </ul>
+                    </li>
 
-            <li class="dropdown">
-              <a href="#orientacoes" class="dropdown-toggle">
+                    <li class="dropdown">
+                        <a href="#orientacoes" class="dropdown-toggle border-bottom">
                 Orientações
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </a>
-              <ul class="submenu">
-                <li>
-                  <a href="../pages/children.html">
+                        <ul class="submenu">
+                            <li>
+                                <a href="../pages/children.html">
                     Direitos da Criança e Adolescente
                   </a>
-                </li>
-                <li>
-                  <a href="/pages/parentalduties.html"> Deveres dos Pais </a>
-                </li>
-                <li>
-                  <a href="#quem-somos"> Quem somos? </a>
-                </li>
-              </ul>
-            </li>
+                            </li>
+                            <li>
+                                <a href="../pages/parentalduties.html"> Deveres dos Pais </a>
+                            </li>
+                            <li><a href="#quem-somos"> Quem somos? </a></li>
+                        </ul>
+                    </li>
 
-            <li><a href="./contato.html">Contato</a></li>
-          </ul>
-        </nav>
-      </div>
+                    <li><a href="../pages/contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <!-- Header -->
-
     <div class="progress-bar"></div>
+</body>
 
-    <section class="hero-duties hero-full-screen">
-      <div class="overlay-hero"></div>
-      <div class="duties-centralizado">
-        <span class="badge-orientacao"> Orientações Legais </span>
-        <p>
-          O Estatuto da Criança e do Adolescente (ECA) estabelece que pais e
-          responsáveis têm a obrigação legal de garantir o desenvolvimento
-          saudável, seguro e digno de crianças e adolescentes. Isso inclui não
-          apenas suprir necessidades básicas, mas também assegurar educação,
-          respeito, convivência familiar e proteção contra qualquer forma de
-          negligência, violência ou exploração.
+<section class="devereslegais">
+    <div class="deveres-text">
+        <span class="deveres-eyebrow">ECA — Lei nº 8.069/1990</span>
+
+        <h1 class="deveres-h1">
+            Deveres Legais<br> dos <em id="heroEm">Responsáveis</em>
+        </h1>
+
+        <p class="hero-lead">
+            A lei é clara: pais e responsáveis têm obrigações jurídicas inegociáveis para com crianças e adolescentes. O descumprimento gera consequências legais concretas.
         </p>
-      </div>
-    </section>
 
-    <section class="duties-list-section">
-      <div class="container-duties">
-        <h2 class="title-centered">
-          Deveres Legais dos <span>Responsáveis.</span>
-        </h2>
-
-        <div class="deveres-wrapper">
-          <div class="glass-list-container">
-            <div class="duty-item">
-              <span class="duty-number"> 01 </span>
-              <div class="duty-content">
-                <h3>Sustento e Guarda</h3>
-                <p>
-                  Dever de garantir a integridade física, fornecer alimentação,
-                  abrigo e todas as condições materiais necessárias para a
-                  sobrevivência digna da criança.
-                </p>
-              </div>
-            </div>
-
-            <div class="duty-item">
-              <span class="duty-number"> 02 </span>
-              <div class="duty-content">
-                <h3>Educação e Matrícula</h3>
-                <p>
-                  Obrigação de matricular o filho na rede regular de ensino e
-                  acompanhar ativamente sua frequência e aproveitamento escolar,
-                  conforme o Art. 55 do ECA.
-                </p>
-              </div>
-            </div>
-
-            <div class="duty-item">
-              <span class="duty-number"> 03 </span>
-              <div class="duty-content">
-                <h3>Poder Familiar</h3>
-                <p>
-                  Exercer a direção da criação, orientando o desenvolvimento
-                  moral e social, além de representar ou assistir os filhos em
-                  atos da vida civil.
-                </p>
-              </div>
-            </div>
-
-            <div class="duty-item">
-              <span class="duty-number"> 04 </span>
-              <div class="duty-content">
-                <h3>Convivência Familiar</h3>
-                <p>
-                  Proporcionar um ambiente seguro e afetuoso, garantindo o
-                  direito da criança de crescer em família, livre de qualquer
-                  forma de negligência ou violência.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="illustration-container">
-            <object
-              data="../src/svgs/Asianfamily.svg"
-              type="image/svg+xml"
-              class="svg-illustration"
-            ></object>
-          </div>
+        <div class="hero-refs">
+            <span class="hero-ref">Art. 22</span>
+            <span class="hero-ref">Art. 55</span>
+            <span class="hero-ref">Art. 98</span>
+            <span class="hero-ref">Art. 129</span>
         </div>
-      </div>
-    </section>
-
-    <!-- Consequências Legais -->
-    <section class="consequences-section">
-      <div class="container-consequences-limit">
-        <h2 class="title-centered">
-          Consequências do <strong class="text-danger">Descumprimento</strong>
-        </h2>
-        <p class="subtitle-centered">
-          O descumprimento do
-          <strong>Estatuto da Criança e do Adolescente (ECA)</strong> gera
-          consequências que variam de sanções financeiras a medidas severas de
-          restrição de direitos, dependendo da gravidade e do tipo de dever
-          violado.
-        </p>
-        <div class="legislation">
-          <p>
-            As principais consequências previstas na
-            <a
-              href="https://www.jusbrasil.com.br/legislacao/91764/estatuto-da-crianca-e-do-adolescente-lei-8069-90"
-              target="_blank"
-              >Lei nº 8.069/1990</a
-            >
-            incluem:
-          </p>
-        </div>
-
-        <!-- 01 -->
-        <div class="info-block">
-          <div class="block-header">
-            <div class="header-content">
-              <span class="block-number">01</span>
-              <h3>Sanções Administrativas e Multas</h3>
-            </div>
-
-            <div class="dropdown-icon-consequent">
-              <ion-icon name="chevron-down-outline"></ion-icon>
-            </div>
-          </div>
-
-          <div class="block-body">
-            <p>
-              A infração administrativa mais comum ocorre pelo descumprimento de
-              deveres inerentes ao poder familiar ou de ordens judiciais e do
-              Conselho Tutelar. As sanções podem incluir advertências, multas e,
-              em casos graves, a suspensão ou perda do poder familiar.
-            </p>
-
-            <ul class="detail-list">
-              <li>
-                <strong>
-                  Multa Judicial: </strong
-                >
-                Prevê multa de
-                <strong>3 a 20 salários de referência</strong> para quem
-                descumpre, dolosa ou culposamente, os deveres do poder familiar
-                ou determinações de autoridades.
-                  <span class="trigger-artigo" data-id="249"
-                    >(Art. 249):</span
-              </li>
-
-              <li>
-                <strong>Abrangência: </strong>
-                O <em>Superior Tribunal de Justiça (STJ)</em> decidiu que essa
-                multa não se limita a pais, podendo ser aplicada a qualquer
-                pessoa física ou jurídica (como empresas de eventos) que
-                desrespeite ordens de proteção.
-              </li>
-
-              <li>
-                <strong>Capacidade Financeira: </strong>
-                A falta de recursos não anula a penalidade em casos graves,
-                embora o valor possa ser reduzido em situações de extrema
-                vulnerabilidade econômica.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- 01 -->
-
-        <!-- 02 -->
-        <div class="info-block">
-          <div class="block-header">
-            <div class="header-content">
-              <span class="block-number">02</span>
-              <h3>Medidas Aplicáveis aos Pais ou Responsáveis</h3>
-            </div>
-
-            <div class="dropdown-icon-consequent">
-              <ion-icon name="chevron-down-outline"></ion-icon>
-            </div>
-          </div>
-
-          <div class="block-body">
-            <p>
-              Quando os responsáveis falham em proteger ou educar o menor, o
-              Juiz ou o Conselho Tutelar podem aplicar medidas previstas no
-              <span class="trigger-artigo" data-id="129">
-                Art. 129 do ECA:
-              </span>
-            </p>
-
-            <ul class="detail-list">
-              <li>
-                <strong> Encaminhamento: </strong>
-                Inclusão em programas oficiais de auxílio, orientação ou
-                tratamento (psicológico/psiquiátrico).
-              </li>
-
-              <li>
-                <strong>Advertência: </strong>
-                Aviso formal sobre a conduta irregular.
-              </li>
-
-              <li>
-                <strong>Obrigação de Matrícula: </strong>
-                Dever de matricular o filho e acompanhar sua frequência e
-                aproveitamento escolar.
-              </li>
-
-              <li>
-                <strong>Perda do Poder Familiar: </strong>
-                Em casos extremos de negligência, abuso ou abandono, pode
-                ocorrer a
-                <strong>suspensão ou destituição do poder familiar.</strong>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- 02 -->
-
-        <!-- 03 -->
-        <div class="info-block">
-          <div class="block-header">
-            <div class="header-content">
-              <span class="block-number">03</span>
-              <h3>Consequências Criminais</h3>
-            </div>
-
-            <div class="dropdown-icon-consequent">
-              <ion-icon name="chevron-down-outline"></ion-icon>
-            </div>
-          </div>
-
-          <div class="block-body">
-            <p>
-              Alguns descumprimentos do ECA são tipificados como crimes,
-              sujeitos a penas de reclusão ou detenção, como:
-              <span class="trigger-artigo" data-id="244B">
-                (Arts. 225 a 244-B),
-              </span>
-            </p>
-
-            <ul class="detail-list">
-              <li>
-                <strong> Venda de álcool/armas: </strong>
-                Fornecer bebidas alcoólicas, armas ou munições a menores.
-              </li>
-
-              <li>
-                <strong> Abandono Intelectual: </strong>
-                Deixar de garantir a educação primária do filho sem justa causa.
-              </li>
-
-              <li>
-                <strong> Exploração e Abuso: </strong>
-                Crimes relacionados à dignidade sexual ou exploração do trabalho
-                infantil.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- 03 -->
-
-        <!-- 04 -->
-        <div class="info-block">
-          <div class="block-header">
-            <div class="header-content">
-              <span class="block-number">04</span>
-              <h3>Responsabilidade de Órgãos e Entes Públicos</h3>
-            </div>
-
-            <div class="dropdown-icon-consequent">
-              <ion-icon name="chevron-down-outline"></ion-icon>
-            </div>
-          </div>
-
-          <div class="block-body">
-            <p>
-              O descumprimento de obrigações por parte de gestores públicos
-              (como falta de vagas em escolas ou hospitais) pode levar a:
-            </p>
-
-            <ul class="detail-list">
-              <li>
-                <strong> Improbidade Administrativa: </strong>
-                Há propostas legislativas para que o descumprimento sistemático
-                do ECA por agentes públicos seja punido rigorosamente.
-              </li>
-
-              <li>
-                <strong> Ações Civis Públicas: </strong>
-                O Ministério Público pode obrigar o Estado a fornecer serviços
-                essenciais sob pena de multa diária.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- 04 -->
-      </div>
-    </section>
-    <!-- Consequências Legais -->
-
-    <!-- Referências -->
-    <section class="referencias-section">
-      <div class="container-flex">
-        <div class="referencias-content">
-          <h2 class="underline-dynamic"> Fontes & Referências </h2>
-
-          <ul class="list-referencias">
-            <li>
-              <span class="ref-number">1</span>
-              <div class="ref-text">
-                <strong>BRASIL, Lei nº 8.069 (13 de julho de 1990).</strong>
-                <p>
-                  <a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank"> Estatuto da Criança e do Adolescente </a>  Diário Oficial da República. Consultado em 23 de junho de 2020
-                </p>
-              </div>
-            </li>
-            <li>
-              <span class="ref-number">2</span>
-              <div class="ref-text">
-                <strong>PROMENINO (30 de novembro de 2016). </strong>
-                <p>
-                  Fundação Telefônica Vivo. Consultado em 23 de junho de 2020
-                </p>
-              </div>
-            </li>
-            <li>
-              <span class="ref-number">3</span>
-              <div class="ref-text">
-                <strong>SOUZA, Ismael Francisco de (16 de dezembro de 2013).</strong>
-                <p>
-                  <a href="https://jus.com.br/artigos/26154/conselho-tutelar" target="_blank"> Conselho tutelar: do processo de participação popular à efetivação dos direitos de crianças e adolescentes </a>  Revista Jus Navigandi. Consultado em 23 de junho de 2020
-                </p>
-              </div>
-            </li>
-            <li>
-              <span class="ref-number">4</span>
-              <div class="ref-text">
-                <strong>BRASIL, Presidência da República (2013).</strong>
-                <p>
-                  <a href="https://portal.mpap.mp.br/images/infancia/Cadastro_CT.pdf" target="_blank"> Cadastro Nacional dos Conselhos Tutelares </a>  Brasília: Secretaria de Direitos Humanos
-                </p>
-              </div>
-            </li>
-            <li>
-              <span class="ref-number">5</span>
-              <div class="ref-text">
-                <strong>CONANDA (17 de março de 2010).</strong>
-                <p>
-                  <a href="https://www.gov.br/participamaisbrasil/conanda/conanda/resolucoes/139-resolucao-139-de-17-de-marco-de-2010/view" target="_blank"> Dispõe sobre os parâmetros para a criação e funcionamento dos Conselhos Tutelares no Brasil, e dá outras providências </a>  Consultado em 23 de junho de 2020
-                </p>
-              </div>
-            </li>
-            <li>
-              <span class="ref-number">6</span>
-              <div class="ref-text">
-                <strong>MPMG (6 de junho de 2017). </strong>
-                <p>
-                  <a href="https://site.mppr.mp.br/crianca/Pagina/O-Conselho-Tutelar-em-perguntas-e-respostas" target="_blank"> Conselho Tutelar: Perguntas e Respostas </a> Consultado em 14 de junho de 2020
-                </p>
-              </div>
-            </li>
-            <li>
-              <span class="ref-number">7</span>
-              <div class="ref-text">
-                <strong> Planalto. 2 de junho de 1992. </strong>
-                <p>
-                  <a href="https://www.planalto.gov.br/ccivil_03/leis/l8429.htm" target="_blank"> LEI Nº 8.429, DE 2 DE JUNHO DE 1992 </a> Consultado em 14 de agosto de 2025
-                </p>
-              </div>
-            </li>
-          </ul>
-
-        </div>
-      </div>
-    </section>
-    <!-- Referências -->
-  
-    <!-- Settings -->
-    <div class="settings-fab" id="settingsFab">
-      <button class="fab-main-btn" onclick="toggleSettingsMenu()">
-        <ion-icon name="settings-outline"></ion-icon>
-      </button>
-
-      <!-- Dark Mode Toggle -->
-      <div class="fab-menu" id="fabMenu">
-        <div class="fab-item">
-          <span>Tema</span>
-          <li class="theme-switch-container">
-            <input type="checkbox" id="chk" class="checkbox" />
-            <label for="chk" class="label">
-              <ion-icon name="moon-outline" class="fa-moon"></ion-icon>
-              <ion-icon name="sunny-outline" class="fa-sun"></ion-icon>
-              <div class="ball"></div>
-            </label>
-          </li>
-        </div>
-
-        <!-- Fonts -->
-        <div class="settings-group">
-          <h4>Fonte</h4>
-          <div id="font-family-options" class="options-grid"></div>
-        </div>
-
-        <div class="settings-group">
-          <h4>Peso Fonte</h4>
-          <div id="font-weight-options" class="options-row"></div>
-        </div>
-        <!-- Fonts -->
-        </div>
-      </div>
-      <!-- Dark Mode Toggle -->
     </div>
-    <!-- Settings -->
 
-    <!-- Footer -->
-    <footer class="main-footer">
-      <div class="footer-wrapper">
+    <div class="hero-img-wrap">
+        <img id="heroImg" src="https://images.unsplash.com/photo-1591035897819-f4bdf739f446?w=900&q=80" alt="Família — pais e filhos" loading="eager" />
+    </div>
+
+    <div class="hero-bar"></div>
+</section>
+
+<!-- ══════════ INTRO ══════════ -->
+<div class="intro-band">
+    <div class="intro-icon" aria-hidden="true">⚖️</div>
+    <p class="intro-text">
+        O Estatuto da Criança e do Adolescente estabelece que pais e responsáveis têm a
+        <strong>obrigação legal de garantir o desenvolvimento saudável, seguro e digno</strong> de crianças e adolescentes. Isso inclui não apenas suprir necessidades básicas, mas também assegurar educação, respeito, convivência familiar e proteção contra
+        qualquer forma de negligência, violência ou exploração.
+    </p>
+</div>
+
+<!-- ══════════ DEVERES ══════════ -->
+<section class="deveres-section">
+    <header class="sec-header">
+        <div class="sec-tag">Obrigações previstas em lei</div>
+        <h2 class="sec-title">O que a lei exige de cada responsável</h2>
+    </header>
+
+    <div class="deveres-grid">
+
+        <!-- 01 -->
+        <div class="dever-card">
+            <div class="dever-num" aria-hidden="true">01</div>
+            <div class="dever-head">
+                <div class="dever-icon" aria-hidden="true">🏠</div>
+                <h3 class="dever-title">Sustento e Guarda</h3>
+            </div>
+            <p class="dever-desc">
+                Dever de garantir a integridade física, fornecer alimentação, abrigo e todas as condições materiais necessárias para a sobrevivência digna da criança e do adolescente.
+            </p>
+            <div class="dever-artigos">
+                <div class="dever-artigo">
+                    <span class="dever-artigo-num">Art. 22</span>
+                    <span class="dever-artigo-text">Incumbe aos pais o dever de sustento, guarda e educação dos filhos menores.</span>
+                </div>
+                <div class="dever-artigo">
+                    <span class="dever-artigo-num">Art. 23</span>
+                    <span class="dever-artigo-text">A falta de recursos materiais não é motivo suficiente para a perda do poder familiar.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="dever-card">
+            <div class="dever-num" aria-hidden="true">02</div>
+            <div class="dever-head">
+                <div class="dever-icon" aria-hidden="true">📚</div>
+                <h3 class="dever-title">Educação e Matrícula</h3>
+            </div>
+            <p class="dever-desc">
+                Obrigação de matricular o filho na rede regular de ensino e acompanhar ativamente sua frequência e aproveitamento escolar, conforme determinação expressa do ECA.
+            </p>
+            <div class="dever-artigos">
+                <div class="dever-artigo">
+                    <span class="dever-artigo-num">Art. 55</span>
+                    <span class="dever-artigo-text">Os pais ou responsáveis têm a obrigação de matricular seus filhos ou pupilos na rede regular de ensino.</span>
+                </div>
+                <div class="dever-artigo">
+                    <span class="dever-artigo-num">Art. 129, V</span>
+                    <span class="dever-artigo-text">O Conselho Tutelar pode obrigar a matrícula e a frequência em estabelecimento de ensino.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="dever-card">
+            <div class="dever-num" aria-hidden="true">03</div>
+            <div class="dever-head">
+                <div class="dever-icon" aria-hidden="true">🛡️</div>
+                <h3 class="dever-title">Proteção contra Violência</h3>
+            </div>
+            <p class="dever-desc">
+                Proibição absoluta de qualquer forma de castigo físico, humilhação ou tratamento cruel. A lei do palmadas (Lei 13.010/14) reforça essa proteção com sanções específicas.
+            </p>
+            <div class="dever-artigos">
+                <div class="dever-artigo">
+                    <span class="dever-artigo-num">Art. 18-A</span>
+                    <span class="dever-artigo-text">A criança e o adolescente têm direito de ser educados sem o uso de castigo físico ou tratamento cruel.</span>
+                </div>
+                <div class="dever-artigo">
+                    <span class="dever-artigo-num">Art. 70-A</span>
+                    <span class="dever-artigo-text">É obrigação do Estado, da família e da sociedade erradicar o castigo físico e o tratamento degradante.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="dever-card">
+            <div class="dever-num" aria-hidden="true">04</div>
+            <div class="dever-head">
+                <div class="dever-icon" aria-hidden="true">❤️</div>
+                <h3 class="dever-title">Saúde e Vacinação</h3>
+            </div>
+            <p class="dever-desc">
+                Responsabilidade de assegurar o acompanhamento médico regular, o cumprimento do calendário vacinal e o acesso aos serviços de saúde sempre que necessário.
+            </p>
+            <div class="dever-artigos">
+                <div class="dever-artigo">
+                    <span class="dever-artigo-num">Art. 7º</span>
+                    <span class="dever-artigo-text">A criança e o adolescente têm direito a proteção à vida e à saúde desde o nascimento.</span>
+                </div>
+                <div class="dever-artigo">
+                    <span class="dever-artigo-num">Art. 14</span>
+                    <span class="dever-artigo-text">O SUS promoverá programas de assistência médica — a vacinação é obrigatória nos termos da lei.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 05 — CARD FULL -->
+        <div class="dever-card dever-card-full">
+            <div class="dever-full-content">
+                <div class="dever-num" aria-hidden="true">05</div>
+                <div class="dever-head">
+                    <div class="dever-icon" aria-hidden="true">🤝</div>
+                    <h3 class="dever-title">Convivência Familiar e Afetividade</h3>
+                </div>
+                <p class="dever-desc" style="max-width:540px;">
+                    Além das obrigações materiais, o ECA reconhece o direito à convivência familiar saudável. Pais e responsáveis devem garantir um ambiente de afeto, segurança emocional e respeito mútuo — condições essenciais para o desenvolvimento integral da personalidade
+                    da criança e do adolescente.
+                </p>
+                <div class="dever-artigos" style="max-width:540px;">
+                    <div class="dever-artigo">
+                        <span class="dever-artigo-num">Art. 19</span>
+                        <span class="dever-artigo-text">É direito da criança e do adolescente ser criado no seio de sua família, em ambiente de afeto e segurança.</span>
+                    </div>
+                    <div class="dever-artigo">
+                        <span class="dever-artigo-num">Art. 4º</span>
+                        <span class="dever-artigo-text">A família tem o dever de assegurar, com absoluta prioridade, a efetivação dos direitos da criança e do adolescente.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dever-full-img">
+                <img src="https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?w=700&q=80" alt="Família em momento de afeto" loading="lazy" />
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════ CONSEQUÊNCIAS ══════════ -->
+<section class="alert-section">
+    <div class="alert-inner">
+
+        <div class="alert-left">
+            <div class="sec-tag">Responsabilidade legal</div>
+            <h2 class="sec-title">O descumprimento tem consequências</h2>
+            <p>
+                Quando os deveres legais não são cumpridos, o Conselho Tutelar, o Ministério Público e o Poder Judiciário têm instrumentos para intervir e proteger a criança ou adolescente em situação de risco.
+            </p>
+        </div>
+
+        <div class="consequencias">
+            <div class="consequencia-item">
+                <span class="conseq-icon">📋</span>
+                <div>
+                    <div class="conseq-title">Advertência formal</div>
+                    <div class="conseq-text">O Conselho Tutelar pode aplicar advertência e encaminhar o caso ao Ministério Público (Art. 129, I).</div>
+                </div>
+            </div>
+            <div class="consequencia-item">
+                <span class="conseq-icon">🏛️</span>
+                <div>
+                    <div class="conseq-title">Encaminhamento ao Judiciário</div>
+                    <div class="conseq-text">Casos graves são levados à Vara da Infância e Juventude para medidas protetivas imediatas (Art. 98).</div>
+                </div>
+            </div>
+            <div class="consequencia-item">
+                <span class="conseq-icon">👨‍👩‍👧</span>
+                <div>
+                    <div class="conseq-title">Suspensão do poder familiar</div>
+                    <div class="conseq-text">O juiz pode suspender ou destituir o poder familiar em casos de abuso, negligência ou abandono (Art. 24).</div>
+                </div>
+            </div>
+            <div class="consequencia-item">
+                <span class="conseq-icon">⚖️</span>
+                <div>
+                    <div class="conseq-title">Responsabilidade criminal</div>
+                    <div class="conseq-text">Crimes contra crianças, como abandono de incapaz e maus-tratos, são tipificados no Código Penal (Arts. 133 e 136).</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<div class="cta-band">
+    <h3>Precisa de orientação ou quer denunciar uma violação?</h3>
+    <p>O Conselho Tutelar está à disposição para orientar e garantir os direitos de crianças e adolescentes.</p>
+    <div class="cta-buttons">
+        <a href="tel:100" class="btn btn-navy">📞 Disque 100 — Denúncias</a>
+        <a href="contato.html" class="btn btn-outline">Falar com o Conselho Tutelar</a>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-wrapper">
         <div class="footer-box">
-          <h4>Projeto Educativo</h4>
-          <p>
-            Iniciativa do
-            <strong>curso de Análise e Desenvolvimento de Sistemas</strong>.
-            UNIASSELVI - Centro Universitário Leonardo da Vinci.
-          </p>
-          <p class="project">Projeto de Caráter Educativo.</p>
-          <p>Foco na conscientização e proteção dos direitos.</p>
+            <h4>Projeto Educativo</h4>
+            <p>
+                Iniciativa do
+                <strong>curso de Análise e Desenvolvimento de Sistemas</strong>. UNIASSELVI - Centro Universitário Leonardo da Vinci.
+            </p>
+            <p class="project">Projeto de Caráter Educativo.</p>
+            <p>Foco na conscientização e proteção dos direitos.</p>
         </div>
 
         <div class="footer-box">
-          <h4>Acesso Rápido</h4>
-          <ul class="footer-links">
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Atribuições</a></li>
-            <li><a href="#">ECA</a></li>
-            <li><a href="#">Dúvidas Frequentes</a></li>
-          </ul>
+            <h4>Links Úteis:</h4>
+            <ul class="footer-links">
+                <li>
+                    <a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank">
+                ECA na Íntegra:
+              </a>
+                </li>
+                <li>
+                    <a href="https://www.gov.br/mdh/pt-br/acesso-a-informacao/participacao-social/conselho-nacional-dos-direitos-da-crianca-e-do-adolescente-conanda/conanda" target="_blank">Conselho Nacional (Conanda):</a
+              >
+            </li>
+            <li><a href="#faq">Dúvidas Frequentes</a></li>
+            </ul>
         </div>
 
         <div class="footer-box">
-          <h4>Atendimentos</h4>
-          <div class="footer-contact">
-            <span
-              ><ion-icon name="call-outline"></ion-icon> (00) 0000-0000</span
+            <h4>Atendimentos</h4>
+            <div class="footer-contact">
+                <span><ion-icon name="call-outline"></ion-icon> (00) 0000-0000</span
             >
             <span
               ><ion-icon name="alert-circle-outline"></ion-icon>
@@ -552,23 +372,25 @@
     <!-- Footer -->
 
     <!-- JavaScript -->
-    <script src="../src/js/index.js"></script>
+      <script src="../src/js/index.js"></script>
+      <script src="../src/js/ModalParent.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JavaScript -->
 
     <!-- Hand Talk -->
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
+    <div class="fab-item">
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
       </div>
-    </div>
-
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget("https://vlibras.gov.br/app");
-    </script>
+    
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
+      </script>
     <!-- Hand Talk -->
-
-    <script src="../src/js/ModalParent.js"></script>
 
     <!-- Ion Icons -->
     <script
