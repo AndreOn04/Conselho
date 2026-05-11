@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estatuto da Criança e Adolescente</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="icon" type="image/x-icon" href="/src/imagens/icon-head.png" />
+
+    <!-- Google Fontes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&family=Open+Sans:wght@300..800&family=Playfair+Display:wght@400..900&family=Lato:wght@100..900&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fontes -->
+
+    <!-- Fonte Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <!-- Fonte Awesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="main-header">
+      <div class="container">
+        <!-- Hanburguer - Menu Mobile -->
+        <div class="menu-mobile-icon" id="menu-icon">
+          <i class="fa-solid fa-bars-staggered"></i>
+          <i class="fa-solid fa-xmark icon-close"></i>
+        </div>
+        <div class="logo">
+          <a href="/">
+            Conselho <span>Tutelar</span>
+            <img src="../src/logo/logo-header.png" alt=" Logo Conselho " />
+          </a>
+        </div>
+
+        <nav class="nav-menu">
+          <ul class="nav-list">
+            <li><a href="../index.html"> O Início </a></li>
+            <li class="dropdown">
+              <a href="#conselho" class="dropdown-toggle border-bottom">
+                O conselho
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </a>
+              <ul class="submenu">
+                <li><a href="../pages/atributo.html"> Atribuições </a></li>
+                <li>
+                  <a href="/pages/estatuto.html">
+                    Estatuto da Criança e do Adolescente
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#orientacoes" class="dropdown-toggle border-bottom">
+                Orientações
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </a>
+              <ul class="submenu">
+                <li>
+                  <a href="../pages/children.html">
+                    Direitos da Criança e Adolescente
+                  </a>
+                </li>
+                <li>
+                  <a href="../pages/parentalduties.html"> Deveres dos Pais </a>
+                </li>
+              </ul>
+            </li>
+
+            <li><a href="../pages/contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Header -->
+  </body>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section class="heroEstatuto" id="topo">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-bg-img" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+ 
+  <div class="hero-content">
+    <div class="hero-law-badge">
+      <span class="law-num">Lei nº 8.069/1990</span>
+      <span class="law-date">13 de julho de 1990</span>
+    </div>
+ 
+    <h1 class="hero-title">
+      Estatuto da<br>
+      Criança e do<br>
+      <span class="outline">Adolescente</span>
+    </h1>
+ 
+    <p class="hero-subtitle">
+      A lei mais importante da história dos direitos de crianças e adolescentes
+      no Brasil — 267 artigos que definem deveres, garantias e proteções
+      com força constitucional.
+    </p>
+ 
+    <nav class="hero-nav" aria-label="Seções da página">
+      <a href="#historico">Histórico</a>
+      <a href="#timeline">Linha do Tempo</a>
+      <a href="#estrutura">Estrutura da Lei</a>
+      <a href="#artigos">Artigos Principais</a>
+      <a href="#conselho">Conselho Tutelar</a>
+    </nav>
+  </div>
+ 
+  <div class="scroll-indicator" id="scrollCue" aria-hidden="true">
+    <span>Explorar</span>
+    <div class="scroll-line"></div>
+  </div>
+ 
+  <div class="hero-bar" aria-hidden="true"></div>
+</section>
+
+<div class="stats-band" role="region" aria-label="Dados numéricos do ECA">
+  <div class="stat-item-estatuto">
+    <span class="stat-num" data-target="267">0</span>
+    <span class="stat-label">Artigos</span>
+  </div>
+  <div class="stat-item-estatuto">
+    <span class="stat-num" data-target="2">0</span>
+    <span class="stat-label">Livros</span>
+  </div>
+  <div class="stat-item-estatuto">
+    <span class="stat-num" data-target="7">0</span>
+    <span class="stat-label">Títulos</span>
+  </div>
+  <div class="stat-item-estatuto">
+    <span class="stat-num" data-target="34">0</span>
+    <span class="stat-label">Anos em vigor</span>
+  </div>
+  <div class="stat-item-estatuto">
+    <span class="stat-num" data-target="18">0</span>
+    <span class="stat-label">Anos como critério</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     HISTÓRICO
+══════════════════════════════ -->
+<section class="historico-section" id="historico">
+  <div class="sec-tag reveal">Contexto e Origem</div>
+  <h2 class="sec-title reveal">Como o ECA nasceu</h2>
+ 
+  <div class="historico-grid">
+    <div class="historico-text reveal">
+      <p>
+        Antes do ECA, o Brasil adotava o chamado <strong>Código de Menores de 1979</strong>,
+        fundamentado na doutrina da situação irregular. Crianças e adolescentes eram
+        tratados como objetos de intervenção estatal — não como sujeitos de direitos.
+        Meninos e meninas pobres eram institucionalizados por simples condição de pobreza.
+      </p>
+      <p>
+        A <strong>Constituição Federal de 1988</strong> rompeu com esse paradigma ao inserir
+        o Art. 227, que pela primeira vez reconheceu a <em>proteção integral</em> como dever
+        prioritário do Estado, da família e da sociedade. O ECA foi o instrumento criado
+        para dar efetividade a esse mandamento constitucional.
+      </p>
+      <p>
+        Fruto de ampla mobilização social — com participação de movimentos de defesa dos
+        direitos humanos, organizações internacionais e da sociedade civil —, o Estatuto
+        foi aprovado em <strong>13 de julho de 1990</strong>, apenas dois anos após a
+        Constituição, tornando o Brasil pioneiro na implementação da Convenção
+        Internacional sobre os Direitos da Criança da ONU (1989).
+      </p>
+ 
+      <blockquote class="historico-quote">
+        <p>"É dever da família, da comunidade, da sociedade em geral e do poder público
+        assegurar, com absoluta prioridade, a efetivação dos direitos referentes à vida,
+        à saúde, à alimentação, à educação..."</p>
+        <cite>Constituição Federal — Art. 227, 1988</cite>
+      </blockquote>
+    </div>
+ 
+    <div class="historico-img reveal">
+      <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&q=80"
+           alt="Crianças — contexto histórico do ECA" loading="lazy"/>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══════════════════════════════
+     LINHA DO TEMPO
+══════════════════════════════ -->
+<section class="timeline-section" id="timeline">
+  <div style="max-width:900px;margin:0 auto 72px;">
+    <div class="sec-tag reveal">Marcos históricos</div>
+    <h2 class="sec-title reveal">Linha do Tempo — 1988 a hoje</h2>
+  </div>
+ 
+  <div class="timeline" role="list">
+ 
+    <div class="tl-item" role="listitem">
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-year">1988</div>
+        <div class="tl-title">Constituição Cidadã</div>
+        <p class="tl-desc">A Constituição Federal de 1988 insere o Art. 227, reconhecendo pela primeira vez a doutrina da proteção integral e a prioridade absoluta dos direitos de crianças e adolescentes no ordenamento jurídico brasileiro.</p>
+        <span class="tl-badge">Art. 227 — CF/88</span>
+      </div>
+    </div>
+ 
+    <div class="tl-item" role="listitem">
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-year">1989</div>
+        <div class="tl-title">Convenção da ONU sobre os Direitos da Criança</div>
+        <p class="tl-desc">A ONU aprova a Convenção Internacional sobre os Direitos da Criança em novembro de 1989, tratado que influencia diretamente a redação do ECA e é ratificado pelo Brasil em 1990.</p>
+        <span class="tl-badge">ONU — Nov/1989</span>
+      </div>
+    </div>
+ 
+    <div class="tl-item" role="listitem">
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-year">1990</div>
+        <div class="tl-title">Promulgação do ECA</div>
+        <p class="tl-desc">Em 13 de julho de 1990, o presidente Fernando Collor sanciona a Lei nº 8.069 — o Estatuto da Criança e do Adolescente. O Brasil se torna um dos primeiros países a implementar a Convenção da ONU em legislação nacional.</p>
+        <span class="tl-badge">Lei 8.069 — 13 Jul 1990</span>
+      </div>
+    </div>
+ 
+    <div class="tl-item" role="listitem">
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-year">1996</div>
+        <div class="tl-title">Lei do Desaparecimento e Busca</div>
+        <p class="tl-desc">Alterações no ECA reforçam os mecanismos de localização e recuperação de crianças e adolescentes desaparecidos, com obrigações claras para autoridades de segurança e saúde.</p>
+        <span class="tl-badge">Lei 9.975/1996</span>
+      </div>
+    </div>
+ 
+    <div class="tl-item" role="listitem">
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-year">2005</div>
+        <div class="tl-title">Sistema Nacional de Atendimento Socioeducativo</div>
+        <p class="tl-desc">O SINASE é instituído, regulamentando as medidas socioeducativas previstas no ECA para adolescentes em conflito com a lei, com ênfase na ressocialização e não na punição.</p>
+        <span class="tl-badge">Res. CONANDA 119/2006</span>
+      </div>
+    </div>
+ 
+    <div class="tl-item" role="listitem">
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-year">2014</div>
+        <div class="tl-title">Lei da Palmada (Lei Menino Bernardo)</div>
+        <p class="tl-desc">A Lei 13.010/2014 acrescenta ao ECA a proibição expressa do castigo físico e do tratamento cruel ou degradante como métodos educativos, reforçando os Arts. 18-A e 18-B.</p>
+        <span class="tl-badge">Lei 13.010/2014</span>
+      </div>
+    </div>
+ 
+    <div class="tl-item" role="listitem">
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-year">2017</div>
+        <div class="tl-title">Adoção e Convivência Familiar</div>
+        <p class="tl-desc">A Lei 13.509/2017 moderniza o processo de adoção no Brasil, reduzindo prazos, fortalecendo o cadastro nacional e priorizando a reintegração familiar antes de qualquer medida de institucionalização.</p>
+        <span class="tl-badge">Lei 13.509/2017</span>
+      </div>
+    </div>
+ 
+    <div class="tl-item" role="listitem">
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-year">2021</div>
+        <div class="tl-title">Proteção de Crianças na Internet</div>
+        <p class="tl-desc">Alterações no ECA e legislação complementar passam a tratar da proteção de crianças e adolescentes no ambiente digital, incluindo o combate ao cyberbullying e à exposição a conteúdos prejudiciais.</p>
+        <span class="tl-badge">Lei 14.261/2021</span>
+      </div>
+    </div>
+ 
+    <div class="tl-item" role="listitem">
+      <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--accent-lt);box-shadow:0 0 0 3px var(--accent-lt);"></div></div>
+      <div class="tl-body" style="border-color:rgba(192,128,58,.3);">
+        <div class="tl-year">Hoje — 34 anos</div>
+        <div class="tl-title">ECA em plena vigência</div>
+        <p class="tl-desc">Com 267 artigos, o ECA permanece como a principal legislação de proteção à infância do Brasil. Conselheiros Tutelares, Ministério Público, Defensoria e Judiciário atuam em conjunto para garantir sua aplicação em todo o território nacional.</p>
+        <span class="tl-badge">Lei 8.069 — em vigor</span>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- ══════════════════════════════
+     ESTRUTURA DA LEI
+══════════════════════════════ -->
+<section class="estrutura-section" id="estrutura">
+  <div class="sec-tag reveal">Organização legal</div>
+  <h2 class="sec-title reveal">Estrutura do Estatuto</h2>
+  <p class="reveal" style="color:var(--muted);font-size:.95rem;margin-top:12px;max-width:600px;">
+    O ECA divide-se em dois grandes Livros, cada um com Títulos e Capítulos temáticos.
+  </p>
+ 
+  <div class="estrutura-grid">
+ 
+    <div class="estrutura-card reveal">
+      <div class="est-num" aria-hidden="true">I</div>
+      <div class="est-icon">⚖️</div>
+      <div class="est-range">Arts. 1º ao 6º</div>
+      <h3 class="est-title">Disposições Preliminares</h3>
+      <p class="est-desc">Define os princípios gerais da proteção integral, os critérios de aplicação da lei e a interpretação baseada nos fins sociais a que se dirige.</p>
+    </div>
+ 
+    <div class="estrutura-card reveal">
+      <div class="est-num" aria-hidden="true">II</div>
+      <div class="est-icon">🛡️</div>
+      <div class="est-range">Arts. 7º ao 69º</div>
+      <h3 class="est-title">Direitos Fundamentais</h3>
+      <p class="est-desc">Vida, saúde, liberdade, respeito, dignidade, convivência familiar, educação, cultura, esporte, lazer, profissionalização e proteção no trabalho.</p>
+    </div>
+ 
+    <div class="estrutura-card reveal">
+      <div class="est-num" aria-hidden="true">III</div>
+      <div class="est-icon">🏛️</div>
+      <div class="est-range">Arts. 70º ao 85º</div>
+      <h3 class="est-title">Prevenção</h3>
+      <p class="est-desc">Obrigações da família, sociedade e Estado na prevenção de ameaças ou violações de direitos, incluindo informações sobre produtos e serviços.</p>
+    </div>
+ 
+    <div class="estrutura-card reveal">
+      <div class="est-num" aria-hidden="true">IV</div>
+      <div class="est-icon">🤝</div>
+      <div class="est-range">Arts. 86º ao 97º</div>
+      <h3 class="est-title">Política de Atendimento</h3>
+      <p class="est-desc">Define as diretrizes da política de atendimento, os tipos de entidades e a articulação dos órgãos governamentais e não-governamentais.</p>
+    </div>
+ 
+    <div class="estrutura-card reveal">
+      <div class="est-num" aria-hidden="true">V</div>
+      <div class="est-icon">🔒</div>
+      <div class="est-range">Arts. 98º ao 101º</div>
+      <h3 class="est-title">Medidas de Proteção</h3>
+      <p class="est-desc">Rol de medidas aplicáveis quando direitos são ameaçados ou violados por ação ou omissão da sociedade, do Estado, dos pais ou da própria criança.</p>
+    </div>
+ 
+    <div class="estrutura-card reveal">
+      <div class="est-num" aria-hidden="true">VI</div>
+      <div class="est-icon">👨‍⚖️</div>
+      <div class="est-range">Arts. 136º ao 137º</div>
+      <h3 class="est-title">Conselho Tutelar</h3>
+      <p class="est-desc">Criação, composição, atribuições e funcionamento do Conselho Tutelar como órgão permanente e autônomo de defesa dos direitos da criança e do adolescente.</p>
+    </div>
+ 
+    <div class="estrutura-card reveal">
+      <div class="est-num" aria-hidden="true">VII</div>
+      <div class="est-icon">⚠️</div>
+      <div class="est-range">Arts. 225º ao 267º</div>
+      <h3 class="est-title">Crimes e Infrações</h3>
+      <p class="est-desc">Tipificação dos crimes contra a criança e o adolescente, com penas específicas para abuso, exploração, negligência e demais violações ao Estatuto.</p>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- ══════════════════════════════
+     ARTIGOS PRINCIPAIS
+══════════════════════════════ -->
+<section class="artigos-section" id="artigos">
+  <div class="artigos-inner">
+    <div class="sec-tag reveal">Texto e explicação</div>
+    <h2 class="sec-title reveal">Artigos Fundamentais</h2>
+ 
+    <div class="accordion-group" role="list">
+ 
+      <div class="acc-item reveal" role="listitem">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-art-num">Art. 1º</span>
+          <span class="acc-title">Objeto e âmbito de aplicação do ECA</span>
+          <span class="acc-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p><strong>Texto legal:</strong> "Esta Lei dispõe sobre a proteção integral à criança e ao adolescente."</p>
+            <p>O Art. 1º anuncia o princípio norteador de toda a lei: a <strong>proteção integral</strong>. Isso significa que a criança e o adolescente não são mais vistos como objetos de tutela, mas como sujeitos de direitos, cuja proteção é dever de todos — Estado, família e sociedade.</p>
+            <div class="acc-highlight">💡 Diferente do Código de Menores de 1979, que se aplicava apenas a crianças em "situação irregular", o ECA protege <em>todas</em> as crianças e adolescentes, independentemente de sua condição social.</div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="acc-item reveal" role="listitem">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-art-num">Art. 2º</span>
+          <span class="acc-title">Definição de criança e adolescente</span>
+          <span class="acc-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p><strong>Texto legal:</strong> "Considera-se criança, para os efeitos desta Lei, a pessoa até doze anos de idade incompletos, e adolescente aquela entre doze e dezoito anos de idade."</p>
+            <p>A lei diferencia duas categorias etárias com tratamentos distintos: <strong>criança</strong> (0 a 11 anos e 364 dias) e <strong>adolescente</strong> (12 a 17 anos e 364 dias). Essa distinção importa sobretudo nas medidas socioeducativas, que só se aplicam a adolescentes.</p>
+            <div class="acc-highlight">💡 Em casos excepcionais previstos em lei, o ECA pode ser aplicado a pessoas entre 18 e 21 anos que cumprem medidas socioeducativas.</div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="acc-item reveal" role="listitem">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-art-num">Art. 4º</span>
+          <span class="acc-title">Dever de proteção com absoluta prioridade</span>
+          <span class="acc-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p><strong>Texto legal:</strong> "É dever da família, da comunidade, da sociedade em geral e do poder público assegurar, com absoluta prioridade, a efetivação dos direitos referentes à vida, à saúde, à alimentação, à educação, ao esporte, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária."</p>
+            <p>O princípio da <strong>prioridade absoluta</strong> significa que, em caso de conflito de interesses, os da criança e do adolescente sempre prevalecem. Isso impacta desde a alocação orçamentária do governo até decisões judiciais cotidianas.</p>
+            <div class="acc-highlight">💡 A prioridade absoluta implica: primazia no recebimento de socorro, precedência de atendimento em serviços públicos, preferência na formulação de políticas sociais e destinação privilegiada de recursos.</div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="acc-item reveal" role="listitem">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-art-num">Art. 13</span>
+          <span class="acc-title">Notificação obrigatória de maus-tratos</span>
+          <span class="acc-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p><strong>Texto legal:</strong> "Os casos de suspeita ou confirmação de castigo físico, de tratamento cruel ou degradante e de maus-tratos contra criança ou adolescente serão obrigatoriamente comunicados ao Conselho Tutelar da respectiva localidade, sem prejuízo de outras providências legais."</p>
+            <p>Médicos, professores, assistentes sociais, psicólogos e todos os profissionais que atuam com crianças têm <strong>obrigação legal</strong> de comunicar ao Conselho Tutelar qualquer suspeita ou confirmação de maus-tratos. O sigilo profissional não impede essa comunicação.</p>
+            <div class="acc-highlight">💡 Qualquer cidadão também pode e deve comunicar ao Conselho Tutelar ou ao Disque 100 situações de suspeita de maus-tratos — não é denúncia, é proteção.</div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="acc-item reveal" role="listitem">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-art-num">Art. 53</span>
+          <span class="acc-title">Direito à educação e seus desdobramentos</span>
+          <span class="acc-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p><strong>Texto legal:</strong> "A criança e o adolescente têm direito à educação, visando ao pleno desenvolvimento de sua pessoa, preparo para o exercício da cidadania e qualificação para o trabalho..."</p>
+            <p>O artigo garante igualdade de condições de acesso e permanência na escola, direito de ser respeitado pelos educadores, direito de contestar critérios avaliativos e o direito à organização de entidades estudantis. A educação é direito <strong>inalienável</strong> e <strong>gratuito</strong>.</p>
+            <div class="acc-highlight">💡 A falta de vagas no ensino fundamental é forma de violação ao ECA. Pais, Conselho Tutelar e Ministério Público podem exigir judicialmente a garantia de vagas.</div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="acc-item reveal" role="listitem">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-art-num">Art. 98</span>
+          <span class="acc-title">Quando as medidas de proteção se aplicam</span>
+          <span class="acc-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p><strong>Texto legal:</strong> "As medidas de proteção à criança e ao adolescente são aplicáveis sempre que os direitos reconhecidos nesta Lei forem ameaçados ou violados: I — por ação ou omissão da sociedade ou do Estado; II — por falta, omissão ou abuso dos pais ou responsável; III — em razão de sua conduta."</p>
+            <p>Este artigo é o gatilho para a atuação do Conselho Tutelar. Sempre que houver <strong>ameaça ou violação</strong> de direitos — por qualquer das causas listadas — as medidas de proteção podem e devem ser aplicadas.</p>
+            <div class="acc-highlight">💡 As medidas incluem: encaminhamento a serviços de saúde, matrícula obrigatória em escola, orientação dos pais, requisição de tratamento médico e, em último caso, acolhimento institucional.</div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- ══════════════════════════════
+     CONSELHO TUTELAR
+══════════════════════════════ -->
+<section class="ct-section" id="conselho">
+  <div class="ct-inner">
+    <div class="sec-tag reveal">Capítulo V — Arts. 131 ao 140</div>
+    <h2 class="sec-title reveal">O Conselho Tutelar no ECA</h2>
+    <p class="ct-lead reveal">
+      O ECA criou o Conselho Tutelar como órgão municipal permanente e autônomo,
+      não-jurisdicional, encarregado de zelar pelo cumprimento dos direitos
+      da criança e do adolescente. Cada município deve ter ao menos um.
+    </p>
+ 
+    <div class="ct-grid">
+      <div class="ct-card reveal">
+        <div class="ct-card-icon">🏛️</div>
+        <div class="ct-card-title">Órgão Autônomo e Permanente</div>
+        <p class="ct-card-desc">Não está subordinado ao Executivo municipal. Exerce suas funções com independência funcional, garantida pela lei federal.</p>
+        <div class="ct-card-art">Art. 131 do ECA</div>
+      </div>
+      <div class="ct-card reveal">
+        <div class="ct-card-icon">🗳️</div>
+        <div class="ct-card-title">Eleição Direta pela Comunidade</div>
+        <p class="ct-card-desc">Os 5 conselheiros são eleitos pela população local a cada 4 anos, sem possibilidade de remuneração inferior ao salário de início de carreira do magistério.</p>
+        <div class="ct-card-art">Art. 132 do ECA</div>
+      </div>
+      <div class="ct-card reveal">
+        <div class="ct-card-icon">⚡</div>
+        <div class="ct-card-title">Atribuições e Poderes</div>
+        <p class="ct-card-desc">Pode aplicar medidas de proteção, requisitar serviços públicos, representar ao MP, assessorar o Executivo e promover execução de suas decisões.</p>
+        <div class="ct-card-art">Art. 136 do ECA</div>
+      </div>
+      <div class="ct-card reveal">
+        <div class="ct-card-icon">📋</div>
+        <div class="ct-card-title">Decisões com Força Legal</div>
+        <p class="ct-card-desc">As deliberações do Conselho Tutelar são obrigatórias para os serviços públicos. O descumprimento pode ser levado ao Ministério Público.</p>
+        <div class="ct-card-art">Art. 137 do ECA</div>
+      </div>
+    </div>
+ 
+    <div class="ct-arts-band reveal">
+      <div class="ct-art-item">
+        <span class="ct-art-num">Art. 131</span>
+        <span class="ct-art-text">O Conselho Tutelar é órgão permanente e autônomo, não jurisdicional, encarregado pela sociedade de zelar pelo cumprimento dos direitos da criança e do adolescente.</span>
+      </div>
+      <div class="ct-art-item">
+        <span class="ct-art-num">Art. 133</span>
+        <span class="ct-art-text">Para a candidatura são exigidos: reconhecida idoneidade moral, idade superior a 21 anos e residência no município.</span>
+      </div>
+      <div class="ct-art-item">
+        <span class="ct-art-num">Art. 134</span>
+        <span class="ct-art-text">Lei municipal disporá sobre local, dia e horário de funcionamento do Conselho Tutelar, inclusive quanto à remuneração de seus membros.</span>
+      </div>
+      <div class="ct-art-item">
+        <span class="ct-art-num">Art. 136</span>
+        <span class="ct-art-text">São atribuições do Conselho Tutelar: atender crianças e adolescentes em situação de risco, aplicar medidas de proteção e requisitar serviços públicos.</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══════════════════════════════
+     CTA
+══════════════════════════════ -->
+<div class="cta-band">
+  <h3>Precisa acionar o Conselho Tutelar?</h3>
+  <p>Conheça os canais de atendimento, denúncia e orientação disponíveis 24 horas para proteção de crianças e adolescentes.</p>
+  <div class="cta-btns">
+    <a href="tel:100" class="btn btn-navy">📞 Disque 100 — Gratuito</a>
+    <a href="contato.html" class="btn btn-white">Falar com o Conselho</a>
+  </div>
+</div>
+
+     <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-wrapper">
+        <div class="footer-box">
+          <h4>Projeto Educativo</h4>
+          <p>
+            Iniciativa do
+            <strong>curso de Análise e Desenvolvimento de Sistemas</strong>.
+            UNIASSELVI - Centro Universitário Leonardo da Vinci.
+          </p>
+          <p class="project">Projeto de Caráter Educativo.</p>
+          <p>Foco na conscientização e proteção dos direitos.</p>
+        </div>
+
+        <div class="footer-box">
+          <h4>Links Úteis:</h4>
+          <ul class="footer-links">
+            <li>
+              <a
+                href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+                target="_blank"
+              >
+                ECA na Íntegra:
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.gov.br/mdh/pt-br/acesso-a-informacao/participacao-social/conselho-nacional-dos-direitos-da-crianca-e-do-adolescente-conanda/conanda"
+                target="_blank"
+                >Conselho Nacional (Conanda):</a
+              >
+            </li>
+            <li><a href="#faq">Dúvidas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-box">
+          <h4>Atendimentos</h4>
+          <div class="footer-contact">
+            <span
+              ><ion-icon name="call-outline"></ion-icon> (00) 0000-0000</span
+            >
+            <span
+              ><ion-icon name="alert-circle-outline"></ion-icon>
+              <strong>Plantão: 100</strong></span
+            >
+            <span
+              ><ion-icon name="mail-outline"></ion-icon>
+              contato@site.com.br</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom-logos">
+        <img src="../src/logo/logo-header.png" alt="Logo Projeto" />
+        <img src="../src/imagens/hand-talk.png" alt="Acessibilidade" />
+      </div>
+
+      <div class="footer-copyright">
+        <p>
+          &copy; 2026 Conselho Tutelar - Projeto Educativo. Todos os direitos
+          reservados.
+        </p>
+      </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- JavaScript -->
+      <script src="../src/js/index.js"></script>
+      <script src="../src/js/Estatuto.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JavaScript -->
+
+    <!-- Hand Talk -->
+    <div class="fab-item">
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+    
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
+      </script>
+    <!-- Hand Talk -->
+
+    <!-- Ion Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
