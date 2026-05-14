@@ -473,6 +473,14 @@
                   <strong>Violação escolar:</strong> Evasão escolar ou recusa de
                   matrícula pela instituição.
                 </p>
+                <p>
+                  <span class="check-area"></span>
+                  <strong>Casamento ou União Infantil: </strong> Situações de união estável ou casamento envolvendo menores de 16 anos.
+                </p>
+                <p>
+                  <span class="check-area"></span>
+                  <strong>Abuso sexual e a Exploração sexual: </strong> são violações gravíssimas e o Conselho Tutelar deve ser acionado imediatamente diante de qualquer suspeita ou confirmação.
+                </p>
               </div>
             </div>
           </div>
@@ -957,73 +965,93 @@
 
     <!-- Footer -->
     <footer class="main-footer">
-      <div class="footer-wrapper">
-        <div class="footer-box">
-          <h4>Projeto Educativo</h4>
-          <p>
-            Iniciativa do
-            <strong>curso de Análise e Desenvolvimento de Sistemas</strong>.
-            UNIASSELVI - Centro Universitário Leonardo da Vinci.
-          </p>
-          <p class="project">Projeto de Caráter Educativo.</p>
-          <p>Foco na conscientização e proteção dos direitos.</p>
-        </div>
-
-        <div class="footer-box">
-          <h4>Links Úteis:</h4>
-          <ul class="footer-links">
-            <li>
-              <a
-                href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
-                target="_blank"
-              >
-                ECA na Íntegra:
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.gov.br/mdh/pt-br/acesso-a-informacao/participacao-social/conselho-nacional-dos-direitos-da-crianca-e-do-adolescente-conanda/conanda"
-                target="_blank"
-                >Conselho Nacional (Conanda):</a
-              >
-            </li>
-            <li><a href="#faq">Dúvidas Frequentes</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-box">
-          <h4>Atendimentos</h4>
-          <div class="footer-contact">
-            <span
-              ><ion-icon name="call-outline"></ion-icon> (00) 0000-0000</span
-            >
-            <span
-              ><ion-icon name="alert-circle-outline"></ion-icon>
-              <strong>Plantão: 100</strong></span
-            >
-            <span
-              ><ion-icon name="mail-outline"></ion-icon>
-              contato@site.com.br</span
-            >
-          </div>
-        </div>
-      </div>
-
-      <hr class="footer-divider" />
-
-      <div class="footer-bottom-logos">
-        <img src="./src/logo/logo-header.png" alt="Logo Projeto" />
-        <img src="./src/imagens/hand-talk.png" alt="Acessibilidade" />
-      </div>
-
-      <div class="footer-copyright">
+ 
+  <!-- barra superior decorativa -->
+  <div class="footer-top-bar"></div>
+ 
+    <div class="footer-wrapper">
+  
+      <!-- COLUNA 1 — Projeto -->
+      <div class="footer-box">
+        <div class="footer-box-label">Projeto Educativo</div>
         <p>
-          &copy; 2026 Conselho Tutelar - Projeto Educativo. Todos os direitos
-          reservados.
+          Iniciativa do <strong>curso de Análise e Desenvolvimento de Sistemas</strong>.
+          UNIASSELVI — Centro Universitário Leonardo da Vinci.
         </p>
+        <div class="footer-tag">Projeto de Caráter Educativo</div>
+        <p class="footer-muted">Foco na conscientização e proteção dos direitos da criança e do adolescente.</p>
       </div>
-    </footer>
-    <!-- Footer -->
+  
+      <!-- COLUNA 2 — Links -->
+      <div class="footer-box">
+        <div class="footer-box-label">Links Úteis</div>
+        <ul class="footer-links">
+          <li>
+            <a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank" rel="noopener">
+              <span class="footer-link-arrow">↗</span> ECA na Íntegra
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.br/mdh/pt-br/acesso-a-informacao/participacao-social/conselho-nacional-dos-direitos-da-crianca-e-do-adolescente-conanda/conanda" target="_blank" rel="noopener">
+              <span class="footer-link-arrow">↗</span> Conselho Nacional (Conanda)
+            </a>
+          </li>
+          <li>
+            <a href="#faq">
+              <span class="footer-link-arrow">↗</span> Dúvidas Frequentes
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- COLUNA 3 — Atendimento -->
+      <div class="footer-box">
+        <div class="footer-box-label">Atendimentos</div>
+        <div class="footer-contact">
+          <a href="tel:100" class="footer-contact-item footer-contact-highlight">
+            <ion-icon name="alert-circle-outline"></ion-icon>
+            <div>
+              <span class="contact-label">Plantão 24h</span>
+              <strong>Disque 100</strong>
+            </div>
+          </a>
+          <a href="tel:0000000000" class="footer-contact-item">
+            <ion-icon name="call-outline"></ion-icon>
+            <div>
+              <span class="contact-label">Telefone</span>
+              <strong>(00) 0000-0000</strong>
+            </div>
+          </a>
+          <a href="mailto:contato@site.com.br" class="footer-contact-item">
+            <ion-icon name="mail-outline"></ion-icon>
+            <div>
+              <span class="contact-label">E-mail</span>
+              <strong>contato@site.com.br</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- divisor -->
+    <div class="footer-divider-wrap">
+      <div class="footer-divider"></div>
+    </div>
+  
+    <!-- rodapé inferior -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-logos">
+        <img src="./src/logo/logo-header.png" alt="Logo Projeto"/>
+        <img src="./src/imagens/hand-talk.png" alt="Site Amigo do Surdo — Hand Talk"/>
+      </div>
+      <p class="footer-copyright">
+        &copy; 2026 Conselho Tutelar — Projeto Educativo.
+        Todos os direitos reservados.
+      </p>
+    </div>
+  
+  </footer>
 
     <!-- JavaScript -->
       <script src="./src/js/index.js"></script>

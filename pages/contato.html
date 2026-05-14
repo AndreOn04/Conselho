@@ -31,24 +31,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
-    <style>
-      body {
-        background: var(--cream);
-        color: var(--navy);
-        min-height: 100vh;
-        overflow-x: hidden;
-      }
 
-      /* ── NOISE TEXTURE OVERLAY ── */
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-        pointer-events: none;
-        z-index: 0;
-      }
-    </style>
   </head>
 
   <body>
@@ -110,16 +93,74 @@
     <!-- Header -->
 
     <!-- Contato -->
-    <!-- ═══ HEADER ═══ -->
-    <div class="header-contato">
-      <div class="header-badge"><span></span> Atendimento ao Cidadão</div>
-      <h1>Entre em <em>contato</em><br />conosco</h1>
-      <p class="header-sub">
-        Em situações de suspeita ou confirmação de violação de direitos, procure
-        o Conselho Tutelar da sua cidade ou utilize os canais oficiais do
-        governo.
+
+    <section class="contactCba">
+      <div class="hero-eyebrowCba">Cuiabá - Mato Grosso</div>
+      <h1>Encontre o <em>Conselho Tutelar</em> mais próximo de você</h1>
+      <p>
+        Digite seu bairro ou região para localizar a unidade responsável pelo
+        seu atendimento.
       </p>
-    </div>
+
+      <div class="search-wrapCba">
+        <input
+          type="text"
+          class="search-input"
+          id="searchInput"
+          placeholder="Ex: Pedra 90, CPA, Centro, Coxipó..."
+          autocomplete="off"
+          aria-label="Buscar por bairro"
+        />
+        <span class="search-icon" aria-hidden="true"> 🔍 </span>
+        <div class="suggestion" id="suggestion" hidden></div>
+      </div>
+
+      <div style="margin-top: 16px">
+        <button class="btn-all" id="btnVerAll">
+          📋 Ver todos os conselhos
+        </button>
+      </div>
+
+      <div class="hero-bar"></div>
+    </section>
+
+    <main class="mainCba" id="mainContent">
+      <!-- Estado inicial -->
+      <div id="stateEmpty" class="state-empty">
+        <div class="big-icon">🏛️</div>
+        <h3>Busque pelo seu bairro</h3>
+        <p>
+          Digite o nome do seu bairro ou região no campo acima.<br />
+          Ou clique em <strong>"Ver todos os conselhos"</strong> para listar
+          todas as unidades.
+        </p>
+      </div>
+
+      <!-- Resultados -->
+      <div id="stateResults" hidden>
+        <div class="result-header">
+          <div>
+            <div class="result-label" id="resultLabel">Resultados</div>
+            <div class="result-count" id="resultCount"></div>
+          </div>
+          <button class="btn-clear" id="btnClear">✕ Limpar busca</button>
+        </div>
+        <div class="cards-grid" id="cardsGrid"></div>
+      </div>
+
+      <!-- Nenhum resultado -->
+      <div id="stateNotFound" hidden class="state-notfound">
+        <div class="big-icon">🔎</div>
+        <h3>Nenhum conselho encontrado</h3>
+        <p>
+          Não encontramos um conselho para o bairro informado.<br />
+          Tente um bairro próximo ou veja todos os conselhos abaixo.
+        </p>
+        <button class="btn-map accent" id="btnVerTodosNF">
+          📋 Ver todos os conselhos
+        </button>
+      </div>
+    </main>
 
     <!-- ═══ MAIN ═══ -->
     <main class="main-contact">
@@ -132,7 +173,7 @@
           <div class="card-arrow">↗</div>
           <div class="card-icon">📞</div>
           <div class="card-title">Telefone Fixo</div>
-          <div class="card-info">(00) 0000-0000</div>
+          <div class="card-info">(65) 3616-6872</div>
           <div class="card-hint">Horário comercial</div>
         </a>
 
@@ -147,7 +188,7 @@
           <div class="card-arrow">↗</div>
           <div class="card-icon">💬</div>
           <div class="card-title">WhatsApp</div>
-          <div class="card-info">(00) 0000-0000</div>
+          <div class="card-info">99215-5608</div>
           <div class="card-hint">Mensagens e dúvidas</div>
         </a>
 
@@ -161,7 +202,7 @@
           <div class="card-icon">✉️</div>
           <div class="card-title">E-mail Institucional</div>
           <div class="card-info">
-            conselho.tutelar<br />@municipio.mt.gov.br
+            ct.cpa@cuiaba.mt.gov.br
           </div>
           <div class="card-hint">Resposta em até 2 dias úteis</div>
         </a>
@@ -176,8 +217,7 @@
           <div class="card-arrow">⧉</div>
           <div class="card-icon">📍</div>
           <div class="card-title">Atendimento Presencial</div>
-          <div class="card-info">Rua das Acácias, 245<br />Centro</div>
-          <div class="card-hint">Clique para copiar o endereço</div>
+          <div class="card-info">Rua Jornalista Caramuru de Campos Maciel, nº 4, quadra 19, bairro CPA II</div>
         </div>
 
         <!-- URGÊNCIA — ocupa linha inteira -->
@@ -256,97 +296,133 @@
 
         <!-- ENDEREÇO -->
         <div class="info-function">
-          <h3>Como Chegar</h3>
+        <h3>O que levar ao atendimento</h3>
 
-          <div class="address-line">
-            <span class="icon-content">📍</span>
-            <p>
-              <strong>Rua das Acácias, 245</strong><br />Centro —
-              Município/MT<br />CEP: 78.000-000
-            </p>
-          </div>
+        <div class="address-line">
+          <span class="icon-content">🪪</span>
+          <p><strong>Documento de identificação</strong><br/>
+          RG, CPF ou Certidão de Nascimento da criança ou adolescente.</p>
+        </div>
 
-          <div class="address-line">
-            <span class="icon-content">🚌</span>
-            <p>Linhas 01, 07 e 12 — ponto de ônibus a 50 metros da sede.</p>
-          </div>
+        <div class="address-line">
+          <span class="icon-content">👨‍👩‍👧</span>
+          <p><strong>Documento do responsável</strong><br/>
+          RG ou CPF de quem acompanha o menor ao atendimento.</p>
+        </div>
 
-          <div class="address-line">
-            <span class="icon-content">🅿️</span>
-            <p>Estacionamento gratuito disponível na rua lateral.</p>
-          </div>
+        <div class="address-line">
+          <span class="icon-content">📋</span>
+          <p><strong>Relato dos fatos</strong><br/>
+          Descreva a situação com datas, locais e nomes sempre que possível — isso agiliza o atendimento.</p>
+        </div>
 
-          <a
-            class="map-btn"
-            href="https://www.google.com/maps/search/Rua+das+Acacias+245+Centro"
-            target="_blank"
-            rel="noopener"
-          >
-            ↗ &nbsp;Ver no Google Maps
-          </a>
+        <div class="address-line">
+          <span class="icon-content">📄</span>
+          <p><strong>Documentos complementares</strong><br/>
+          Boletim de ocorrência, laudos médicos ou comprovante escolar, se houver.</p>
+        </div>
+
+        <div class="address-line">
+          <span class="icon-content">ℹ️</span>
+          <p style="color: var(--muted); font-size: .82rem;">
+          Nenhum documento é obrigatório para registrar uma denúncia. O atendimento não pode ser negado por falta de documentação.
+          </p>
         </div>
       </div>
     </main>
 
     <!-- Contato -->
 
+
     <!-- Footer -->
     <footer class="main-footer">
-      <div class="footer-wrapper">
-        <div class="footer-box">
-          <h4>Projeto Educativo</h4>
-          <p>
-            Iniciativa do
-            <strong>curso de Análise e Desenvolvimento de Sistemas</strong>.
-            UNIASSELVI - Centro Universitário Leonardo da Vinci.
-          </p>
-          <p class="project">Projeto de Caráter Educativo.</p>
-          <p>Foco na conscientização e proteção dos direitos.</p>
-        </div>
-
-        <div class="footer-box">
-          <h4>Acesso Rápido</h4>
-          <ul class="footer-links">
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Atribuições</a></li>
-            <li><a href="#">ECA</a></li>
-            <li><a href="#">Dúvidas Frequentes</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-box">
-          <h4>Atendimentos</h4>
-          <div class="footer-contact">
-            <span
-              ><ion-icon name="call-outline"></ion-icon> (00) 0000-0000</span
-            >
-            <span
-              ><ion-icon name="alert-circle-outline"></ion-icon>
-              <strong>Plantão: 100</strong></span
-            >
-            <span
-              ><ion-icon name="mail-outline"></ion-icon>
-              contato@site.com.br</span
-            >
-          </div>
-        </div>
-      </div>
-
-      <hr class="footer-divider" />
-
-      <div class="footer-bottom-logos">
-        <img src="../src/logo/logo-header.png" alt="Logo Projeto" />
-        <img src="../src/imagens/hand-talk.png" alt="Acessibilidade" />
-      </div>
-
-      <div class="footer-copyright">
+ 
+  <!-- barra superior decorativa -->
+  <div class="footer-top-bar"></div>
+ 
+    <div class="footer-wrapper">
+  
+      <!-- COLUNA 1 — Projeto -->
+      <div class="footer-box">
+        <div class="footer-box-label">Projeto Educativo</div>
         <p>
-          &copy; 2026 Conselho Tutelar - Projeto Educativo. Todos os direitos
-          reservados.
+          Iniciativa do <strong>curso de Análise e Desenvolvimento de Sistemas</strong>.
+          UNIASSELVI — Centro Universitário Leonardo da Vinci.
         </p>
+        <div class="footer-tag">Projeto de Caráter Educativo</div>
+        <p class="footer-muted">Foco na conscientização e proteção dos direitos da criança e do adolescente.</p>
       </div>
-    </footer>
-    <!-- Footer -->
+  
+      <!-- COLUNA 2 — Links -->
+      <div class="footer-box">
+        <div class="footer-box-label">Links Úteis</div>
+        <ul class="footer-links">
+          <li>
+            <a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank" rel="noopener">
+              <span class="footer-link-arrow">↗</span> ECA na Íntegra
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.br/mdh/pt-br/acesso-a-informacao/participacao-social/conselho-nacional-dos-direitos-da-crianca-e-do-adolescente-conanda/conanda" target="_blank" rel="noopener">
+              <span class="footer-link-arrow">↗</span> Conselho Nacional (Conanda)
+            </a>
+          </li>
+          <li>
+            <a href="#faq">
+              <span class="footer-link-arrow">↗</span> Dúvidas Frequentes
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- COLUNA 3 — Atendimento -->
+      <div class="footer-box">
+        <div class="footer-box-label">Atendimentos</div>
+        <div class="footer-contact">
+          <a href="tel:100" class="footer-contact-item footer-contact-highlight">
+            <ion-icon name="alert-circle-outline"></ion-icon>
+            <div>
+              <span class="contact-label">Plantão 24h</span>
+              <strong>Disque 100</strong>
+            </div>
+          </a>
+          <a href="tel:0000000000" class="footer-contact-item">
+            <ion-icon name="call-outline"></ion-icon>
+            <div>
+              <span class="contact-label">Telefone</span>
+              <strong>(00) 0000-0000</strong>
+            </div>
+          </a>
+          <a href="mailto:contato@site.com.br" class="footer-contact-item">
+            <ion-icon name="mail-outline"></ion-icon>
+            <div>
+              <span class="contact-label">E-mail</span>
+              <strong>contato@site.com.br</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- divisor -->
+    <div class="footer-divider-wrap">
+      <div class="footer-divider"></div>
+    </div>
+  
+    <!-- rodapé inferior -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-logos">
+        <img src="../src/logo/logo-header.png" alt="Logo Projeto"/>
+        <img src="../src/imagens/hand-talk.png" alt="Site Amigo do Surdo — Hand Talk"/>
+      </div>
+      <p class="footer-copyright">
+        &copy; 2026 Conselho Tutelar — Projeto Educativo.
+        Todos os direitos reservados.
+      </p>
+    </div>
+  
+  </footer>
 
     <!-- JavaScript -->
     <script src="../src/js/index.js"></script>

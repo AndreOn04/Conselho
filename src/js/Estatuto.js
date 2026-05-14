@@ -107,7 +107,6 @@ document.querySelectorAll('.acc-trigger').forEach(btn => {
   });
 });
  
-/* ── 6. TIMELINE ITEMS — reveal com offset ── */
 (function () {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
