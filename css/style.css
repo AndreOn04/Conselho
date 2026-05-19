@@ -4048,7 +4048,6 @@ body.dark-mode .nav-list a {
 }
 
 .ct-card {
-    background: var(--white);
     padding: 36px 32px;
     position: relative;
     overflow: hidden;

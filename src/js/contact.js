@@ -269,7 +269,7 @@ function mostrarResultados(lista, termo) {
   const resultLabel   = document.getElementById("resultLabel");
   const resultCount   = document.getElementById("resultCount");
 
-  if (!stateEmpty) return; // localizador não está nesta página
+  if (!stateEmpty) return;
 
   stateEmpty.hidden = true;
   stateNotFound.hidden = true;
