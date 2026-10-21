@@ -30,10 +30,9 @@ async function carregarDados() {
     document.querySelectorAll('[data-info="email"]').forEach((el) => (el.textContent = email));
     document.querySelectorAll('[data-info="email-link"]').forEach((el) => (el.href = "mailto:" + email));
 
-    console.log("[dados] Carregado do banco:", tel, email);
+    // console.log("[dados] Carregado do banco:", tel, email);
   } catch (erro) {
-    console.warn("[dados] Falha ao falar com o banco, mantendo o HTML:", erro);
+    // console.warn("[dados] Falha ao falar com o banco, mantendo o HTML:", erro);
   }
 }
-
 carregarDados();
