@@ -1,6 +1,7 @@
 const SUPABASE_URL = "https://tekamtmjvfoloazfnzyz.supabase.co";
 const SUPABASE_CHAVE = "sb_publishable_AqgDyDi8hr3LaBPCIbTHlw_9VU0oyOO";
 const CONSELHO_DONO = 3; // 3º Conselho (CPA)
+let enderecoAtual = "Rua Jornalista Caramuru de Campos Maciel, nº 4, quadra 19, bairro CPA II, Cuiabá/MT";
 
 function soDigitos(texto) {
   return texto.replace(/\D/g, "");
@@ -9,7 +10,7 @@ function soDigitos(texto) {
 async function carregarDados() {
   try {
     const resp = await fetch(
-      `${SUPABASE_URL}/rest/v1/conselhos?id=eq.${CONSELHO_DONO}&select=telefones,emails`,
+      `${SUPABASE_URL}/rest/v1/conselhos?id=eq.${CONSELHO_DONO}&select=telefones,emails,endereco`,
       { headers: { apikey: SUPABASE_CHAVE } }
     );
     if (!resp.ok) {
@@ -24,6 +25,7 @@ async function carregarDados() {
 
     const tel = conselho.telefones[0];
     const email = conselho.emails[0];
+    if (conselho.endereco) enderecoAtual = conselho.endereco + ", Cuiabá/MT";
 
     document.querySelectorAll('[data-info="telefone"]').forEach((el) => (el.textContent = tel));
     document.querySelectorAll('[data-info="telefone-link"]').forEach((el) => (el.href = "tel:+55" + soDigitos(tel)));

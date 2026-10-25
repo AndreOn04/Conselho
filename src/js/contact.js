@@ -36,7 +36,8 @@
 const copyAddressEl = document.getElementById("copyAddress");
 if (copyAddressEl) {
   copyAddressEl.addEventListener("click", function () {
-    const address = "Rua das Acácias, 245 — Centro, Município/MT, CEP 78.000-000";
+    // const address = "Rua das Acácias, 245 — Centro, Município/MT, CEP 78.000-000";
+    const address = typeof enderecoAtual !== "undefined" ? enderecoAtual : "";
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(address).then(showToast);
     } else {
@@ -53,9 +54,10 @@ if (copyAddressEl) {
   });
 }
 
-function showToast() {
+function showToast(texto = "Endereço copiado com sucesso! 📋") {
   const t = document.getElementById("toast");
-  if (!t) return;
+  if(!t) return;
+  t.textContent = texto;
   t.classList.add("show");
   setTimeout(() => t.classList.remove("show"), 2800);
 }
