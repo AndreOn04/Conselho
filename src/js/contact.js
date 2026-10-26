@@ -3,7 +3,12 @@
   const now = new Date();
   const day = now.getDay();
   const hour = now.getHours();
-  const open = hour >= 8 && hour < 17;
+  // const open = hour >= 8 && hour < 17;
+  const h = window.horarioAtual || { abre: "08:00", fecha: "18:00" };
+  const toMin = (s) => Number(s.split(0, 2)) * 60 + Number(s.split(3, 5));
+  const minutos = hour * 60 + now.getMinutes();
+  const open = minutos >= toMin(h.abre) && minutos < toMin(h.fecha);
+
   const week = day >= 1 && day <= 5;
   const isOpen = week && open;
 
@@ -23,12 +28,18 @@
 
   const banner = document.getElementById("statusBanner");
   if (!banner) return;
+
+  const verde = "#22c55e";
+  const vermelho = "#ef4444";
+  const fecha = h.fecha.replace(":", "h");
+  const abre = h.abre.replace(":", "h");
+
   if (isOpen) {
-    banner.innerHTML = '<span style="color:#22c55e;">● Aberto agora</span> — Encerra às 17h00.';
+    banner.innerHTML = `<span style="color:${verde};">● Aberto agora</span> — Encerra às ${fecha}.`;
   } else if (week) {
-    banner.innerHTML = '<span style="color:#ef4444;">● Fechado no momento</span> — Abre às 08h00 nos dias úteis.';
+    banner.innerHTML = `<span style="color:${vermelho};">● Fechado no momento</span> — Retomamos às ${abre} nos dias úteis.`;
   } else {
-    banner.innerHTML = '<span style="color:#ef4444;">● Fechado</span> — Retomamos na segunda-feira às 08h00.';
+    banner.innerHTML = `<span style="color:${vermelho};">● Fechado</span> — Retomamos na segunda-feira às ${abre}.`;
   }
 })();
 
@@ -56,7 +67,7 @@ if (copyAddressEl) {
 
 function showToast(texto = "Endereço copiado com sucesso! 📋") {
   const t = document.getElementById("toast");
-  if(!t) return;
+  if (!t) return;
   t.textContent = texto;
   t.classList.add("show");
   setTimeout(() => t.classList.remove("show"), 2800);
@@ -72,7 +83,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 }
+  { threshold: 0.1 },
 );
 
 document.querySelectorAll(".contact-card, .info-block").forEach((el) => {
@@ -93,7 +104,15 @@ const CONSELHOS = [
     telefones: ["(65) 99206-6741"],
     email: "conselhotutelarplantaocuiaba@gmail.com",
     horario: "18h às 08h (plantão noturno)",
-    bairros: ["centro", "centro sul", "todos", "plantão", "emergência", "urgência", "noturno"],
+    bairros: [
+      "centro",
+      "centro sul",
+      "todos",
+      "plantão",
+      "emergência",
+      "urgência",
+      "noturno",
+    ],
     mapsQuery: "Av.+Getúlio+Vargas+997+Centro+Cuiabá+MT",
   },
   {
@@ -106,7 +125,17 @@ const CONSELHOS = [
     telefones: ["(65) 3317-6733", "(65) 99217-7873"],
     email: "ct.centro2@gmail.com",
     horario: "Segunda a Sexta, 08h às 18h",
-    bairros: ["centro", "centro sul", "praeiro", "goiabeiras", "lixeira", "areão", "santa helena", "porto", "bandeirantes"],
+    bairros: [
+      "centro",
+      "centro sul",
+      "praeiro",
+      "goiabeiras",
+      "lixeira",
+      "areão",
+      "santa helena",
+      "porto",
+      "bandeirantes",
+    ],
     mapsQuery: "Av.+Getúlio+Vargas+997+Centro+Sul+Cuiabá+MT",
   },
   {
@@ -119,7 +148,15 @@ const CONSELHOS = [
     telefones: ["(65) 3617-1950", "(65) 99244-8766"],
     email: "ct.pedra90@cuiaba.mt.gov.br",
     horario: "Segunda a Sexta, 08h às 18h",
-    bairros: ["pedra 90", "pedra90", "grande terceiro", "pascoal ramos", "novo terceiro", "osmar cabral", "sul"],
+    bairros: [
+      "pedra 90",
+      "pedra90",
+      "grande terceiro",
+      "pascoal ramos",
+      "novo terceiro",
+      "osmar cabral",
+      "sul",
+    ],
     mapsQuery: "Av.+Nilton+Rabelo+de+Castro+Pedra+90+Cuiabá+MT",
   },
   {
@@ -128,11 +165,22 @@ const CONSELHOS = [
     regiao: "CPA",
     numero: "03",
     plantao: false,
-    endereco: "Rua Jornalista Caramuru de Campos Maciel, nº 4, quadra 19, bairro CPA II",
+    endereco:
+      "Rua Jornalista Caramuru de Campos Maciel, nº 4, quadra 19, bairro CPA II",
     telefones: ["(65) 3616-6872", "(65) 99215-5608"],
     email: "ct.cpa@cuiaba.mt.gov.br",
     horario: "Segunda a Sexta, 08h às 18h",
-    bairros: ["cpa", "cpa i", "cpa ii", "cpa iii", "cpa iv", "morada do ouro", "plano diretor", "novo horizonte", "parque cuiabá"],
+    bairros: [
+      "cpa",
+      "cpa i",
+      "cpa ii",
+      "cpa iii",
+      "cpa iv",
+      "morada do ouro",
+      "plano diretor",
+      "novo horizonte",
+      "parque cuiabá",
+    ],
     mapsQuery: "Rua+Jornalista+Caramuru+de+Campos+Maciel+4+CPA+II+Cuiabá+MT",
   },
   {
@@ -145,7 +193,16 @@ const CONSELHOS = [
     telefones: ["(65) 3617-1405", "(65) 99238-6890"],
     email: "ct.santaizabel@cuiaba.mt.gov.br",
     horario: "Segunda a Sexta, 08h às 18h",
-    bairros: ["cidade alta", "santa isabel", "santa izabel", "jardim florianópolis", "alvorada", "santa marta", "dom aquino", "grande cidade alta"],
+    bairros: [
+      "cidade alta",
+      "santa isabel",
+      "santa izabel",
+      "jardim florianópolis",
+      "alvorada",
+      "santa marta",
+      "dom aquino",
+      "grande cidade alta",
+    ],
     mapsQuery: "Rua+Maurício+Cardoso+744+Cidade+Alta+Cuiabá+MT",
   },
   {
@@ -158,7 +215,16 @@ const CONSELHOS = [
     telefones: ["(65) 3313-3155", "(65) 99209-7377"],
     email: "ct.coxipo@cuiaba.mt.gov.br",
     horario: "Segunda a Sexta, 08h às 18h",
-    bairros: ["coxipó", "coophema", "coxipó da ponte", "coxipó do ouro", "jardim das américas", "rio médio", "nova esperança", "recanto dos pássaros"],
+    bairros: [
+      "coxipó",
+      "coophema",
+      "coxipó da ponte",
+      "coxipó do ouro",
+      "jardim das américas",
+      "rio médio",
+      "nova esperança",
+      "recanto dos pássaros",
+    ],
     mapsQuery: "Rua+Antônio+Dorileo+116+Coophema+Cuiabá+MT",
   },
   {
@@ -171,32 +237,52 @@ const CONSELHOS = [
     telefones: ["(65) 3617-1712", "(65) 99209-7377"],
     email: "ct.planalto@cuiaba.mt.gov.br",
     horario: "Segunda a Sexta, 08h às 18h",
-    bairros: ["planalto", "grande planalto", "jardim leblon", "pico do amor", "jardim paulista", "verdão", "quilombo", "jardim imperial", "residencial"],
+    bairros: [
+      "planalto",
+      "grande planalto",
+      "jardim leblon",
+      "pico do amor",
+      "jardim paulista",
+      "verdão",
+      "quilombo",
+      "jardim imperial",
+      "residencial",
+    ],
     mapsQuery: "Av.+Parecis+168+Planalto+Cuiabá+MT",
   },
 ];
 
 /* ── normaliza texto ── */
 function norm(str) {
-  return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
 }
 
 /* ── busca ── */
 function buscar(termo) {
   if (!termo) return [];
   const t = norm(termo);
-  const exatos = [], parciais = [];
+  const exatos = [],
+    parciais = [];
   CONSELHOS.forEach((c) => {
     const match = c.bairros.some((b) => {
       const bn = norm(b);
       if (bn === t) return true;
-      if (bn.includes(t) || t.includes(bn)) { parciais.push(c); return false; }
+      if (bn.includes(t) || t.includes(bn)) {
+        parciais.push(c);
+        return false;
+      }
       return false;
     });
     if (match) exatos.push(c);
   });
   const vistos = new Set();
-  return [...exatos, ...parciais].filter((c) => (vistos.has(c.id) ? false : vistos.add(c.id)));
+  return [...exatos, ...parciais].filter((c) =>
+    vistos.has(c.id) ? false : vistos.add(c.id),
+  );
 }
 
 /* ── autocomplete ── */
@@ -210,8 +296,12 @@ function renderCard(conselho, termoBusca) {
   card.className = `ct-card${conselho.plantao ? " plantao" : ""}`;
   card.style.animationDelay = `${conselho.id * 0.06}s`;
 
-  const badgeText = conselho.plantao ? "🔴 Plantão Noturno" : `${conselho.numero}ª Unidade`;
-  const badgeClass = conselho.plantao ? "card-badge plantao-badge" : "card-badge";
+  const badgeText = conselho.plantao
+    ? "🔴 Plantão Noturno"
+    : `${conselho.numero}ª Unidade`;
+  const badgeClass = conselho.plantao
+    ? "card-badge plantao-badge"
+    : "card-badge";
 
   const tels = conselho.telefones
     .map((t) => `<a href="tel:${t.replace(/\D/g, "")}">${t}</a>`)
@@ -219,7 +309,10 @@ function renderCard(conselho, termoBusca) {
 
   const tn = norm(termoBusca || "");
   const bairrosTags = conselho.bairros
-    .filter((b) => !["todos", "plantão", "urgência", "emergência", "noturno"].includes(b))
+    .filter(
+      (b) =>
+        !["todos", "plantão", "urgência", "emergência", "noturno"].includes(b),
+    )
     .slice(0, 6)
     .map((b) => {
       const bn = norm(b);
@@ -264,12 +357,12 @@ function renderCard(conselho, termoBusca) {
 
 /* ── mostra resultados ── */
 function mostrarResultados(lista, termo) {
-  const stateEmpty    = document.getElementById("stateEmpty");
-  const stateResults  = document.getElementById("stateResults");
+  const stateEmpty = document.getElementById("stateEmpty");
+  const stateResults = document.getElementById("stateResults");
   const stateNotFound = document.getElementById("stateNotFound");
-  const cardsGrid     = document.getElementById("cardsGrid");
-  const resultLabel   = document.getElementById("resultLabel");
-  const resultCount   = document.getElementById("resultCount");
+  const cardsGrid = document.getElementById("cardsGrid");
+  const resultLabel = document.getElementById("resultLabel");
+  const resultCount = document.getElementById("resultCount");
 
   if (!stateEmpty) return;
 
@@ -285,7 +378,9 @@ function mostrarResultados(lista, termo) {
   stateResults.hidden = false;
   cardsGrid.innerHTML = "";
 
-  resultLabel.textContent = termo ? `Conselhos que atendem "${termo}"` : "Todos os Conselhos Tutelares";
+  resultLabel.textContent = termo
+    ? `Conselhos que atendem "${termo}"`
+    : "Todos os Conselhos Tutelares";
   resultCount.textContent = `${lista.length} unidade${lista.length > 1 ? "s" : ""} encontrada${lista.length > 1 ? "s" : ""}`;
 
   lista.forEach((c) => cardsGrid.appendChild(renderCard(c, termo)));
@@ -294,32 +389,39 @@ function mostrarResultados(lista, termo) {
 /* ── limpar ── */
 function limpar() {
   const searchInput = document.getElementById("searchInput");
-  const suggestion  = document.getElementById("suggestion");
+  const suggestion = document.getElementById("suggestion");
   if (searchInput) searchInput.value = "";
-  if (suggestion)  suggestion.hidden = true;
-  document.getElementById("stateEmpty").hidden    = false;
-  document.getElementById("stateResults").hidden  = true;
+  if (suggestion) suggestion.hidden = true;
+  document.getElementById("stateEmpty").hidden = false;
+  document.getElementById("stateResults").hidden = true;
   document.getElementById("stateNotFound").hidden = true;
 }
 
 /* ── inicializa localizador apenas se o HTML existir ── */
 const searchInput = document.getElementById("searchInput");
-const sugBox      = document.getElementById("suggestion"); // <-- id corrigido
+const sugBox = document.getElementById("suggestion"); // <-- id corrigido
 
 if (searchInput && sugBox) {
-
   searchInput.addEventListener("input", () => {
     const val = searchInput.value.trim();
-    if (!val) { sugBox.hidden = true; return; }
+    if (!val) {
+      sugBox.hidden = true;
+      return;
+    }
 
     const vn = norm(val);
     const matches = TODOS_BAIRROS.filter((b) => b.includes(vn)).slice(0, 8);
 
-    if (!matches.length) { sugBox.hidden = true; return; }
+    if (!matches.length) {
+      sugBox.hidden = true;
+      return;
+    }
 
     sugBox.innerHTML = "";
     matches.forEach((b) => {
-      const c = CONSELHOS.find((ct) => ct.bairros.some((cb) => norm(cb) === norm(b)));
+      const c = CONSELHOS.find((ct) =>
+        ct.bairros.some((cb) => norm(cb) === norm(b)),
+      );
       const item = document.createElement("div");
       item.className = "suggestion-item";
       item.innerHTML = `
@@ -339,7 +441,10 @@ if (searchInput && sugBox) {
   searchInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       sugBox.hidden = true;
-      mostrarResultados(buscar(searchInput.value.trim()), searchInput.value.trim());
+      mostrarResultados(
+        buscar(searchInput.value.trim()),
+        searchInput.value.trim(),
+      );
     }
     if (e.key === "Escape") sugBox.hidden = true;
   });

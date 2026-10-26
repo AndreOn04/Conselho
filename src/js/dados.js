@@ -10,7 +10,7 @@ function soDigitos(texto) {
 async function carregarDados() {
   try {
     const resp = await fetch(
-      `${SUPABASE_URL}/rest/v1/conselhos?id=eq.${CONSELHO_DONO}&select=telefones,emails,endereco`,
+      `${SUPABASE_URL}/rest/v1/conselhos?id=eq.${CONSELHO_DONO}&select=telefones,emails,endereco,abre,fecha`,
       { headers: { apikey: SUPABASE_CHAVE } }
     );
     if (!resp.ok) {
@@ -26,6 +26,17 @@ async function carregarDados() {
     const tel = conselho.telefones[0];
     const email = conselho.emails[0];
     if (conselho.endereco) enderecoAtual = conselho.endereco + ", Cuiabá/MT";
+
+    if(conselho.abre && conselho.fecha) {
+      const abre = conselho.abre.slice(0, 5); // "08:00"
+      const fecha = conselho.fecha.slice(0, 5); // "18:00"
+      window.horarioAtual = { abre, fecha };
+
+      const fmt = (h) => h.replace(":", "h"); // "08:00"
+      document.querySelectorAll('[data-info="horario"]').forEach((el) => {
+        el.textContent = `${fmt(abre)} – ${fmt(fecha)}`;
+      })
+    }
 
     document.querySelectorAll('[data-info="telefone"]').forEach((el) => (el.textContent = tel));
     document.querySelectorAll('[data-info="telefone-link"]').forEach((el) => (el.href = "tel:+55" + soDigitos(tel)));
