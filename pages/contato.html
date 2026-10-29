@@ -111,13 +111,13 @@
           autocomplete="off"
           aria-label="Buscar por bairro"
         />
-        <span class="search-icon" aria-hidden="true"> 🔍 </span>
+        <span class="search-icon" aria-hidden="true"> <ion-icon name="search-outline"></ion-icon> </span>
         <div class="suggestion" id="suggestion" hidden></div>
       </div>
 
       <div style="margin-top: 16px">
         <button class="btn-all" id="btnVerAll">
-          📋 Ver todos os conselhos
+          <ion-icon name="add-outline"></ion-icon> Ver todos os conselhos
         </button>
       </div>
 
@@ -143,7 +143,7 @@
             <div class="result-label" id="resultLabel">Resultados</div>
             <div class="result-count" id="resultCount"></div>
           </div>
-          <button class="btn-clear" id="btnClear">✕ Limpar busca</button>
+          <button class="btn-clear" id="btnClear"><ion-icon name="close-outline"></ion-icon> Limpar busca</button>
         </div>
         <div class="cards-grid" id="cardsGrid"></div>
       </div>
@@ -171,7 +171,7 @@
         <!-- TELEFONE -->
         <a href="tel:+556536166872" data-info="telefone-link" class="contact-card" title="Ligar agora">
           <div class="card-arrow">↗</div>
-          <div class="card-icon">📞</div>
+          <div class="card-icon"><ion-icon name="call-outline"></ion-icon></div>
           <div class="card-title">Telefone Fixo</div>
           <div class="card-info" data-info="telefone">(65) 3616-6872</div>
           <div class="card-hint">Horário comercial</div>
@@ -179,17 +179,18 @@
 
         <!-- WHATSAPP -->
         <a
-          href="https://wa.me/556399990000?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Conselho%20Tutelar."
-          target="_blank"
-          rel="noopener"
-          class="contact-card"
-          title="Abrir WhatsApp"
-        >
-          <div class="card-arrow">↗</div>
-          <div class="card-icon">💬</div>
-          <div class="card-title">WhatsApp</div>
-          <div class="card-info">99215-5608</div>
-          <div class="card-hint">Mensagens e dúvidas</div>
+            href="#"
+            data-info="whatsapp-link"
+            target="_blank"
+            rel="noopener"
+            class="contact-card"
+            title="Abrir WhatsApp"
+            hidden
+            >
+            <div class="card-arrow">↗</div>
+            <div class="card-icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></div>
+            <div class="card-info" data-info="whatsapp"></div>
+            <div class="card-hint"> Mensagens e dúvidas </div>
         </a>
 
         <!-- E-MAIL -->
@@ -200,7 +201,7 @@
           title="Enviar e-mail"
         >
           <div class="card-arrow">↗</div>
-          <div class="card-icon">✉️</div>
+          <div class="card-icon"><ion-icon name="mail-outline"></ion-icon></div>
           <div class="card-title">E-mail Institucional</div>
           <div class="card-info" data-info="email">ct.cpa@cuiaba.mt.gov.br</div>
           <div class="card-hint">Resposta em até 2 dias úteis</div>
@@ -214,7 +215,7 @@
           style="cursor: pointer"
         >
           <div class="card-arrow">⧉</div>
-          <div class="card-icon">📍</div>
+          <div class="card-icon"><ion-icon name="pin-outline"></ion-icon></div>
           <div class="card-title">Atendimento Presencial</div>
           <div class="card-info">Rua Jornalista Caramuru de Campos Maciel, nº 4, quadra 19, bairro CPA II</div>
         </div>
